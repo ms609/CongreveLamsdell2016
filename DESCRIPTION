@@ -1,7 +1,7 @@
 Package: CongreveLamsdell2016
 Version: 0.0.0.9000
 Date: 2018-11-19
-Title: Results generated from Congreve and Lamsdell 2016
+Title: Results generated from Congreve and Lamsdell (2016)
 Description: Includes the 100 datasets simulated by Congreve and Lamsdell (2016) 
   <doi:10.1111/pala.12236>, and analyes of their partition and quartet distance 
   from the generative tree, as analysed by Smith (2019).
@@ -23,11 +23,11 @@ Imports:
     Rdpack
 Suggests:
     ape,
+    phangorn,
     Quartet,
     usethis
 RdMacros: Rdpack
 LazyData: true
 ByteCompile: true
-VignetteBuilder: knitr
 RoxygenNote: 6.1.0
 Roxygen: list(markdown = TRUE)
