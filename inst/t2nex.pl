@@ -1,5 +1,5 @@
-## Replace the following line with the path to your files
-$dir = "C:/path/to/files"; 
+## $dir should point to the same path as used in bayesgen.pl
+$dir = "C:/path/to/files";
 
 ###
 use File::Find;
@@ -30,7 +30,7 @@ sub t2nex() {
       for (@lines) {
         ++$i;
         if ($i < 5) {
-          print OUTPUT; 
+          print OUTPUT;
         } elsif ($i > 428) {
           s/:[^,\(\)]+//g;
           # Replace taxon numbers with taxon names
@@ -57,7 +57,7 @@ sub t2nex() {
           s/(?<!\d)21(?![\d~])/21~/g;
           s/(?<!\d)22(?![\d~])/22~/g;
           s/~//g;
-          
+
           s/(\d+) /\1, /g;
           s/,? +\)/\)/g;
           s/(gen.\d+),/\1/g;
