@@ -3,7 +3,7 @@ Version: 0.0.0.9000
 Date: 2018-11-19
 Title: Results generated from Congreve and Lamsdell (2016)
 Description: Includes the 100 datasets simulated by Congreve and Lamsdell (2016) 
-  <doi:10.1111/pala.12236>, and analyes of their partition and quartet distance 
+  <doi:10.1111/pala.12236>, and analyses of their partition and quartet distance 
   from the generative tree, as analysed by Smith (2019).
 URL: https://github.com/ms609/CongreveLamsdell2016
 BugReports: https://github.com/ms609/Quartet/issues
