@@ -1,6 +1,7 @@
 # Runs mpts.run for files 001 > 100
-# Be sure to replace $dir with the path to your MrBayes files
-# This directory should contain mrbayesblock.nex.
+# Set $dir below to point to the working directory.
+# This directory should contain mrbayesblock.nex, and the trees from Congreve &
+# Lamsdell's data dryad repository (copied in this repository in inst/matrices/###.txt.nex)
 $dir = "C:/Bayes64/iw";
 
 ####
@@ -24,7 +25,7 @@ foreach my $i (1..100) {
   }
   close SPLICE;
   system("C:/Bayes64/MrBayes/mrbayes_x64.exe $splicefile");
-  
+
   open (CONSENSUS, "<$dir/$fileno.nex.con.tre") or warn ("Can't open consensus trees");
   @lines = <CONSENSUS>;
   close CONSENSUS;
