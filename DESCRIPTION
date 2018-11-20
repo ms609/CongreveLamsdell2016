@@ -20,15 +20,12 @@ License: GPL (>= 2)
 Encoding: UTF-8
 Language: en-GB
 Depends: R (>= 3.4.0)
-Imports:
-    Rdpack
 Suggests:
     ape,
     phangorn,
     Quartet,
     usethis
-RdMacros: Rdpack
 LazyData: true
 ByteCompile: true
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)

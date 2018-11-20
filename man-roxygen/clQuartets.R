@@ -6,11 +6,11 @@
 #' phylogenetic analysis under different methods:
 #'
 #' \itemize{
-#' \item{markov}{Using the Markov K model in MrBayes.}
-#' \item{equal}{Using equal weights in TNT.}
-#' \item{implied1,implied2,implied3,implied5,implied10}{Using implied weights in TNT,
+#' \item{`markov`: }{Using the Markov K model in MrBayes.}
+#' \item{`equal`: }{Using equal weights in TNT.}
+#' \item{`implied1`, `implied2`, `implied3`, `implied5`, `implied10`: }{Using implied weights in TNT,
 #'   with the concavity constant (_k_) set to 1, 2, 3, 5, or 10}
-#' \item{impliedC}{By taking the strict *c*onsensus of all trees recovered by implied
+#' \item{`impliedC`: }{By taking the strict *c*onsensus of all trees recovered by implied
 #' weights parsimony analysis under the _k_ values 2, 3, 5 and 10 (but not 1).}
 #' }
 #'
@@ -24,17 +24,17 @@
 #' The data object contains a list whose elements are named after the methods, as listed above.
 #'
 #' Each list entry is a three-dimensional array, whose dimensions are:
-#' \itemize{
-#' \item{1}{The suboptimality of the tree: for _markov_, the consensus at a 50%,
+#'   1.  The suboptimality of the tree: for _markov_, the consensus at a 50%,
 #'  52.5%, ... 97.5%, 100% posterior probability; for _equal_, the consensus of
 #'  all trees that are 0, 1, .... 19, 20 steps less optimal than the optimal
 #'  tree; for _implied_, the consensus of all trees that are 0.73^(19:0)
-#' less optimal than the optimal tree.}
-#' \item{2}{The number of <%=quartet%>s in total, the same, different, resolved
+#' less optimal than the optimal tree.
+#'   2.  The number of <%=quartet%>s in total, the same, different, resolved
 #'  in the estimated tree but not the generative tree (= 0), resolved in the
-#'  generative tree but not the estimated tree}
-#' \item{3}{The number of the matrix, from 1 to 100.}
-#' }
+#'  generative tree but not the estimated tree
+#'   3.  The number of the matrix, from 1 to 100.
 #'
-#' @seealso \link{clMatrices}, \link{clReferenceTree}.
-#' @source \insertRef{Congreve2016}{Quartet}
+#' @seealso [clMatrices], [clReferenceTree].
+#' @source Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
+#'   utility in palaeontological datasets: a study using modelled phylogenetic
+#'    matrices. Palaeontology 59(3), 447--465. <doi:10.1111/pala.12236>.

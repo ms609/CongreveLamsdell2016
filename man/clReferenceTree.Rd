@@ -6,7 +6,9 @@
 \title{Tree topology for matrix simulation}
 \format{A single phylogenetic tree saved as an object of class \code{phylo}}
 \source{
-\insertRef{Congreve2016}{Quartet}
+Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
+utility in palaeontological datasets: a study using modelled phylogenetic
+matrices. Palaeontology 59(3), 447--465. \url{doi:10.1111/pala.12236}.
 }
 \usage{
 clReferenceTree
@@ -22,7 +24,13 @@ Congreve & Lamsdell (2016)
 
 }
 \references{
-\insertRef{Congreve2016}{Quartet}
-\insertRef{Congreve2016dd}{Quartet}
+\itemize{
+\item Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
+utility in palaeontological datasets: a study using modelled phylogenetic
+matrices. Palaeontology 59(3), 447--465. \url{doi:10.1111/pala.12236}.
+\item Congreve, C. R. & Lamsdell, J. C. (2016). Data from: Implied weighting and its
+utility in palaeontological datasets: a study using modelled phylogenetic
+matrices. Dryad Digital Repository. \url{doi:10.5061/dryad.7dq0j}
+}
 }
 \keyword{datasets}
