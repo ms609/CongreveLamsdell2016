@@ -1,3 +1,3 @@
-# CongreveLamsdell2016 v0.0.0.9000 (development)
+# CongreveLamsdell2016 v1.0.0
 
-* Standalone pacakge created
+* Standalone package created. (Data was originally included in `Quartet`.)

@@ -14,10 +14,10 @@
 #' @references
 #'   - Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
 #'   utility in palaeontological datasets: a study using modelled phylogenetic
-#'    matrices. Palaeontology 59(3), 447--465. <doi:10.1111/pala.12236>.
+#'    matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
 #'   - Congreve, C. R. & Lamsdell, J. C. (2016). Data from: Implied weighting and its
 #'   utility in palaeontological datasets: a study using modelled phylogenetic
-#'    matrices. Dryad Digital Repository. <doi:10.5061/dryad.7dq0j>
+#'    matrices. Dryad Digital Repository. \doi{10.5061/dryad.7dq0j}.
 
 #'
 #' @source \url{http://datadryad.org/resource/doi:10.5061/dryad.7dq0j}
@@ -36,10 +36,10 @@
 #' @references
 #'   - Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
 #'   utility in palaeontological datasets: a study using modelled phylogenetic
-#'    matrices. Palaeontology 59(3), 447--465. <doi:10.1111/pala.12236>.
+#'    matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
 #'   - Congreve, C. R. & Lamsdell, J. C. (2016). Data from: Implied weighting and its
 #'   utility in palaeontological datasets: a study using modelled phylogenetic
-#'    matrices. Dryad Digital Repository. <doi:10.5061/dryad.7dq0j>
+#'    matrices. Dryad Digital Repository. \doi{10.5061/dryad.7dq0j}.
 #'
 #' @examples
 #'   library(ape) # Contains tree plotting functions
@@ -48,7 +48,7 @@
 #'
 #' @source Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
 #'   utility in palaeontological datasets: a study using modelled phylogenetic
-#'    matrices. Palaeontology 59(3), 447--465. <doi:10.1111/pala.12236>.
+#'    matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
 "clReferenceTree"
 
 #' @templateVar quartet quartet
