@@ -128,8 +128,8 @@ clPartitions <- list(
 
 
 ### Save statistics to data file
-This uses `devtools` (which you'll need to install using 
-`install.packages('devtools')` if you haven't already) to package the data 
+This uses the `usedata` package (which you'll need to install using 
+`install.packages('usethis')` if you haven't already) to package the data 
 into a data file that can be bundled with the package.
 
 ```{R Save statistics}
