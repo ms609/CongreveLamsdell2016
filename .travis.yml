@@ -1,0 +1,32 @@
+language: r
+r:
+ - 3.4
+ - devel
+cache: packages
+warnings_are_errors: true
+r_check_args: --as-cran
+env:
+ - _R_CHECK_FORCE_SUGGESTS_=false
+sudo: required # Required to use binary packages, which are faster than source installs
+
+git:
+  depth: 1
+
+addons:
+  apt:
+    packages:
+      - ghostscript
+
+r_binary_packages:
+ - ape
+ - devtools
+ - knitr
+ - rmarkdown
+ - roxygen2
+
+# Some packages not available as binaries:
+r_packages:
+ - Ternary
+
+before_script:
+ - R -e "devtools::document()"
