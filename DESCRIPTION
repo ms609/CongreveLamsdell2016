@@ -22,11 +22,13 @@ Language: en-GB
 Depends: R (>= 3.4.0)
 Suggests:
     ape,
+    knitr,
     phangorn,
     Quartet,
     Ternary,
     usethis
 LazyData: true
 ByteCompile: true
+VignetteBuilder: knitr
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
