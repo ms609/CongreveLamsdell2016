@@ -57,7 +57,7 @@ LoadSuboptimal <- function (pref) {
 rawMatrices <- lapply(MATRIX_FILES, ape::read.nexus.data)
 clMatrices <- lapply(rawMatrices, function (mat) lapply(mat, function (row) row[-(56:59)]))
 clPhyDat <- lapply(clMatrices, phangorn::phyDat, type="USER", levels=1:2)
-clCI <- vapply(clPhyDat, function (mat) phangorn::CI(clReferenceTree, mat), double(1))
+clCI <- vapply(clPhyDat, function (mat) phangorn::CI(referenceTree, mat), double(1))
 names(clCI) <- FILE_NUMS
 
 # Save data:
