@@ -8,7 +8,7 @@
 \source{
 Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
 utility in palaeontological datasets: a study using modelled phylogenetic
-matrices. Palaeontology 59(3), 447--465. \url{doi:10.1111/pala.12236}.
+matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
 }
 \usage{
 clPartitions

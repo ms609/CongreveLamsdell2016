@@ -8,7 +8,7 @@
 \source{
 Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
 utility in palaeontological datasets: a study using modelled phylogenetic
-matrices. Palaeontology 59(3), 447--465. \url{doi:10.1111/pala.12236}.
+matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
 }
 \usage{
 clReferenceTree
@@ -27,10 +27,10 @@ Congreve & Lamsdell (2016)
 \itemize{
 \item Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
 utility in palaeontological datasets: a study using modelled phylogenetic
-matrices. Palaeontology 59(3), 447--465. \url{doi:10.1111/pala.12236}.
+matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
 \item Congreve, C. R. & Lamsdell, J. C. (2016). Data from: Implied weighting and its
 utility in palaeontological datasets: a study using modelled phylogenetic
-matrices. Dryad Digital Repository. \url{doi:10.5061/dryad.7dq0j}
+matrices. Dryad Digital Repository. \doi{10.5061/dryad.7dq0j}.
 }
 }
 \keyword{datasets}
