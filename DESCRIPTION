@@ -27,6 +27,7 @@ Suggests:
     Quartet,
     Ternary,
     usethis
+Remotes: ms609/Quartet#20
 LazyData: true
 ByteCompile: true
 VignetteBuilder: knitr

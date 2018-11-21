@@ -29,5 +29,8 @@ r_packages:
  - bookdown
  - Ternary
 
+r_github_packages:
+ - ms609/Quartet#20
+
 before_script:
  - R -e "devtools::document()"
