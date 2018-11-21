@@ -23,11 +23,9 @@ Congreve & Lamsdell [-@Congreve2016] using a ternary plotting approach
 
 ```{r initialize, echo=FALSE}
 Sys.setlocale("LC_ALL", "English_United Kingdom.1252") # allows PCH=183
-library(Quartet)
-library(Ternary)
-# TODO replace with CRAN link, and remove devtools as a dependancy
-if (!require(CongreveLamsdell2016)) devtools::install_github('ms609/CongreveLamsdell2016')
-library(CongreveLamsdell2016)
+library("Quartet")
+library("Ternary")
+library("CongreveLamsdell2016")
 data('clPartitions', 'clQuartets', 'clCI')
 ```
 

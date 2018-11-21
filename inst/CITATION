@@ -1,7 +1,7 @@
 year <- "2017"
 
 citHeader(paste0("Data: Congreve & Lamsdell (2016a, b). Analysis: Smith (", year,
-          ")"))
+          ")."))
 
 citEntry(entry = "article",
         journal = "BioRxiv",
