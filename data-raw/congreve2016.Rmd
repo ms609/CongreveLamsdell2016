@@ -104,25 +104,25 @@ impC  <- lapply(seq_along(imp2), function(i) lapply(1:21, function (j)
 BLANK_RETURN <- matrix(0, ncol=6, nrow=21)
 
 clQuartets <- list(
-  markov    = vapply(markov, Quartet::MatchingQuartets, cf=referenceTree, BLANK_RETURN),
-  equal     = vapply(equal,  Quartet::MatchingQuartets, cf=referenceTree, BLANK_RETURN),
-  implied1  = vapply(imp1,   Quartet::MatchingQuartets, cf=referenceTree, BLANK_RETURN),
-  implied2  = vapply(imp2,   Quartet::MatchingQuartets, cf=referenceTree, BLANK_RETURN),
-  implied3  = vapply(imp3,   Quartet::MatchingQuartets, cf=referenceTree, BLANK_RETURN),
-  implied5  = vapply(imp5,   Quartet::MatchingQuartets, cf=referenceTree, BLANK_RETURN),
-  implied10 = vapply(impX,   Quartet::MatchingQuartets, cf=referenceTree, BLANK_RETURN),
-  impliedC  = vapply(impC,   Quartet::MatchingQuartets, cf=referenceTree, BLANK_RETURN)
+  markov    = vapply(markov, Quartet::QuartetStatus, cf=referenceTree, BLANK_RETURN),
+  equal     = vapply(equal,  Quartet::QuartetStatus, cf=referenceTree, BLANK_RETURN),
+  implied1  = vapply(imp1,   Quartet::QuartetStatus, cf=referenceTree, BLANK_RETURN),
+  implied2  = vapply(imp2,   Quartet::QuartetStatus, cf=referenceTree, BLANK_RETURN),
+  implied3  = vapply(imp3,   Quartet::QuartetStatus, cf=referenceTree, BLANK_RETURN),
+  implied5  = vapply(imp5,   Quartet::QuartetStatus, cf=referenceTree, BLANK_RETURN),
+  implied10 = vapply(impX,   Quartet::QuartetStatus, cf=referenceTree, BLANK_RETURN),
+  impliedC  = vapply(impC,   Quartet::QuartetStatus, cf=referenceTree, BLANK_RETURN)
 )
 
 clPartitions <- list(
-  markov    = vapply(markov, Quartet::MatchingSplits, cf=referenceTree, BLANK_RETURN),
-  equal     = vapply(equal , Quartet::MatchingSplits, cf=referenceTree, BLANK_RETURN),
-  implied1  = vapply(imp1,   Quartet::MatchingSplits, cf=referenceTree, BLANK_RETURN),
-  implied2  = vapply(imp2,   Quartet::MatchingSplits, cf=referenceTree, BLANK_RETURN),
-  implied3  = vapply(imp3,   Quartet::MatchingSplits, cf=referenceTree, BLANK_RETURN),
-  implied5  = vapply(imp5,   Quartet::MatchingSplits, cf=referenceTree, BLANK_RETURN),
-  implied10 = vapply(impX,   Quartet::MatchingSplits, cf=referenceTree, BLANK_RETURN),
-  impliedC  = vapply(impC,   Quartet::MatchingSplits, cf=referenceTree, BLANK_RETURN)
+  markov    = vapply(markov, Quartet::SplitStatus, cf=referenceTree, BLANK_RETURN),
+  equal     = vapply(equal , Quartet::SplitStatus, cf=referenceTree, BLANK_RETURN),
+  implied1  = vapply(imp1,   Quartet::SplitStatus, cf=referenceTree, BLANK_RETURN),
+  implied2  = vapply(imp2,   Quartet::SplitStatus, cf=referenceTree, BLANK_RETURN),
+  implied3  = vapply(imp3,   Quartet::SplitStatus, cf=referenceTree, BLANK_RETURN),
+  implied5  = vapply(imp5,   Quartet::SplitStatus, cf=referenceTree, BLANK_RETURN),
+  implied10 = vapply(impX,   Quartet::SplitStatus, cf=referenceTree, BLANK_RETURN),
+  impliedC  = vapply(impC,   Quartet::SplitStatus, cf=referenceTree, BLANK_RETURN)
 )
 ```
 

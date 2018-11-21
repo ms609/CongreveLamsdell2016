@@ -1,0 +1,45 @@
+year <- "2017"
+
+citHeader(paste0("Data: Congreve & Lamsdell (2016a, b). Analysis: Smith (", year,
+          ")"))
+
+citEntry(entry = "article",
+        journal = "BioRxiv",
+        author = personList(as.person("Martin R. Smith")),
+        title = "Quantifying and visualising divergence between pairs of phylogenetic trees",
+        year = year,
+
+        textVersion =
+        paste0("Smith (", year, "). ",
+               "Quantifying and visualising divergence between pairs of phylogenetic trees. ",
+               "BioRxiv",
+               ", doi: 10.1101/227942"))
+
+citEntry(entry= "article",
+  author = personList(as.person("Congreve, Curtis R."), as.person("Lamsdell, James C.")),
+  issue = "3",
+  journal = "Palaeontology",
+  pages = "447-465",
+  title = "Implied weighting and its utility in palaeontological datasets: a study using modelled phylogenetic matrices",
+  volume = "59",
+  year = "2016",
+
+  textVersion = paste0("Congreve, C. R., and J. C. Lamsdell. 2016. ",
+                       "Implied weighting and its utility in palaeontological datasets: ",
+                       "a study using modelled phylogenetic matrices. ",
+                       "Palaeontology, 59:447–462. doi:10.1111/pala.12236")
+)
+
+citEntry(entry= "article",
+  author = personList(as.person("Congreve, Curtis R."), as.person("Lamsdell, James C.")),
+  journal = "Dryad Digital Repository",
+  pages = "doi:10.5061/dryad.7dq0j",
+  title = "Data from: Implied weighting and its utility in palaeontological datasets: a study using modelled phylogenetic matrices",
+  year = "2016",
+
+  textVersion <- paste0("Congreve, C. R., and J. C. Lamsdell. 2016. Data from: ",
+                        "Implied weighting and its utility in palaeontological datasets: ",
+                        "a study using modelled phylogenetic matrices. ",
+                        "Dryad Digital Repository, doi:10.5061/dryad.7dq0j.")
+)
+
