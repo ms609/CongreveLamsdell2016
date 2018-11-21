@@ -30,7 +30,7 @@ r_packages:
  - Ternary
 
 r_github_packages:
- - ms609/Quartet#20
+ - ms609/Quartet
 
 before_script:
  - R -e "devtools::document()"
