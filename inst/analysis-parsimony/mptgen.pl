@@ -18,6 +18,6 @@ foreach my $i (1..100) {
     print SCRIPT $line;
   }
   close SCRIPT;
-  system("tnt $scriptfile");
+  system("tnt proc $scriptfile");
 }
 do "tnt2nex.pl";
