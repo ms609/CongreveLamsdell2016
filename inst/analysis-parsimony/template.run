@@ -1,5 +1,5 @@
 macro =;
-proc s1-tnt\001.txt
+proc Matrices\001.txt;
 xmult:repl 10 hits 20 level 4 chklevel 5 rss fuse5 rat10 drift15; 
 
 keep 0; hold 10000;
