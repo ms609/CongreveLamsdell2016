@@ -1,9 +1,11 @@
 macro =;
 proc Matrices\001.txt;
 xmult:repl 10 hits 20 level 4 chklevel 5 rss fuse5 rat10 drift15; 
+var: nt;
 
 keep 0; hold 10000;
- piwe-  ;xmult;bbreak=tbr;tsav *Trees/eq.001.tre;sav;tsav/;tsav *Trees/eq.001.con.tre;nels*;sav/;tsav/;
+ piwe-  ;xmult;bbreak=tbr;tsav *Trees/eq.001.tre;sav;tsav/;nels*;set nt ntrees;ttag=;
+ resample=sym replications 1000;resample=jak replications 1000;log Trees/eq.001a.con.tre;ttag/;log/;ttag-; 
  hold 200;
  subopt 1 ; bbreak;  tsav *Trees/eq.001.so01.tre;sav;tsav/;tsav *Trees/eq.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 2 ; bbreak;  tsav *Trees/eq.001.so02.tre;sav;tsav/;tsav *Trees/eq.001.so02.con.tre;nels*;sav/;tsav/;
