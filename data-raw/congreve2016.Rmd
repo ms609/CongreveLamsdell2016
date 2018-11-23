@@ -95,6 +95,34 @@ impC  <- lapply(seq_along(imp2), function(i) lapply(1:21, function (j)
   ))
 ```
 
+```{R Load resampling metrics}
+GetJacks <- function (jackFile) {
+  jackLines <- readLines(jackFile)
+  jackTree <- TNTText2Tree(jackLines[3])
+  jackTipOrder <- order(as.integer(jackTree$tip.label) + 1L)
+  jackNodeOrder <- unique(unlist(phangorn::Ancestors(jackTree, jackTipOrder)))[-1]
+  nTntNode <- jackTree$Nnode
+
+  treeFile <- gsub("\\.ttag$", ".tre", jackFile)
+  tntTrees <- ReadTntTree(treeFile, relativePath='.')
+  tipLabel <- if (class(tntTrees) == 'phylo') tntTrees$tip.label else tntTrees[[1]]$tip.label
+  jackTree$tip.label <- tipLabel
+
+  jackScores <- trimws(gsub("ttag \\+\\d+ (.*); *", "\\1",
+                            jackLines[length(jackLines) - (nTntNode - 2L):0]))[order(jackNodeOrder)]
+  return (list(tree = jackTree,
+               sym  = gsub("^(\\d+)/.*", "\\1", jackScores),
+               jak  = gsub("^\\d+/(\\[?\\d+\\]?)$", "\\1", jackScores)
+               )
+}
+
+jackFile <- "C:/research/iw/Trees/eq.001.ttag"
+
+jacks <- GetJacks(jackFile)
+plot(jacks$tree)
+nodelabels(paste0(jacks$sym, '/', jacks$jak))
+```
+
 
 ### Calculate tree statistics
 

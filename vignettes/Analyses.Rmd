@@ -101,7 +101,7 @@ download.file(paste0(INST_ROOT, "analysis-parsimony/template.run"),
 ```{r eval=FALSE}
 tempFile <- tempfile(fileext='.zip')
 download.file("https://datadryad.org/bitstream/handle/10255/dryad.101095/S1%20-%20TNT%20files.zip", tempFile)
-unzip(tempFile, exdir=paste0(HOME, 'Matrices'))
+unzip(tempFile, exdir=paste0(HOME, '/Matrices'))
 ```
 
 * Perform the analyses by executing `mptgen.pl`. (Once Perl is installed,
