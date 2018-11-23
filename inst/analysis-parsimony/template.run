@@ -1,9 +1,9 @@
 macro =;
 proc s1-tnt\001.txt
-xmult:hits 20 level 4 chklevel 5 rat10 drift10; 
+xmult:repl 10 hits 20 level 4 chklevel 5 rss fuse5 rat10 drift15; 
 
 keep 0; hold 10000;
- piwe-  ;xmult;tsav *Trees/eq.001.tre;sav;tsav/;tsav *Trees/eq.001.con.tre;nels*;sav/;tsav/;
+ piwe-  ;xmult;bbreak=tbr;tsav *Trees/eq.001.tre;sav;tsav/;tsav *Trees/eq.001.con.tre;nels*;sav/;tsav/;
  hold 200;
  subopt 1 ; bbreak;  tsav *Trees/eq.001.so01.tre;sav;tsav/;tsav *Trees/eq.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 2 ; bbreak;  tsav *Trees/eq.001.so02.tre;sav;tsav/;tsav *Trees/eq.001.so02.con.tre;nels*;sav/;tsav/;
@@ -27,7 +27,7 @@ keep 0; hold 10000;
  subopt 20; bbreak;  tsav *Trees/eq.001.so20.tre;sav;tsav/;tsav *Trees/eq.001.so20.con.tre;nels*;sav/;tsav/;
   
  keep 0; hold 10000; 
- piwe=1 ;xmult;tsav *Trees/k1.001.tre;sav;tsav/;tsav *Trees/k1.001.con.tre;nels*;sav/;tsav/;
+ piwe=1 ;xmult;bbreak=tbr;tsav *Trees/k1.001.tre;sav;tsav/;tsav *Trees/k1.001.con.tre;nels*;sav/;tsav/;
  hold 200;
  subopt 0.00253; bbreak; tsav *Trees/k1.001.so01.tre;sav;tsav/;tsav *Trees/k1.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 0.00347; bbreak; tsav *Trees/k1.001.so02.tre;sav;tsav/;tsav *Trees/k1.001.so02.con.tre;nels*;sav/;tsav/;
@@ -51,7 +51,7 @@ keep 0; hold 10000;
  subopt 1.00000; bbreak; tsav *Trees/k1.001.so20.tre;sav;tsav/;tsav *Trees/k1.001.so20.con.tre;nels*;sav/;tsav/;
  
  keep 0; hold 10000; 
- piwe=2 ;xmult;tsav *Trees/k2.001.tre;sav;tsav/;tsav *Trees/k2.001.con.tre;nels*;sav/;tsav/;
+ piwe=2 ;xmult;bbreak=tbr;tsav *Trees/k2.001.tre;sav;tsav/;tsav *Trees/k2.001.con.tre;nels*;sav/;tsav/;
  hold 200;
  subopt 0.00253; bbreak; tsav *Trees/k2.001.so01.tre;sav;tsav/;tsav *Trees/k2.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 0.00347; bbreak; tsav *Trees/k2.001.so02.tre;sav;tsav/;tsav *Trees/k2.001.so02.con.tre;nels*;sav/;tsav/;
@@ -75,7 +75,7 @@ keep 0; hold 10000;
  subopt 1.00000; bbreak; tsav *Trees/k2.001.so20.tre;sav;tsav/;tsav *Trees/k2.001.so20.con.tre;nels*;sav/;tsav/;
 
  keep 0; hold 10000;
- piwe=3 ;xmult;tsav *Trees/k3.001.tre;sav;tsav/;tsav *Trees/k3.001.con.tre;nels*;sav/;tsav/;
+ piwe=3 ;xmult;bbreak=tbr;tsav *Trees/k3.001.tre;sav;tsav/;tsav *Trees/k3.001.con.tre;nels*;sav/;tsav/;
  hold 200;
  subopt 0.00253; bbreak; tsav *Trees/k3.001.so01.tre;sav;tsav/;tsav *Trees/k3.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 0.00347; bbreak; tsav *Trees/k3.001.so02.tre;sav;tsav/;tsav *Trees/k3.001.so02.con.tre;nels*;sav/;tsav/;
@@ -99,7 +99,7 @@ keep 0; hold 10000;
  subopt 1.00000; bbreak; tsav *Trees/k3.001.so20.tre;sav;tsav/;tsav *Trees/k3.001.so20.con.tre;nels*;sav/;tsav/;
 
  keep 0; hold 10000;
- piwe=5 ;xmult;tsav *Trees/k5.001.tre;sav;tsav/;tsav *Trees/k5.001.con.tre;nels*;sav/;tsav/;
+ piwe=5 ;xmult;bbreak=tbr;tsav *Trees/k5.001.tre;sav;tsav/;tsav *Trees/k5.001.con.tre;nels*;sav/;tsav/;
  hold 200;
  subopt 0.00253; bbreak; tsav *Trees/k5.001.so01.tre;sav;tsav/;tsav *Trees/k5.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 0.00347; bbreak; tsav *Trees/k5.001.so02.tre;sav;tsav/;tsav *Trees/k5.001.so02.con.tre;nels*;sav/;tsav/;
@@ -123,7 +123,7 @@ keep 0; hold 10000;
  subopt 1.00000; bbreak; tsav *Trees/k5.001.so20.tre;sav;tsav/;tsav *Trees/k5.001.so20.con.tre;nels*;sav/;tsav/;
 
  keep 0; hold 10000;
- piwe=10;xmult;tsav *Trees/kX.001.tre;sav;tsav/;tsav *Trees/kX.001.con.tre;nels*;sav/;tsav/;
+ piwe=10;xmult;bbreak=tbr;tsav *Trees/kX.001.tre;sav;tsav/;tsav *Trees/kX.001.con.tre;nels*;sav/;tsav/;
  hold 200;
  subopt 0.00253; bbreak; tsav *Trees/kX.001.so01.tre;sav;tsav/;tsav *Trees/kX.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 0.00347; bbreak; tsav *Trees/kX.001.so02.tre;sav;tsav/;tsav *Trees/kX.001.so02.con.tre;nels*;sav/;tsav/;
