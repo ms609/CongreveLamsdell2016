@@ -5,7 +5,7 @@ var: nt;
 
 keep 0; hold 10000;
  piwe-  ;xmult;bbreak=tbr;tsav *Trees/eq.001.tre;sav;tsav/;nels*;set nt ntrees;ttag=;
- resample=sym replications 1000;resample=jak replications 1000;log Trees/eq.001.ttag;ttag/;log/;ttag-; 
+ resample=sym replications 5000 frequency;resample=jak replications 5000 frequency;log Trees/eq.001.ttag;ttag/;log/;ttag-; 
  hold 200;
  subopt 1 ; bbreak;  tsav *Trees/eq.001.so01.tre;sav;tsav/;tsav *Trees/eq.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 2 ; bbreak;  tsav *Trees/eq.001.so02.tre;sav;tsav/;tsav *Trees/eq.001.so02.con.tre;nels*;sav/;tsav/;

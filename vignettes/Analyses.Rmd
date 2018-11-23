@@ -94,7 +94,7 @@ writeLines(mptgen, mptgenPath)
 *	Copy the file template.run into the tntscript subdirectory
 ```{r eval=FALSE}
 download.file(paste0(INST_ROOT, "analysis-parsimony/template.run"), 
-              paste0(HOME, 'tntscript/template.run'))
+              paste0(HOME, '/tntscript/template.run'))
 ```
 
 *	Download Appendix S1 from Congreve and Lamsdell [-@Congreve2016dd]  (doi:[10.5061/dryad.7dq0j/1](https://dx.doi.org/10.5061/dryad.7dq0j/1)) and unzip its 100 text files to `Matrices`

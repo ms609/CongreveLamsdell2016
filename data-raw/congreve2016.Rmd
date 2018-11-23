@@ -49,6 +49,28 @@ LoadSuboptimal <- function (pref) {
   })
 }
 
+# Helper function to load bootstrap and jackknife scores
+Resampling <- function (jackFile) {
+  jackLines <- readLines(jackFile)
+  jackTree <- TNTText2Tree(jackLines[3])
+  jackTipOrder <- order(as.integer(jackTree$tip.label) + 1L)
+  jackNodeOrder <- unique(unlist(phangorn::Ancestors(jackTree, jackTipOrder)))[-1]
+  nTntNode <- jackTree$Nnode
+
+  treeFile <- gsub("\\.ttag$", ".tre", jackFile)
+  tntTrees <- ReadTntTree(treeFile, relativePath='.')
+  tipLabel <- if (class(tntTrees) == 'phylo') tntTrees$tip.label else tntTrees[[1]]$tip.label
+  jackTree$tip.label <- tipLabel
+
+  jackScores <- trimws(gsub("ttag \\+\\d+ (.*); *", "\\1",
+                            jackLines[length(jackLines) - (nTntNode - 2L):0]))[order(jackNodeOrder)]
+  jackScores <- gsub("\\?", 0, jackScores)
+  return (list(tree = jackTree,
+               sym  = gsub("^(\\d+)/.*", "\\1", jackScores),
+               jak  = gsub("^\\d+/(\\[?\\d+\\]?)$", "\\1", jackScores)
+               ))
+}
+
 ```
 
 ## Load matrices and calcluate consistency
@@ -93,38 +115,12 @@ impX  <- LoadSuboptimal('kX')
 impC  <- lapply(seq_along(imp2), function(i) lapply(1:21, function (j)
   ape::consensus(imp2[[i]][[j]], imp3[[i]][[j]], imp5[[i]][[j]], impX[[i]][[j]])
   ))
-```
 
-```{R Load resampling metrics}
-GetJacks <- function (jackFile) {
-  jackLines <- readLines(jackFile)
-  jackTree <- TNTText2Tree(jackLines[3])
-  jackTipOrder <- order(as.integer(jackTree$tip.label) + 1L)
-  jackNodeOrder <- unique(unlist(phangorn::Ancestors(jackTree, jackTipOrder)))[-1]
-  nTntNode <- jackTree$Nnode
 
-  treeFile <- gsub("\\.ttag$", ".tre", jackFile)
-  tntTrees <- ReadTntTree(treeFile, relativePath='.')
-  tipLabel <- if (class(tntTrees) == 'phylo') tntTrees$tip.label else tntTrees[[1]]$tip.label
-  jackTree$tip.label <- tipLabel
-
-  jackScores <- trimws(gsub("ttag \\+\\d+ (.*); *", "\\1",
-                            jackLines[length(jackLines) - (nTntNode - 2L):0]))[order(jackNodeOrder)]
-  return (list(tree = jackTree,
-               sym  = gsub("^(\\d+)/.*", "\\1", jackScores),
-               jak  = gsub("^\\d+/(\\[?\\d+\\]?)$", "\\1", jackScores)
-               )
-}
-
-jackFile <- "C:/research/iw/Trees/eq.001.ttag"
-
-jacks <- GetJacks(jackFile)
-plot(jacks$tree)
-nodelabels(paste0(jacks$sym, '/', jacks$jak))
 ```
 
 
-### Calculate tree statistics
+### Calculate tree statistics (Bremer)
 
 ```{R Calculate-statistics}
 # Define the expected format of tree statistics (needed for vapply)
@@ -165,3 +161,37 @@ usethis::use_data(clQuartets, clPartitions, overwrite=TRUE)
 ```
 
 This data is used in `inst/Generate_figures.R` to generate ternary diagrams.
+
+### Calculate tree statistics (resampling)
+
+```{R Load resampling metrics, message=FALSE, warn=FALSE}
+jackFile <- "C:/research/iw/Trees/eq.001.ttag"
+
+resamples <- Resampling(jackFile)
+plot(resamples$tree)
+# TODO verify that the order is correct
+nodelabels(c('', paste0(resamples$sym, '/', resamples$jak)))
+ReduceTrees <- function(tree, nodeSupport) {
+  nTip <- length(tree$tip.label)
+  nNode <- tree$Nnode
+  collapseOrder <- order(as.double(nodeSupport))
+  reduced <- vector('list', length(nodeSupport))
+  edge <- tree$edge
+  nodeOrder <- nTip + collapseOrder
+  for (i in seq_along(nodeOrder)) {
+    node <- nodeOrder[i]
+    parentEdge <- edge[, 2] == node
+    parent <- edge[parentEdge, 1]
+    edge[edge[, 1] == node, 1] <- parent
+    edge <- edge[-parentEdge, ]
+    newTree <- tree
+    newTree$edge <- edge
+    newTree$Nnode <- Nnode - i
+    reduced[[i]] <- RenumberTree(newTree)
+  }
+}
+
+ReduceTrees(resamples$tree, resamples$sym)
+```
+
+
