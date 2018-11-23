@@ -1,7 +1,8 @@
 # Runs mpts.run for files 001 > 100
+# Edit this line to point to your /Trees folder
 $dir = "C:/Research/iw";
 
-
+## Nothing below this line should need editing.
 open (TEMPLATE, "<$dir/tntscript/template.run") or warn "ERROR: can't find template file at $dir/tntscript/template.run";
 @template = <TEMPLATE>;
 close TEMPLATE;
