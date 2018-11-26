@@ -25,6 +25,7 @@ Suggests:
     knitr,
     phangorn,
     Quartet,
+    TreeSearch (> 0.2.0),
     Ternary,
     usethis
 Remotes: ms609/Quartet

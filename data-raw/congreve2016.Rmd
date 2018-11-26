@@ -52,13 +52,13 @@ LoadSuboptimal <- function (pref) {
 # Helper function to load bootstrap and jackknife scores
 Resampling <- function (jackFile) {
   jackLines <- readLines(jackFile)
-  jackTree <- TNTText2Tree(jackLines[3])
+  jackTree <- TreeSearch::TNTText2Tree(jackLines[3])
   jackTipOrder <- order(as.integer(jackTree$tip.label) + 1L)
   jackNodeOrder <- unique(unlist(phangorn::Ancestors(jackTree, jackTipOrder)))[-1]
   nTntNode <- jackTree$Nnode
 
   treeFile <- gsub("\\.ttag$", ".tre", jackFile)
-  tntTrees <- ReadTntTree(treeFile, relativePath='.')
+  tntTrees <- TreeSearch::ReadTntTree(treeFile, relativePath='.')
   tipLabel <- if (class(tntTrees) == 'phylo') tntTrees$tip.label else tntTrees[[1]]$tip.label
   jackTree$tip.label <- tipLabel
 
@@ -168,30 +168,23 @@ This data is used in `inst/Generate_figures.R` to generate ternary diagrams.
 jackFile <- "C:/research/iw/Trees/eq.001.ttag"
 
 resamples <- Resampling(jackFile)
-plot(resamples$tree)
+
 # TODO verify that the order is correct
-nodelabels(c('', paste0(resamples$sym, '/', resamples$jak)))
+ape::nodelabels(c('', paste0(resamples$sym, '/', resamples$jak)))
 ReduceTrees <- function(tree, nodeSupport) {
   nTip <- length(tree$tip.label)
+  rootNode <- nTip + 1L
   nNode <- tree$Nnode
   collapseOrder <- order(as.double(nodeSupport))
-  reduced <- vector('list', length(nodeSupport))
-  edge <- tree$edge
-  nodeOrder <- nTip + collapseOrder
-  for (i in seq_along(nodeOrder)) {
-    node <- nodeOrder[i]
-    parentEdge <- edge[, 2] == node
-    parent <- edge[parentEdge, 1]
-    edge[edge[, 1] == node, 1] <- parent
-    edge <- edge[-parentEdge, ]
-    newTree <- tree
-    newTree$edge <- edge
-    newTree$Nnode <- Nnode - i
-    reduced[[i]] <- RenumberTree(newTree)
-  }
+  nodeOrder <- rootNode + collapseOrder
+  nodeChoices <- !upper.tri(matrix(NA, length(nodeOrder), length(nodeOrder)))
+  
+  # Return:
+  apply(nodeChoices, 1, function (i) TreeSearch::CollapseNode(tree, nodeOrder[i]))
 }
 
-ReduceTrees(resamples$tree, resamples$sym)
+reduced <- ReduceTrees(resamples$tree, resamples$sym)
+
 ```
 
 
