@@ -53,8 +53,9 @@ keep 0; hold 10000;
  subopt 0.73000; bbreak; tsav *Trees/k1.001.so19.tre;sav;tsav/;tsav *Trees/k1.001.so19.con.tre;nels*;sav/;tsav/;
  subopt 1.00000; bbreak; tsav *Trees/k1.001.so20.tre;sav;tsav/;tsav *Trees/k1.001.so20.con.tre;nels*;sav/;tsav/;
  
- keep 0; hold 10000; 
- piwe=2 ;xmult;bbreak=tbr;tsav *Trees/k2.001.tre;sav;tsav/;tsav *Trees/k2.001.con.tre;nels*;sav/;tsav/;
+ keep 0; hold 10000;
+  piwe=2 ;xmult;bbreak=tbr;tsav *Trees/k2.001.tre;sav;tsav/;nels*;set nt ntrees;ttag=;
+ resample=sym replications 1000;resample=jak replications 1000;log Trees/k2.001.ttag;ttag/;log/;ttag-; 
  hold 200;
  subopt 0.00253; bbreak; tsav *Trees/k2.001.so01.tre;sav;tsav/;tsav *Trees/k2.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 0.00347; bbreak; tsav *Trees/k2.001.so02.tre;sav;tsav/;tsav *Trees/k2.001.so02.con.tre;nels*;sav/;tsav/;
@@ -78,7 +79,8 @@ keep 0; hold 10000;
  subopt 1.00000; bbreak; tsav *Trees/k2.001.so20.tre;sav;tsav/;tsav *Trees/k2.001.so20.con.tre;nels*;sav/;tsav/;
 
  keep 0; hold 10000;
- piwe=3 ;xmult;bbreak=tbr;tsav *Trees/k3.001.tre;sav;tsav/;tsav *Trees/k3.001.con.tre;nels*;sav/;tsav/;
+  piwe=3 ;xmult;bbreak=tbr;tsav *Trees/k3.001.tre;sav;tsav/;nels*;set nt ntrees;ttag=;
+ resample=sym replications 1000;resample=jak replications 1000;log Trees/k3.001.ttag;ttag/;log/;ttag-; 
  hold 200;
  subopt 0.00253; bbreak; tsav *Trees/k3.001.so01.tre;sav;tsav/;tsav *Trees/k3.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 0.00347; bbreak; tsav *Trees/k3.001.so02.tre;sav;tsav/;tsav *Trees/k3.001.so02.con.tre;nels*;sav/;tsav/;
@@ -102,7 +104,8 @@ keep 0; hold 10000;
  subopt 1.00000; bbreak; tsav *Trees/k3.001.so20.tre;sav;tsav/;tsav *Trees/k3.001.so20.con.tre;nels*;sav/;tsav/;
 
  keep 0; hold 10000;
- piwe=5 ;xmult;bbreak=tbr;tsav *Trees/k5.001.tre;sav;tsav/;tsav *Trees/k5.001.con.tre;nels*;sav/;tsav/;
+  piwe=5 ;xmult;bbreak=tbr;tsav *Trees/k5.001.tre;sav;tsav/;nels*;set nt ntrees;ttag=;
+ resample=sym replications 1000;resample=jak replications 1000;log Trees/k5.001.ttag;ttag/;log/;ttag-; 
  hold 200;
  subopt 0.00253; bbreak; tsav *Trees/k5.001.so01.tre;sav;tsav/;tsav *Trees/k5.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 0.00347; bbreak; tsav *Trees/k5.001.so02.tre;sav;tsav/;tsav *Trees/k5.001.so02.con.tre;nels*;sav/;tsav/;
@@ -126,7 +129,8 @@ keep 0; hold 10000;
  subopt 1.00000; bbreak; tsav *Trees/k5.001.so20.tre;sav;tsav/;tsav *Trees/k5.001.so20.con.tre;nels*;sav/;tsav/;
 
  keep 0; hold 10000;
- piwe=10;xmult;bbreak=tbr;tsav *Trees/kX.001.tre;sav;tsav/;tsav *Trees/kX.001.con.tre;nels*;sav/;tsav/;
+  piwe=10;xmult;bbreak=tbr;tsav *Trees/kX.001.tre;sav;tsav/;nels*;set nt ntrees;ttag=;
+ resample=sym replications 1000;resample=jak replications 1000;log Trees/kX.001.ttag;ttag/;log/;ttag-; 
  hold 200;
  subopt 0.00253; bbreak; tsav *Trees/kX.001.so01.tre;sav;tsav/;tsav *Trees/kX.001.so01.con.tre;nels*;sav/;tsav/;
  subopt 0.00347; bbreak; tsav *Trees/kX.001.so02.tre;sav;tsav/;tsav *Trees/kX.001.so02.con.tre;nels*;sav/;tsav/;
