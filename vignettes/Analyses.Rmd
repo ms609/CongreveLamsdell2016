@@ -60,6 +60,7 @@ Then:
 *	Create a local directory (default: `C:/Research/iw`) with three subdirectories entitled tntscript, S1-TNT, and Trees.
 ```{r eval=FALSE}
 HOME <- "C:/Research/iw" # Must not end in a trailing '/'
+INST_ROOT <- "https://raw.githubusercontent.com/ms609/CongreveLamsdell2016/master/inst/"
 sapply(paste0(HOME, '/', c('', 'tntscript', 'Matrices', 'Trees')), dir.create)
 ```
 
@@ -76,7 +77,6 @@ file.remove(zipFile)
 
 *	Copy tnt2nex.pl and mptgen.pl into this root directory, updating each file so its variable $dir corresponds to the appropriate path
 ```{r eval=FALSE}
-INST_ROOT <- "https://raw.githubusercontent.com/ms609/CongreveLamsdell2016/master/inst/"
 tnt2nexPath <-  paste0(HOME, '/tnt2nex.pl')
 mptgenPath <-  paste0(HOME, '/mptgen.pl')
 
