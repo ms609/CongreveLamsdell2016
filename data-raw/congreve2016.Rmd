@@ -39,6 +39,7 @@ MATRIX_FILES <- paste0(MATRIX_DIR, '/', FILE_NUMS, '.txt.nex')
 BAYES_TREE <- paste0(DIR_ROOT, 'MrBayes/%s.nex.run%s.nex')
 CI_PATH <- paste0(DIR_ROOT, 'consistency_indices.txt')
 BAYES_SUBOPTIMAL <- seq(1, 0.5, length.out = 21)
+RESAMPLE_SUBOPTIMAL <- seq(0, 100, length.out = 21)
 
 # Helper function to load suboptimal trees
 LoadSuboptimal <- function (pref) {
@@ -71,7 +72,8 @@ Resampling <- function (jackFile) {
 QuartetScores <- function (X) Quartet::QuartetStatus(X, cf=referenceTree)
 PartitionScores <- function (X) Quartet::SplitStatus(X, cf=referenceTree)
 
-ReduceTrees <- function(tree, nodeSupport) {
+# Not used: remove the least supported node in turn until none remain
+ReduceTreesNodeByNode <- function(tree, nodeSupport) {
   nTip <- length(tree$tip.label)
   rootNode <- nTip + 1L
   nNode <- tree$Nnode
@@ -83,9 +85,21 @@ ReduceTrees <- function(tree, nodeSupport) {
   apply(nodeChoices, 1, function (i) TreeSearch::CollapseNode(tree, nodeOrder[i]))
 }
 
+ReduceTreesBySupport <- function(tree, nodeSupport) {
+  nTip <- length(tree$tip.label)
+  rootNode <- nTip + 1L
+  nNode <- tree$Nnode
+  nodeSupport <- as.double(nodeSupport)
+  nodeNumbers <- rootNode + seq_along(nodeSupport)
+  collapse <- lapply(RESAMPLE_SUBOPTIMAL, function (threshold) nodeNumbers[nodeSupport < threshold])
+  
+  # Return:
+  lapply(collapse, function (toCollapse) TreeSearch::CollapseNode(tree, toCollapse))
+}
+
 SupportSuboptimal <- function (filePath, measure) {
   resamples <- Resampling(filePath)
-  reduced <- ReduceTrees(resamples$tree, resamples[[measure]])
+  reduced <- ReduceTreesBySupport(resamples$tree, resamples[[measure]])
 }
   
 NodeSupportSuboptimal <- function(pref, measure) {
@@ -169,15 +183,27 @@ This data is used in `inst/Generate_figures.R` to generate ternary diagrams.
 
 ```{R Load resampling metrics, message=FALSE, warn=FALSE}
 bootTrees <- lapply(WEIGHTINGS, NodeSupportSuboptimal, 'sym')
+names(bootTrees) <- WEIGHTINGS
+bootTrees[['kC']] <-
+  lapply(seq_along(FILE_NUMS), function(i) lapply(1:21, function (j)
+  ape::consensus(bootTrees[['k2']][[i]][[j]], bootTrees[['k3']][[i]][[j]],
+                 bootTrees[['k5']][[i]][[j]], bootTrees[['kX']][[i]][[j]])
+  ))
+
 jackTrees <- lapply(WEIGHTINGS, NodeSupportSuboptimal, 'jak')
+names(jackTrees) <- WEIGHTINGS
+jackTrees[['kC']] <-
+  lapply(seq_along(FILE_NUMS), function(i) lapply(1:21, function (j)
+  ape::consensus(jackTrees[['k2']][[i]][[j]], jackTrees[['k3']][[i]][[j]],
+                 jackTrees[['k5']][[i]][[j]], jackTrees[['kX']][[i]][[j]])
+  ))
 
 BLANK_RETURN <- matrix(0, ncol=6, nrow=21)
-clBootQuartets <- lapply(bootTrees, lapply, QuartetScores)
-clJackQuartets <- lapply(jackTrees, lapply, QuartetScores)
-clBootPartitions <- lapply(bootTrees, lapply, PartitionScores)
-clJackPartitions <- lapply(jackTrees, lapply, PartitionScores)
-names(clBootQuartets) <- names(clBootPartitions) <- names(clJackQuartets) <- 
-  names(clJackPartitions) <- WEIGHTINGS
+clBootQuartets <- lapply(bootTrees, vapply, QuartetScores, FUN.VALUE=BLANK_RETURN)
+clJackQuartets <- lapply(jackTrees, vapply, QuartetScores, FUN.VALUE=BLANK_RETURN)
+clBootPartitions <- lapply(bootTrees, vapply, PartitionScores, FUN.VALUE=BLANK_RETURN)
+clJackPartitions <- lapply(jackTrees, vapply, PartitionScores, FUN.VALUE=BLANK_RETURN)
+
 usethis::use_data(clBootQuartets, clBootPartitions,
                   clJackQuartets, clJackPartitions, overwrite=TRUE)
 
