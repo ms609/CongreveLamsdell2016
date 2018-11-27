@@ -19,7 +19,7 @@ in which the package is installed -- great, no further work is required.
 Otherwise you might need to run `setwd("C:/path/to/CongreveLamsdell2016/data-raw")`, 
 substituting in the necessary path on your machine.
 
-```{R Initialize-variables}
+```{R Initialize}
 
 # Load the tree used to generate the simulated data matrices
 referenceTree <- CongreveLamsdell2016::clReferenceTree
@@ -56,7 +56,7 @@ Resampling <- function (jackFile) {
   jackTipOrder <- order(as.integer(jackTree$tip.label) + 1L)
   jackNodeOrder <- unique(unlist(phangorn::Ancestors(jackTree, jackTipOrder)))[-1]
   nTntNode <- jackTree$Nnode
-  jackTree$tip.label <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 19, 18, 17, 15, 16, 13, 14, 20, 21, 22)
+  jackTree$tip.label <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 19, 18, 17, 15, 16, 13, 14, 20, 21, 22)[as.integer(jackTree$tip.label) + 1L]
 
   jackScores <- trimws(gsub("ttag \\+\\d+ (.*); *", "\\1",
                             jackLines[length(jackLines) -
@@ -71,6 +71,27 @@ Resampling <- function (jackFile) {
 QuartetScores <- function (X) Quartet::QuartetStatus(X, cf=referenceTree)
 PartitionScores <- function (X) Quartet::SplitStatus(X, cf=referenceTree)
 
+ReduceTrees <- function(tree, nodeSupport) {
+  nTip <- length(tree$tip.label)
+  rootNode <- nTip + 1L
+  nNode <- tree$Nnode
+  collapseOrder <- order(as.double(nodeSupport))
+  nodeOrder <- rootNode + collapseOrder
+  nodeChoices <- !upper.tri(matrix(NA, length(nodeOrder), length(nodeOrder)))
+  
+  # Return:
+  apply(nodeChoices, 1, function (i) TreeSearch::CollapseNode(tree, nodeOrder[i]))
+}
+
+SupportSuboptimal <- function (filePath, measure) {
+  resamples <- Resampling(filePath)
+  reduced <- ReduceTrees(resamples$tree, resamples[[measure]])
+}
+  
+NodeSupportSuboptimal <- function(pref, measure) {
+  lapply(paste0(DIR_ROOT, '', pref, '/', pref, '.', FILE_NUMS, '.ttag'),
+           SupportSuboptimal, measure)
+}
 ```
 
 ## Load matrices and calcluate consistency
@@ -147,38 +168,16 @@ This data is used in `inst/Generate_figures.R` to generate ternary diagrams.
 ### Calculate tree statistics (resampling)
 
 ```{R Load resampling metrics, message=FALSE, warn=FALSE}
-jackFile <- "C:/research/iw/Trees/eq.001.ttag"
-
-ReduceTrees <- function(tree, nodeSupport) {
-  nTip <- length(tree$tip.label)
-  rootNode <- nTip + 1L
-  nNode <- tree$Nnode
-  collapseOrder <- order(as.double(nodeSupport))
-  nodeOrder <- rootNode + collapseOrder
-  nodeChoices <- !upper.tri(matrix(NA, length(nodeOrder), length(nodeOrder)))
-  
-  # Return:
-  apply(nodeChoices, 1, function (i) TreeSearch::CollapseNode(tree, nodeOrder[i]))
-}
-
-SupportSuboptimal <- function (filePath, measure) {
-  resamples <- Resampling(filePath)
-  reduced <- ReduceTrees(resamples$tree, resamples[[measure]])
-}
-  
-NodeSupportSuboptimal <- function(pref, measure) {
-  lapply(paste0(DIR_ROOT, '', pref, '/', pref, '.', FILE_NUMS, '.ttag'),
-           SupportSuboptimal, measure)
-}
-analyses <- c('eq', 'k1')
-bootTrees <- lapply(analyses, NodeSupportSuboptimal, 'sym')
-jackTrees <- lapply(analyses, NodeSupportSuboptimal, 'jak')
+bootTrees <- lapply(WEIGHTINGS, NodeSupportSuboptimal, 'sym')
+jackTrees <- lapply(WEIGHTINGS, NodeSupportSuboptimal, 'jak')
 
 BLANK_RETURN <- matrix(0, ncol=6, nrow=21)
 clBootQuartets <- lapply(bootTrees, lapply, QuartetScores)
 clJackQuartets <- lapply(jackTrees, lapply, QuartetScores)
 clBootPartitions <- lapply(bootTrees, lapply, PartitionScores)
 clJackPartitions <- lapply(jackTrees, lapply, PartitionScores)
+names(clBootQuartets) <- names(clBootPartitions) <- names(clJackQuartets) <- 
+  names(clJackPartitions) <- WEIGHTINGS
 usethis::use_data(clBootQuartets, clBootPartitions,
                   clJackQuartets, clJackPartitions, overwrite=TRUE)
 
