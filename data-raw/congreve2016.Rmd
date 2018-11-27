@@ -19,6 +19,9 @@ in which the package is installed -- great, no further work is required.
 Otherwise you might need to run `setwd("C:/path/to/CongreveLamsdell2016/data-raw")`, 
 substituting in the necessary path on your machine.
 
+Data are saved to the package using the `usedata` package (which you'll need to
+install using `install.packages('usethis')` if you haven't already).
+
 ```{R Initialize}
 
 # Load the tree used to generate the simulated data matrices
@@ -40,6 +43,11 @@ BAYES_TREE <- paste0(DIR_ROOT, 'MrBayes/%s.nex.run%s.nex')
 CI_PATH <- paste0(DIR_ROOT, 'consistency_indices.txt')
 BAYES_SUBOPTIMAL <- seq(1, 0.5, length.out = 21)
 RESAMPLE_SUBOPTIMAL <- seq(0, 100, length.out = 21)
+
+# Define the expected format of tree statistics (needed for vapply)
+# (Using lapply or sapply instead of vapply can be simpler, and is only slightly slower)
+BLANK_RETURN <- matrix(0, ncol=6, nrow=21)
+
 
 # Helper function to load suboptimal trees
 LoadSuboptimal <- function (pref) {
@@ -121,9 +129,9 @@ names(clCI) <- FILE_NUMS
 usethis::use_data(clMatrices, clPhyDat, clCI, overwrite=TRUE)
 ```
 
-## Load trees
+## Bayesian results
 
-```{R load-trees}
+```{R markov-analyses}
 # For each file, load the MrBayes tree:
 for (NUM in FILE_NUMS) {
   if (!file.exists(sprintf(TREE_FILE[as.integer(NUM)], 'mk', 'mk', ''))
@@ -141,6 +149,14 @@ for (NUM in FILE_NUMS) {
 
 # Load consensus trees from Equal Weights and Markov model analyses
 markovTrees <- lapply(sprintf(TREE_FILE, 'mk', 'mk', ''), ape::read.nexus)
+clMkvQuartets <- lapply(markovTrees, QuartetScores)
+clMkvPartitions <- lapply(markovTrees, PartitionScores)
+usethis::use_data(clMkvQuartets, clMkvPartitions, overwrite=TRUE)
+```
+
+## Bremer results
+
+```{R Bremer-analyses}
 bremTrees <- lapply(WEIGHTINGS, LoadSuboptimal)
 names(bremTrees) <- WEIGHTINGS
 bremTrees[['kC']] <- lapply(seq_along(FILE_NUMS), function(i) lapply(1:21, function (j)
@@ -148,36 +164,13 @@ bremTrees[['kC']] <- lapply(seq_along(FILE_NUMS), function(i) lapply(1:21, funct
                  bremTrees[['k5']][[i]][[j]], bremTrees[['kX']][[i]][[j]])
   ))
 
-```
-
-
-### Calculate tree statistics (Bremer)
-
-```{R Calculate-statistics}
-# Define the expected format of tree statistics (needed for vapply)
-# (Using lapply or sapply instead of vapply can be simpler, and is only slightly slower)
-BLANK_RETURN <- matrix(0, ncol=6, nrow=21)
-
-clMkvQuartets <- lapply(markovTrees, QuartetScores)
 clBremQuartets <- lapply(bremTrees, vapply, QuartetScores, BLANK_RETURN)
-
-clMkvPartitions <- lapply(markovTrees, PartitionScores)
 clBremPartitions <-  lapply(bremTrees, vapply, PartitionScores, BLANK_RETURN)
 
-```
-
-
-### Save statistics to data file
-This uses the `usedata` package (which you'll need to install using 
-`install.packages('usethis')` if you haven't already) to package the data 
-into a data file that can be bundled with the package.
-
-```{R Save statistics}
 usethis::use_data(clMkvQuartets, clBremQuartets,
                   clMkvPartitions, clBremPartitions, overwrite=TRUE)
 ```
 
-This data is used in `inst/Generate_figures.R` to generate ternary diagrams.
 
 ### Calculate tree statistics (resampling)
 
@@ -198,7 +191,7 @@ jackTrees[['kC']] <-
                  jackTrees[['k5']][[i]][[j]], jackTrees[['kX']][[i]][[j]])
   ))
 
-BLANK_RETURN <- matrix(0, ncol=6, nrow=21)
+
 clBootQuartets <- lapply(bootTrees, vapply, QuartetScores, FUN.VALUE=BLANK_RETURN)
 clJackQuartets <- lapply(jackTrees, vapply, QuartetScores, FUN.VALUE=BLANK_RETURN)
 clBootPartitions <- lapply(bootTrees, vapply, PartitionScores, FUN.VALUE=BLANK_RETURN)

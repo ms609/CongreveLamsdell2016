@@ -128,3 +128,6 @@ NULL
 #' Congreve Lamsdell consistency indices
 #' @rdname congreveLamsdellMatrices
 "clCI"
+
+#' Default colours for analyses
+"clColours"
