@@ -5,7 +5,7 @@ bbreak:tbr;
 var: nt;
 
 /* Clear memory */
-keep 0; hold 10000;
+keep 0; hold 10000; subopt 0;
 /* Conduct search, break branches to find many MPTs, and save them to files */
 piwe-  ;xmult;bbreak;tsav *Trees/eq/eq.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsav/;
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
@@ -40,7 +40,7 @@ subopt 19; bbreak;  tsav *Trees/eq/eq.001.so19.tre;sav;tsav/;tsav *Trees/eq/eq.0
 subopt 20; bbreak;  tsav *Trees/eq/eq.001.so20.tre;sav;tsav/;tsav *Trees/eq/eq.001.so20.con.tre;nels*;sav/;tsav/;
 
 /* Clear memory */
-keep 0; hold 10000;
+keep 0; hold 10000; subopt 0;
 /* Conduct search, break branches to find many MPTs, and save them to files */
 piwe=1 ;xmult;bbreak;tsav *Trees/k1/k1.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsav/;
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
@@ -75,7 +75,7 @@ subopt 0.73000; bbreak;  tsav *Trees/k1/k1.001.so19.tre;sav;tsav/;tsav *Trees/k1
 subopt 1.00000; bbreak;  tsav *Trees/k1/k1.001.so20.tre;sav;tsav/;tsav *Trees/k1/k1.001.so20.con.tre;nels*;sav/;tsav/;
 
 /* Clear memory */
-keep 0; hold 10000;
+keep 0; hold 10000; subopt 0;
 /* Conduct search, break branches to find many MPTs, and save them to files */
 piwe=2 ;xmult;bbreak;tsav *Trees/k2/k2.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsav/;
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
@@ -110,7 +110,7 @@ subopt 0.73000; bbreak;  tsav *Trees/k2/k2.001.so19.tre;sav;tsav/;tsav *Trees/k2
 subopt 1.00000; bbreak;  tsav *Trees/k2/k2.001.so20.tre;sav;tsav/;tsav *Trees/k2/k2.001.so20.con.tre;nels*;sav/;tsav/;
 
 /* Clear memory */
-keep 0; hold 10000;
+keep 0; hold 10000; subopt 0;
 /* Conduct search, break branches to find many MPTs, and save them to files */
 piwe=3 ;xmult;bbreak;tsav *Trees/k3/k3.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsav/;
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
@@ -145,7 +145,7 @@ subopt 0.73000; bbreak;  tsav *Trees/k3/k3.001.so19.tre;sav;tsav/;tsav *Trees/k3
 subopt 1.00000; bbreak;  tsav *Trees/k3/k3.001.so20.tre;sav;tsav/;tsav *Trees/k3/k3.001.so20.con.tre;nels*;sav/;tsav/;
 
 /* Clear memory */
-keep 0; hold 10000;
+keep 0; hold 10000; subopt 0;
 /* Conduct search, break branches to find many MPTs, and save them to files */
 piwe=5 ;xmult;bbreak;tsav *Trees/k5/k5.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsav/;
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
@@ -180,7 +180,7 @@ subopt 0.73000; bbreak;  tsav *Trees/k5/k5.001.so19.tre;sav;tsav/;tsav *Trees/k5
 subopt 1.00000; bbreak;  tsav *Trees/k5/k5.001.so20.tre;sav;tsav/;tsav *Trees/k5/k5.001.so20.con.tre;nels*;sav/;tsav/;
 
 /* Clear memory */
-keep 0; hold 10000;
+keep 0; hold 10000; subopt 0;
 /* Conduct search, break branches to find many MPTs, and save them to files */
 piwe=10;xmult;bbreak;tsav *Trees/kX/kX.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsav/;
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
