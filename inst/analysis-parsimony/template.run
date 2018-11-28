@@ -11,9 +11,9 @@ piwe-  ;xmult;bbreak;tsav *Trees/eq.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsa
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
 tsav *Trees/eq.001.con.tre;nels*;sav/;tsav/;set nt ntrees;
 /* Conduct resampling */
-ttag=;resample=sym replications 50 gc frequency from 'nt';log Trees/eq.001.sym;ttag/;log/;ttag-;
+ttag=;resample=sym replications 5000 gc frequency from 'nt';log Trees/eq.001.sym;ttag/;log/;ttag-;
 keep 0; shortread Trees/tmp.ctf;nels*; set nt ntrees;
-ttag=;resample=jak replications 50 gc frequency from 'nt';log Trees/eq.001.jak;ttag/;log/;ttag-; 
+ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/eq.001.jak;ttag/;log/;ttag-; 
 
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
@@ -46,9 +46,9 @@ piwe=1 ;xmult;bbreak;tsav *Trees/k1.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsa
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
 tsav *Trees/k1.001.con.tre;nels*;sav/;tsav/;set nt ntrees;
 /* Conduct resampling */
-ttag=;resample=sym replications 50 gc frequency from 'nt';log Trees/k1.001.sym;ttag/;log/;ttag-;
+ttag=;resample=sym replications 5000 gc frequency from 'nt';log Trees/k1.001.sym;ttag/;log/;ttag-;
 keep 0; shortread Trees/tmp.ctf;nels*; set nt ntrees;
-ttag=;resample=jak replications 50 gc frequency from 'nt';log Trees/k1.001.jak;ttag/;log/;ttag-; 
+ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/k1.001.jak;ttag/;log/;ttag-; 
 
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
@@ -81,9 +81,9 @@ piwe=2 ;xmult;bbreak;tsav *Trees/k2.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsa
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
 tsav *Trees/k2.001.con.tre;nels*;sav/;tsav/;set nt ntrees;
 /* Conduct resampling */
-ttag=;resample=sym replications 50 gc frequency from 'nt';log Trees/k2.001.sym;ttag/;log/;ttag-;
+ttag=;resample=sym replications 5000 gc frequency from 'nt';log Trees/k2.001.sym;ttag/;log/;ttag-;
 keep 0; shortread Trees/tmp.ctf;nels*; set nt ntrees;
-ttag=;resample=jak replications 50 gc frequency from 'nt';log Trees/k2.001.jak;ttag/;log/;ttag-; 
+ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/k2.001.jak;ttag/;log/;ttag-; 
 
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
@@ -116,9 +116,9 @@ piwe=3 ;xmult;bbreak;tsav *Trees/k3.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsa
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
 tsav *Trees/k3.001.con.tre;nels*;sav/;tsav/;set nt ntrees;
 /* Conduct resampling */
-ttag=;resample=sym replications 50 gc frequency from 'nt';log Trees/k3.001.sym;ttag/;log/;ttag-;
+ttag=;resample=sym replications 5000 gc frequency from 'nt';log Trees/k3.001.sym;ttag/;log/;ttag-;
 keep 0; shortread Trees/tmp.ctf;nels*; set nt ntrees;
-ttag=;resample=jak replications 50 gc frequency from 'nt';log Trees/k3.001.jak;ttag/;log/;ttag-; 
+ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/k3.001.jak;ttag/;log/;ttag-; 
 
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
@@ -151,9 +151,9 @@ piwe=5 ;xmult;bbreak;tsav *Trees/k5.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsa
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
 tsav *Trees/k5.001.con.tre;nels*;sav/;tsav/;set nt ntrees;
 /* Conduct resampling */
-ttag=;resample=sym replications 50 gc frequency from 'nt';log Trees/k5.001.sym;ttag/;log/;ttag-;
+ttag=;resample=sym replications 5000 gc frequency from 'nt';log Trees/k5.001.sym;ttag/;log/;ttag-;
 keep 0; shortread Trees/tmp.ctf;nels*; set nt ntrees;
-ttag=;resample=jak replications 50 gc frequency from 'nt';log Trees/k5.001.jak;ttag/;log/;ttag-; 
+ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/k5.001.jak;ttag/;log/;ttag-; 
 
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
@@ -186,9 +186,9 @@ piwe=10;xmult;bbreak;tsav *Trees/kX.001.tre;sav;tsav/;tsav Trees/tmp.ctf;sav;tsa
 /* Calculate and store the strict consensus, and note its position in memory (as 'nt') */
 tsav *Trees/kX.001.con.tre;nels*;sav/;tsav/;set nt ntrees;
 /* Conduct resampling */
-ttag=;resample=sym replications 50 gc frequency from 'nt';log Trees/kX.001.sym;ttag/;log/;ttag-;
+ttag=;resample=sym replications 5000 gc frequency from 'nt';log Trees/kX.001.sym;ttag/;log/;ttag-;
 keep 0; shortread Trees/tmp.ctf;nels*; set nt ntrees;
-ttag=;resample=jak replications 50 gc frequency from 'nt';log Trees/kX.001.jak;ttag/;log/;ttag-; 
+ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/kX.001.jak;ttag/;log/;ttag-; 
 
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
