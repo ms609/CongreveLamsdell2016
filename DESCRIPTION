@@ -20,14 +20,16 @@ License: GPL (>= 2)
 Encoding: UTF-8
 Language: en-GB
 Depends: R (>= 3.4.0)
+Imports:
+  Ternary
 Suggests:
-    ape,
-    knitr,
-    phangorn,
-    Quartet,
-    TreeSearch (> 0.2.0),
-    Ternary,
-    usethis
+  ape,
+  knitr,
+  phangorn,
+  Quartet,
+  TreeSearch (> 0.2.0),
+  Ternary,
+  usethis
 Remotes: ms609/Quartet
 LazyData: true
 ByteCompile: true
