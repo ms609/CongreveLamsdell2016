@@ -14,7 +14,8 @@ clPlotAverageQuartets(dataset, cex = 1.1, pch = 2, col = clColours,
 \arguments{
 \item{tree}{Integer specifying which tree to plot}
 
-\item{cex, pch, \dots}{Graphical parameters to pass to \link{Ternary:JoinTheDots}}
+\item{cex, pch, \dots}{Graphical parameters to pass to
+\code{\link[Ternary:AddToTernary]{JoinTheDots}}}
 
 \item{col}{Named vector specifying colour in which to plot each analysis}
 }

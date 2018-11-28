@@ -1,6 +1,7 @@
 #' Plot results
 #'
-#' @param cex,pch,\dots Graphical parameters to pass to [Ternary:JoinTheDots]
+#' @param cex,pch,\dots Graphical parameters to pass to
+#' \code{\link[Ternary:AddToTernary]{JoinTheDots}}
 #' @param tree Integer specifying which tree to plot
 #' @param col Named vector specifying colour in which to plot each analysis
 #'
