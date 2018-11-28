@@ -57,11 +57,13 @@ Before running the script, you'll need an installation of Perl.  [Strawberry Per
 
 Then:
 
-*	Create a local directory (default: `C:/Research/iw`) with three subdirectories entitled tntscript, S1-TNT, and Trees.
+*	Create a local directory (default: `C:/Research/iw`) with three subdirectories entitled `tntscript`, `S1-TNT`, and `Trees`.  `Trees` should contain the further subdirectories
+`eq`, `k1`, `k2`, `k3`, `k5` and `kX`.
 ```{r eval=FALSE}
 HOME <- "C:/Research/iw" # Must not end in a trailing '/'
 INST_ROOT <- "https://raw.githubusercontent.com/ms609/CongreveLamsdell2016/master/inst/"
 sapply(paste0(HOME, '/', c('', 'tntscript', 'Matrices', 'Trees')), dir.create)
+sapply(paste0(HOME, '/Trees/', c('eq', 'k1', 'k2', 'k3', 'k5', 'kX')), dir.create)
 ```
 
 *	[Install TNT](http://www.lillo.org.ar/phylogeny/tnt/)
