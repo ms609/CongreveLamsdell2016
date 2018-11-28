@@ -7,16 +7,20 @@
 \alias{clBremPartitions}
 \alias{clMkvPartitions}
 \alias{clMkvQuartets}
-\alias{clBootPartitions}
-\alias{clBootQuartets}
-\alias{clJackPartitions}
-\alias{clJackQuartets}
+\alias{clBootFreqPartitions}
+\alias{clBootFreqQuartets}
+\alias{clJackFreqPartitions}
+\alias{clJackFreqQuartets}
+\alias{clBootGcPartitions}
+\alias{clBootGcQuartets}
+\alias{clJackGcPartitions}
+\alias{clJackGcQuartets}
 \title{Congreve and Lamsdell tree distances}
 \format{An object of class \code{list} of length 7.}
 \source{
 Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
 utility in palaeontological datasets: a study using modelled phylogenetic
-matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
+matrices. \emph{Palaeontology} 59(3), 447--465. \doi{10.1111/pala.12236}.
 }
 \usage{
 clBremQuartets
@@ -27,13 +31,21 @@ clMkvPartitions
 
 clMkvQuartets
 
-clBootPartitions
+clBootFreqPartitions
 
-clBootQuartets
+clBootFreqQuartets
 
-clJackPartitions
+clJackFreqPartitions
 
-clJackQuartets
+clJackFreqQuartets
+
+clBootGcPartitions
+
+clBootGcQuartets
+
+clJackGcPartitions
+
+clJackGcQuartets
 }
 \description{
 Distance of CL trees from generative tree.
@@ -72,13 +84,21 @@ support are employed:
 (equal weights) 0, 1, .... 19, 20 steps less optimal than the optimal
 tree (implied weights: the consensus of all trees that are 0.73^(19:0)
 less optimal than the optimal tree).
-* \code{Boot}: Bootstrap supports.
-* \code{Jack}: Jackknife supports.
+* \code{Boot}: Bootstrap supports (symmetric resampling, \emph{p} = 0.33).
+* \code{Jack}: Jackknife supports (\emph{p} = 0.36).
+\code{Boot} and \code{Jack} results are reported both as the \code{freq}uency of splits
+among replicates, and using the \code{gc} (Groups Present / Contradicted)
+measure (Goloboff \emph{et al}. 2003)
 \item The number of quartets or partitions in total, the same, different, resolved
 in the estimated tree but not the generative tree (= 0), resolved in the
 generative tree but not the estimated tree
 \item The number of the matrix, from 1 to 100.
 }
+}
+\references{
+Goloboff, P. A., J. S. Farris, M. Källersjö, B. Oxelman, M. J. Ramírez, and
+C. A. Szumik. 2003. Improvements to resampling measures of group support.
+\emph{Cladistics} 19, 324–332. \doi{10.1016/S0748-3007(03)00060-4}.
 }
 \seealso{
 \link{clMatrices}, \link{clReferenceTree}.

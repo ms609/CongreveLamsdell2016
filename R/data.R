@@ -87,17 +87,24 @@
 #'     (equal weights) 0, 1, .... 19, 20 steps less optimal than the optimal
 #'  tree (implied weights: the consensus of all trees that are 0.73^(19:0)
 #' less optimal than the optimal tree).
-#'     * `Boot`: Bootstrap supports.
-#'     * `Jack`: Jackknife supports.
+#'     * `Boot`: Bootstrap supports (symmetric resampling, _p_ = 0.33).
+#'     * `Jack`: Jackknife supports (_p_ = 0.36).
+#'     `Boot` and `Jack` results are reported both as the `freq`uency of splits
+#'     among replicates, and using the `gc` (Groups Present / Contradicted)
+#'     measure (Goloboff _et al_. 2003)
 #'   2.  The number of quartets or partitions in total, the same, different, resolved
 #'  in the estimated tree but not the generative tree (= 0), resolved in the
 #'  generative tree but not the estimated tree
 #'   3.  The number of the matrix, from 1 to 100.
 #'
 #' @seealso [clMatrices], [clReferenceTree].
+#' @references
+#'   Goloboff, P. A., J. S. Farris, M. Källersjö, B. Oxelman, M. J. Ramírez, and
+#'    C. A. Szumik. 2003. Improvements to resampling measures of group support.
+#'    _Cladistics_ 19, 324–332. \doi{10.1016/S0748-3007(03)00060-4}.
 #' @source Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
 #'   utility in palaeontological datasets: a study using modelled phylogenetic
-#'    matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
+#'    matrices. _Palaeontology_ 59(3), 447--465. \doi{10.1111/pala.12236}.
 #' @name clResults
 NULL
 
@@ -114,16 +121,28 @@ NULL
 "clMkvQuartets"
 
 #' @rdname clResults
-"clBootPartitions"
+"clBootFreqPartitions"
 
 #' @rdname clResults
-"clBootQuartets"
+"clBootFreqQuartets"
 
 #' @rdname clResults
-"clJackPartitions"
+"clJackFreqPartitions"
 
 #' @rdname clResults
-"clJackQuartets"
+"clJackFreqQuartets"
+
+#' @rdname clResults
+"clBootGcPartitions"
+
+#' @rdname clResults
+"clBootGcQuartets"
+
+#' @rdname clResults
+"clJackGcPartitions"
+
+#' @rdname clResults
+"clJackGcQuartets"
 
 #' Congreve Lamsdell consistency indices
 #' @rdname congreveLamsdellMatrices

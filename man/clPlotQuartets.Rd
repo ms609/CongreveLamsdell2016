@@ -2,21 +2,33 @@
 % Please edit documentation in R/points.R
 \name{clPlotQuartets}
 \alias{clPlotQuartets}
+\alias{clPlotAverageQuartets}
 \title{Plot results}
 \usage{
-clPlotQuartets(dataset, tree, cex = 1.1, pch = 2, COL = clColours,
+clPlotQuartets(dataset, tree, cex = 1.1, pch = 2, col = clColours,
+  ...)
+
+clPlotAverageQuartets(dataset, cex = 1.1, pch = 2, col = clColours,
   ...)
 }
 \arguments{
 \item{tree}{Integer specifying which tree to plot}
 
-\item{cex, pch, \dots}{Graphical parameters to pass to \link[Ternary:JoinTheDots]{Ternary::JoinTheDots}}
+\item{cex, pch, \dots}{Graphical parameters to pass to \link{Ternary:JoinTheDots}}
 
-\item{COL}{Named vector specifying colour in which to plot each analysis}
+\item{col}{Named vector specifying colour in which to plot each analysis}
+}
+\value{
+Returns \link{invisible}.
 }
 \description{
 Plot results
 }
+\section{Functions}{
+\itemize{
+\item \code{clPlotAverageQuartets}: Plots average across all 100 trees
+}}
+
 \author{
 Martin R. Smith
 }
