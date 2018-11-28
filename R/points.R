@@ -20,13 +20,20 @@ clPlotQuartets <- function(dataset, tree, cex=1.1, pch=2, col=clColours, ...) {
 }
 
 #' @describeIn clPlotQuartets Plots average across all 100 trees
+#' @export
 clPlotAverageQuartets <- function(dataset, cex=1.1, pch=2, col=clColours, ...) {
   lapply(names(dataset), function (weighting) {
-    JoinTheDots(apply(dataset[[weighting]][, c('r2', 'd', 's'), ], 2, rowMeans),
-                col=col[weighting], cex=cex, pch=pch, ...)
+    clPlotTheseAverageQuartets(dataset[[weighting]], col=col[weighting],
+                               cex=cex, pch=pch, ...)
   })
 
   # Return:
   invisible()
 }
 
+#' @describeIn clPlotQuartets
+#' @export
+clPlotTheseAverageQuartets <- function (dataset, cex=1.1, pch=2, col='black', ...) {
+  JoinTheDots(apply(dataset[, c('r2', 'd', 's'), ], 2, rowMeans),
+              col=col, cex=cex, pch=pch, ...)
+}

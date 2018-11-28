@@ -168,8 +168,8 @@ for (NUM in FILE_NUMS) {
 
 # Load consensus trees from Equal Weights and Markov model analyses
 markovTrees <- lapply(sprintf(TREE_FILE, 'mk', 'mk', ''), ape::read.nexus)
-clMkvQuartets <- lapply(markovTrees, QuartetScores)
-clMkvPartitions <- lapply(markovTrees, PartitionScores)
+clMkvQuartets <- vapply(markovTrees, QuartetScores, BLANK_RETURN)
+clMkvPartitions <- vapply(markovTrees, PartitionScores, BLANK_RETURN)
 usethis::use_data(clMkvQuartets, clMkvPartitions, overwrite=TRUE)
 ```
 
