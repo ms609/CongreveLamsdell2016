@@ -53,26 +53,26 @@ ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/k1/k1.001.
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
 /* Conduct Bremer support calculations */
-subopt 1 ; bbreak;  tsav *Trees/k1/k1.001.so01.tre;sav;tsav/;tsav *Trees/k1/k1.001.so01.con.tre;nels*;sav/;tsav/;
-subopt 2 ; bbreak;  tsav *Trees/k1/k1.001.so02.tre;sav;tsav/;tsav *Trees/k1/k1.001.so02.con.tre;nels*;sav/;tsav/;
-subopt 3 ; bbreak;  tsav *Trees/k1/k1.001.so03.tre;sav;tsav/;tsav *Trees/k1/k1.001.so03.con.tre;nels*;sav/;tsav/;
-subopt 4 ; bbreak;  tsav *Trees/k1/k1.001.so04.tre;sav;tsav/;tsav *Trees/k1/k1.001.so04.con.tre;nels*;sav/;tsav/;
-subopt 5 ; bbreak;  tsav *Trees/k1/k1.001.so05.tre;sav;tsav/;tsav *Trees/k1/k1.001.so05.con.tre;nels*;sav/;tsav/;
-subopt 6 ; bbreak;  tsav *Trees/k1/k1.001.so06.tre;sav;tsav/;tsav *Trees/k1/k1.001.so06.con.tre;nels*;sav/;tsav/;
-subopt 7 ; bbreak;  tsav *Trees/k1/k1.001.so07.tre;sav;tsav/;tsav *Trees/k1/k1.001.so07.con.tre;nels*;sav/;tsav/;
-subopt 8 ; bbreak;  tsav *Trees/k1/k1.001.so08.tre;sav;tsav/;tsav *Trees/k1/k1.001.so08.con.tre;nels*;sav/;tsav/;
-subopt 9 ; bbreak;  tsav *Trees/k1/k1.001.so09.tre;sav;tsav/;tsav *Trees/k1/k1.001.so09.con.tre;nels*;sav/;tsav/;
-subopt 10; bbreak;  tsav *Trees/k1/k1.001.so10.tre;sav;tsav/;tsav *Trees/k1/k1.001.so10.con.tre;nels*;sav/;tsav/;
-subopt 11; bbreak;  tsav *Trees/k1/k1.001.so11.tre;sav;tsav/;tsav *Trees/k1/k1.001.so11.con.tre;nels*;sav/;tsav/;
-subopt 12; bbreak;  tsav *Trees/k1/k1.001.so12.tre;sav;tsav/;tsav *Trees/k1/k1.001.so12.con.tre;nels*;sav/;tsav/;
-subopt 13; bbreak;  tsav *Trees/k1/k1.001.so13.tre;sav;tsav/;tsav *Trees/k1/k1.001.so13.con.tre;nels*;sav/;tsav/;
-subopt 14; bbreak;  tsav *Trees/k1/k1.001.so14.tre;sav;tsav/;tsav *Trees/k1/k1.001.so14.con.tre;nels*;sav/;tsav/;
-subopt 15; bbreak;  tsav *Trees/k1/k1.001.so15.tre;sav;tsav/;tsav *Trees/k1/k1.001.so15.con.tre;nels*;sav/;tsav/;
-subopt 16; bbreak;  tsav *Trees/k1/k1.001.so16.tre;sav;tsav/;tsav *Trees/k1/k1.001.so16.con.tre;nels*;sav/;tsav/;
-subopt 17; bbreak;  tsav *Trees/k1/k1.001.so17.tre;sav;tsav/;tsav *Trees/k1/k1.001.so17.con.tre;nels*;sav/;tsav/;
-subopt 18; bbreak;  tsav *Trees/k1/k1.001.so18.tre;sav;tsav/;tsav *Trees/k1/k1.001.so18.con.tre;nels*;sav/;tsav/;
-subopt 19; bbreak;  tsav *Trees/k1/k1.001.so19.tre;sav;tsav/;tsav *Trees/k1/k1.001.so19.con.tre;nels*;sav/;tsav/;
-subopt 20; bbreak;  tsav *Trees/k1/k1.001.so20.tre;sav;tsav/;tsav *Trees/k1/k1.001.so20.con.tre;nels*;sav/;tsav/;
+subopt 0.00253; bbreak;  tsav *Trees/k1/k1.001.so01.tre;sav;tsav/;tsav *Trees/k1/k1.001.so01.con.tre;nels*;sav/;tsav/;
+subopt 0.00347; bbreak;  tsav *Trees/k1/k1.001.so02.tre;sav;tsav/;tsav *Trees/k1/k1.001.so02.con.tre;nels*;sav/;tsav/;
+subopt 0.00475; bbreak;  tsav *Trees/k1/k1.001.so03.tre;sav;tsav/;tsav *Trees/k1/k1.001.so03.con.tre;nels*;sav/;tsav/;
+subopt 0.00650; bbreak;  tsav *Trees/k1/k1.001.so04.tre;sav;tsav/;tsav *Trees/k1/k1.001.so04.con.tre;nels*;sav/;tsav/;
+subopt 0.00891; bbreak;  tsav *Trees/k1/k1.001.so05.tre;sav;tsav/;tsav *Trees/k1/k1.001.so05.con.tre;nels*;sav/;tsav/;
+subopt 0.01220; bbreak;  tsav *Trees/k1/k1.001.so06.tre;sav;tsav/;tsav *Trees/k1/k1.001.so06.con.tre;nels*;sav/;tsav/;
+subopt 0.01672; bbreak;  tsav *Trees/k1/k1.001.so07.tre;sav;tsav/;tsav *Trees/k1/k1.001.so07.con.tre;nels*;sav/;tsav/;
+subopt 0.02290; bbreak;  tsav *Trees/k1/k1.001.so08.tre;sav;tsav/;tsav *Trees/k1/k1.001.so08.con.tre;nels*;sav/;tsav/;
+subopt 0.03137; bbreak;  tsav *Trees/k1/k1.001.so09.tre;sav;tsav/;tsav *Trees/k1/k1.001.so09.con.tre;nels*;sav/;tsav/;
+subopt 0.04298; bbreak;  tsav *Trees/k1/k1.001.so10.tre;sav;tsav/;tsav *Trees/k1/k1.001.so10.con.tre;nels*;sav/;tsav/;
+subopt 0.05887; bbreak;  tsav *Trees/k1/k1.001.so11.tre;sav;tsav/;tsav *Trees/k1/k1.001.so11.con.tre;nels*;sav/;tsav/;
+subopt 0.08065; bbreak;  tsav *Trees/k1/k1.001.so12.tre;sav;tsav/;tsav *Trees/k1/k1.001.so12.con.tre;nels*;sav/;tsav/;
+subopt 0.11047; bbreak;  tsav *Trees/k1/k1.001.so13.tre;sav;tsav/;tsav *Trees/k1/k1.001.so13.con.tre;nels*;sav/;tsav/;
+subopt 0.15133; bbreak;  tsav *Trees/k1/k1.001.so14.tre;sav;tsav/;tsav *Trees/k1/k1.001.so14.con.tre;nels*;sav/;tsav/;
+subopt 0.20731; bbreak;  tsav *Trees/k1/k1.001.so15.tre;sav;tsav/;tsav *Trees/k1/k1.001.so15.con.tre;nels*;sav/;tsav/;
+subopt 0.28398; bbreak;  tsav *Trees/k1/k1.001.so16.tre;sav;tsav/;tsav *Trees/k1/k1.001.so16.con.tre;nels*;sav/;tsav/;
+subopt 0.38902; bbreak;  tsav *Trees/k1/k1.001.so17.tre;sav;tsav/;tsav *Trees/k1/k1.001.so17.con.tre;nels*;sav/;tsav/;
+subopt 0.53290; bbreak;  tsav *Trees/k1/k1.001.so18.tre;sav;tsav/;tsav *Trees/k1/k1.001.so18.con.tre;nels*;sav/;tsav/;
+subopt 0.73000; bbreak;  tsav *Trees/k1/k1.001.so19.tre;sav;tsav/;tsav *Trees/k1/k1.001.so19.con.tre;nels*;sav/;tsav/;
+subopt 1.00000; bbreak;  tsav *Trees/k1/k1.001.so20.tre;sav;tsav/;tsav *Trees/k1/k1.001.so20.con.tre;nels*;sav/;tsav/;
 
 /* Clear memory */
 keep 0; hold 10000;
@@ -88,26 +88,26 @@ ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/k2/k2.001.
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
 /* Conduct Bremer support calculations */
-subopt 1 ; bbreak;  tsav *Trees/k2/k2.001.so01.tre;sav;tsav/;tsav *Trees/k2/k2.001.so01.con.tre;nels*;sav/;tsav/;
-subopt 2 ; bbreak;  tsav *Trees/k2/k2.001.so02.tre;sav;tsav/;tsav *Trees/k2/k2.001.so02.con.tre;nels*;sav/;tsav/;
-subopt 3 ; bbreak;  tsav *Trees/k2/k2.001.so03.tre;sav;tsav/;tsav *Trees/k2/k2.001.so03.con.tre;nels*;sav/;tsav/;
-subopt 4 ; bbreak;  tsav *Trees/k2/k2.001.so04.tre;sav;tsav/;tsav *Trees/k2/k2.001.so04.con.tre;nels*;sav/;tsav/;
-subopt 5 ; bbreak;  tsav *Trees/k2/k2.001.so05.tre;sav;tsav/;tsav *Trees/k2/k2.001.so05.con.tre;nels*;sav/;tsav/;
-subopt 6 ; bbreak;  tsav *Trees/k2/k2.001.so06.tre;sav;tsav/;tsav *Trees/k2/k2.001.so06.con.tre;nels*;sav/;tsav/;
-subopt 7 ; bbreak;  tsav *Trees/k2/k2.001.so07.tre;sav;tsav/;tsav *Trees/k2/k2.001.so07.con.tre;nels*;sav/;tsav/;
-subopt 8 ; bbreak;  tsav *Trees/k2/k2.001.so08.tre;sav;tsav/;tsav *Trees/k2/k2.001.so08.con.tre;nels*;sav/;tsav/;
-subopt 9 ; bbreak;  tsav *Trees/k2/k2.001.so09.tre;sav;tsav/;tsav *Trees/k2/k2.001.so09.con.tre;nels*;sav/;tsav/;
-subopt 10; bbreak;  tsav *Trees/k2/k2.001.so10.tre;sav;tsav/;tsav *Trees/k2/k2.001.so10.con.tre;nels*;sav/;tsav/;
-subopt 11; bbreak;  tsav *Trees/k2/k2.001.so11.tre;sav;tsav/;tsav *Trees/k2/k2.001.so11.con.tre;nels*;sav/;tsav/;
-subopt 12; bbreak;  tsav *Trees/k2/k2.001.so12.tre;sav;tsav/;tsav *Trees/k2/k2.001.so12.con.tre;nels*;sav/;tsav/;
-subopt 13; bbreak;  tsav *Trees/k2/k2.001.so13.tre;sav;tsav/;tsav *Trees/k2/k2.001.so13.con.tre;nels*;sav/;tsav/;
-subopt 14; bbreak;  tsav *Trees/k2/k2.001.so14.tre;sav;tsav/;tsav *Trees/k2/k2.001.so14.con.tre;nels*;sav/;tsav/;
-subopt 15; bbreak;  tsav *Trees/k2/k2.001.so15.tre;sav;tsav/;tsav *Trees/k2/k2.001.so15.con.tre;nels*;sav/;tsav/;
-subopt 16; bbreak;  tsav *Trees/k2/k2.001.so16.tre;sav;tsav/;tsav *Trees/k2/k2.001.so16.con.tre;nels*;sav/;tsav/;
-subopt 17; bbreak;  tsav *Trees/k2/k2.001.so17.tre;sav;tsav/;tsav *Trees/k2/k2.001.so17.con.tre;nels*;sav/;tsav/;
-subopt 18; bbreak;  tsav *Trees/k2/k2.001.so18.tre;sav;tsav/;tsav *Trees/k2/k2.001.so18.con.tre;nels*;sav/;tsav/;
-subopt 19; bbreak;  tsav *Trees/k2/k2.001.so19.tre;sav;tsav/;tsav *Trees/k2/k2.001.so19.con.tre;nels*;sav/;tsav/;
-subopt 20; bbreak;  tsav *Trees/k2/k2.001.so20.tre;sav;tsav/;tsav *Trees/k2/k2.001.so20.con.tre;nels*;sav/;tsav/;
+subopt 0.00253; bbreak;  tsav *Trees/k2/k2.001.so01.tre;sav;tsav/;tsav *Trees/k2/k2.001.so01.con.tre;nels*;sav/;tsav/;
+subopt 0.00347; bbreak;  tsav *Trees/k2/k2.001.so02.tre;sav;tsav/;tsav *Trees/k2/k2.001.so02.con.tre;nels*;sav/;tsav/;
+subopt 0.00475; bbreak;  tsav *Trees/k2/k2.001.so03.tre;sav;tsav/;tsav *Trees/k2/k2.001.so03.con.tre;nels*;sav/;tsav/;
+subopt 0.00650; bbreak;  tsav *Trees/k2/k2.001.so04.tre;sav;tsav/;tsav *Trees/k2/k2.001.so04.con.tre;nels*;sav/;tsav/;
+subopt 0.00891; bbreak;  tsav *Trees/k2/k2.001.so05.tre;sav;tsav/;tsav *Trees/k2/k2.001.so05.con.tre;nels*;sav/;tsav/;
+subopt 0.01220; bbreak;  tsav *Trees/k2/k2.001.so06.tre;sav;tsav/;tsav *Trees/k2/k2.001.so06.con.tre;nels*;sav/;tsav/;
+subopt 0.01672; bbreak;  tsav *Trees/k2/k2.001.so07.tre;sav;tsav/;tsav *Trees/k2/k2.001.so07.con.tre;nels*;sav/;tsav/;
+subopt 0.02290; bbreak;  tsav *Trees/k2/k2.001.so08.tre;sav;tsav/;tsav *Trees/k2/k2.001.so08.con.tre;nels*;sav/;tsav/;
+subopt 0.03137; bbreak;  tsav *Trees/k2/k2.001.so09.tre;sav;tsav/;tsav *Trees/k2/k2.001.so09.con.tre;nels*;sav/;tsav/;
+subopt 0.04298; bbreak;  tsav *Trees/k2/k2.001.so10.tre;sav;tsav/;tsav *Trees/k2/k2.001.so10.con.tre;nels*;sav/;tsav/;
+subopt 0.05887; bbreak;  tsav *Trees/k2/k2.001.so11.tre;sav;tsav/;tsav *Trees/k2/k2.001.so11.con.tre;nels*;sav/;tsav/;
+subopt 0.08065; bbreak;  tsav *Trees/k2/k2.001.so12.tre;sav;tsav/;tsav *Trees/k2/k2.001.so12.con.tre;nels*;sav/;tsav/;
+subopt 0.11047; bbreak;  tsav *Trees/k2/k2.001.so13.tre;sav;tsav/;tsav *Trees/k2/k2.001.so13.con.tre;nels*;sav/;tsav/;
+subopt 0.15133; bbreak;  tsav *Trees/k2/k2.001.so14.tre;sav;tsav/;tsav *Trees/k2/k2.001.so14.con.tre;nels*;sav/;tsav/;
+subopt 0.20731; bbreak;  tsav *Trees/k2/k2.001.so15.tre;sav;tsav/;tsav *Trees/k2/k2.001.so15.con.tre;nels*;sav/;tsav/;
+subopt 0.28398; bbreak;  tsav *Trees/k2/k2.001.so16.tre;sav;tsav/;tsav *Trees/k2/k2.001.so16.con.tre;nels*;sav/;tsav/;
+subopt 0.38902; bbreak;  tsav *Trees/k2/k2.001.so17.tre;sav;tsav/;tsav *Trees/k2/k2.001.so17.con.tre;nels*;sav/;tsav/;
+subopt 0.53290; bbreak;  tsav *Trees/k2/k2.001.so18.tre;sav;tsav/;tsav *Trees/k2/k2.001.so18.con.tre;nels*;sav/;tsav/;
+subopt 0.73000; bbreak;  tsav *Trees/k2/k2.001.so19.tre;sav;tsav/;tsav *Trees/k2/k2.001.so19.con.tre;nels*;sav/;tsav/;
+subopt 1.00000; bbreak;  tsav *Trees/k2/k2.001.so20.tre;sav;tsav/;tsav *Trees/k2/k2.001.so20.con.tre;nels*;sav/;tsav/;
 
 /* Clear memory */
 keep 0; hold 10000;
@@ -123,26 +123,26 @@ ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/k3/k3.001.
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
 /* Conduct Bremer support calculations */
-subopt 1 ; bbreak;  tsav *Trees/k3/k3.001.so01.tre;sav;tsav/;tsav *Trees/k3/k3.001.so01.con.tre;nels*;sav/;tsav/;
-subopt 2 ; bbreak;  tsav *Trees/k3/k3.001.so02.tre;sav;tsav/;tsav *Trees/k3/k3.001.so02.con.tre;nels*;sav/;tsav/;
-subopt 3 ; bbreak;  tsav *Trees/k3/k3.001.so03.tre;sav;tsav/;tsav *Trees/k3/k3.001.so03.con.tre;nels*;sav/;tsav/;
-subopt 4 ; bbreak;  tsav *Trees/k3/k3.001.so04.tre;sav;tsav/;tsav *Trees/k3/k3.001.so04.con.tre;nels*;sav/;tsav/;
-subopt 5 ; bbreak;  tsav *Trees/k3/k3.001.so05.tre;sav;tsav/;tsav *Trees/k3/k3.001.so05.con.tre;nels*;sav/;tsav/;
-subopt 6 ; bbreak;  tsav *Trees/k3/k3.001.so06.tre;sav;tsav/;tsav *Trees/k3/k3.001.so06.con.tre;nels*;sav/;tsav/;
-subopt 7 ; bbreak;  tsav *Trees/k3/k3.001.so07.tre;sav;tsav/;tsav *Trees/k3/k3.001.so07.con.tre;nels*;sav/;tsav/;
-subopt 8 ; bbreak;  tsav *Trees/k3/k3.001.so08.tre;sav;tsav/;tsav *Trees/k3/k3.001.so08.con.tre;nels*;sav/;tsav/;
-subopt 9 ; bbreak;  tsav *Trees/k3/k3.001.so09.tre;sav;tsav/;tsav *Trees/k3/k3.001.so09.con.tre;nels*;sav/;tsav/;
-subopt 10; bbreak;  tsav *Trees/k3/k3.001.so10.tre;sav;tsav/;tsav *Trees/k3/k3.001.so10.con.tre;nels*;sav/;tsav/;
-subopt 11; bbreak;  tsav *Trees/k3/k3.001.so11.tre;sav;tsav/;tsav *Trees/k3/k3.001.so11.con.tre;nels*;sav/;tsav/;
-subopt 12; bbreak;  tsav *Trees/k3/k3.001.so12.tre;sav;tsav/;tsav *Trees/k3/k3.001.so12.con.tre;nels*;sav/;tsav/;
-subopt 13; bbreak;  tsav *Trees/k3/k3.001.so13.tre;sav;tsav/;tsav *Trees/k3/k3.001.so13.con.tre;nels*;sav/;tsav/;
-subopt 14; bbreak;  tsav *Trees/k3/k3.001.so14.tre;sav;tsav/;tsav *Trees/k3/k3.001.so14.con.tre;nels*;sav/;tsav/;
-subopt 15; bbreak;  tsav *Trees/k3/k3.001.so15.tre;sav;tsav/;tsav *Trees/k3/k3.001.so15.con.tre;nels*;sav/;tsav/;
-subopt 16; bbreak;  tsav *Trees/k3/k3.001.so16.tre;sav;tsav/;tsav *Trees/k3/k3.001.so16.con.tre;nels*;sav/;tsav/;
-subopt 17; bbreak;  tsav *Trees/k3/k3.001.so17.tre;sav;tsav/;tsav *Trees/k3/k3.001.so17.con.tre;nels*;sav/;tsav/;
-subopt 18; bbreak;  tsav *Trees/k3/k3.001.so18.tre;sav;tsav/;tsav *Trees/k3/k3.001.so18.con.tre;nels*;sav/;tsav/;
-subopt 19; bbreak;  tsav *Trees/k3/k3.001.so19.tre;sav;tsav/;tsav *Trees/k3/k3.001.so19.con.tre;nels*;sav/;tsav/;
-subopt 20; bbreak;  tsav *Trees/k3/k3.001.so20.tre;sav;tsav/;tsav *Trees/k3/k3.001.so20.con.tre;nels*;sav/;tsav/;
+subopt 0.00253; bbreak;  tsav *Trees/k3/k3.001.so01.tre;sav;tsav/;tsav *Trees/k3/k3.001.so01.con.tre;nels*;sav/;tsav/;
+subopt 0.00347; bbreak;  tsav *Trees/k3/k3.001.so02.tre;sav;tsav/;tsav *Trees/k3/k3.001.so02.con.tre;nels*;sav/;tsav/;
+subopt 0.00475; bbreak;  tsav *Trees/k3/k3.001.so03.tre;sav;tsav/;tsav *Trees/k3/k3.001.so03.con.tre;nels*;sav/;tsav/;
+subopt 0.00650; bbreak;  tsav *Trees/k3/k3.001.so04.tre;sav;tsav/;tsav *Trees/k3/k3.001.so04.con.tre;nels*;sav/;tsav/;
+subopt 0.00891; bbreak;  tsav *Trees/k3/k3.001.so05.tre;sav;tsav/;tsav *Trees/k3/k3.001.so05.con.tre;nels*;sav/;tsav/;
+subopt 0.01220; bbreak;  tsav *Trees/k3/k3.001.so06.tre;sav;tsav/;tsav *Trees/k3/k3.001.so06.con.tre;nels*;sav/;tsav/;
+subopt 0.01672; bbreak;  tsav *Trees/k3/k3.001.so07.tre;sav;tsav/;tsav *Trees/k3/k3.001.so07.con.tre;nels*;sav/;tsav/;
+subopt 0.02290; bbreak;  tsav *Trees/k3/k3.001.so08.tre;sav;tsav/;tsav *Trees/k3/k3.001.so08.con.tre;nels*;sav/;tsav/;
+subopt 0.03137; bbreak;  tsav *Trees/k3/k3.001.so09.tre;sav;tsav/;tsav *Trees/k3/k3.001.so09.con.tre;nels*;sav/;tsav/;
+subopt 0.04298; bbreak;  tsav *Trees/k3/k3.001.so10.tre;sav;tsav/;tsav *Trees/k3/k3.001.so10.con.tre;nels*;sav/;tsav/;
+subopt 0.05887; bbreak;  tsav *Trees/k3/k3.001.so11.tre;sav;tsav/;tsav *Trees/k3/k3.001.so11.con.tre;nels*;sav/;tsav/;
+subopt 0.08065; bbreak;  tsav *Trees/k3/k3.001.so12.tre;sav;tsav/;tsav *Trees/k3/k3.001.so12.con.tre;nels*;sav/;tsav/;
+subopt 0.11047; bbreak;  tsav *Trees/k3/k3.001.so13.tre;sav;tsav/;tsav *Trees/k3/k3.001.so13.con.tre;nels*;sav/;tsav/;
+subopt 0.15133; bbreak;  tsav *Trees/k3/k3.001.so14.tre;sav;tsav/;tsav *Trees/k3/k3.001.so14.con.tre;nels*;sav/;tsav/;
+subopt 0.20731; bbreak;  tsav *Trees/k3/k3.001.so15.tre;sav;tsav/;tsav *Trees/k3/k3.001.so15.con.tre;nels*;sav/;tsav/;
+subopt 0.28398; bbreak;  tsav *Trees/k3/k3.001.so16.tre;sav;tsav/;tsav *Trees/k3/k3.001.so16.con.tre;nels*;sav/;tsav/;
+subopt 0.38902; bbreak;  tsav *Trees/k3/k3.001.so17.tre;sav;tsav/;tsav *Trees/k3/k3.001.so17.con.tre;nels*;sav/;tsav/;
+subopt 0.53290; bbreak;  tsav *Trees/k3/k3.001.so18.tre;sav;tsav/;tsav *Trees/k3/k3.001.so18.con.tre;nels*;sav/;tsav/;
+subopt 0.73000; bbreak;  tsav *Trees/k3/k3.001.so19.tre;sav;tsav/;tsav *Trees/k3/k3.001.so19.con.tre;nels*;sav/;tsav/;
+subopt 1.00000; bbreak;  tsav *Trees/k3/k3.001.so20.tre;sav;tsav/;tsav *Trees/k3/k3.001.so20.con.tre;nels*;sav/;tsav/;
 
 /* Clear memory */
 keep 0; hold 10000;
@@ -158,26 +158,26 @@ ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/k5/k5.001.
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
 /* Conduct Bremer support calculations */
-subopt 1 ; bbreak;  tsav *Trees/k5/k5.001.so01.tre;sav;tsav/;tsav *Trees/k5/k5.001.so01.con.tre;nels*;sav/;tsav/;
-subopt 2 ; bbreak;  tsav *Trees/k5/k5.001.so02.tre;sav;tsav/;tsav *Trees/k5/k5.001.so02.con.tre;nels*;sav/;tsav/;
-subopt 3 ; bbreak;  tsav *Trees/k5/k5.001.so03.tre;sav;tsav/;tsav *Trees/k5/k5.001.so03.con.tre;nels*;sav/;tsav/;
-subopt 4 ; bbreak;  tsav *Trees/k5/k5.001.so04.tre;sav;tsav/;tsav *Trees/k5/k5.001.so04.con.tre;nels*;sav/;tsav/;
-subopt 5 ; bbreak;  tsav *Trees/k5/k5.001.so05.tre;sav;tsav/;tsav *Trees/k5/k5.001.so05.con.tre;nels*;sav/;tsav/;
-subopt 6 ; bbreak;  tsav *Trees/k5/k5.001.so06.tre;sav;tsav/;tsav *Trees/k5/k5.001.so06.con.tre;nels*;sav/;tsav/;
-subopt 7 ; bbreak;  tsav *Trees/k5/k5.001.so07.tre;sav;tsav/;tsav *Trees/k5/k5.001.so07.con.tre;nels*;sav/;tsav/;
-subopt 8 ; bbreak;  tsav *Trees/k5/k5.001.so08.tre;sav;tsav/;tsav *Trees/k5/k5.001.so08.con.tre;nels*;sav/;tsav/;
-subopt 9 ; bbreak;  tsav *Trees/k5/k5.001.so09.tre;sav;tsav/;tsav *Trees/k5/k5.001.so09.con.tre;nels*;sav/;tsav/;
-subopt 10; bbreak;  tsav *Trees/k5/k5.001.so10.tre;sav;tsav/;tsav *Trees/k5/k5.001.so10.con.tre;nels*;sav/;tsav/;
-subopt 11; bbreak;  tsav *Trees/k5/k5.001.so11.tre;sav;tsav/;tsav *Trees/k5/k5.001.so11.con.tre;nels*;sav/;tsav/;
-subopt 12; bbreak;  tsav *Trees/k5/k5.001.so12.tre;sav;tsav/;tsav *Trees/k5/k5.001.so12.con.tre;nels*;sav/;tsav/;
-subopt 13; bbreak;  tsav *Trees/k5/k5.001.so13.tre;sav;tsav/;tsav *Trees/k5/k5.001.so13.con.tre;nels*;sav/;tsav/;
-subopt 14; bbreak;  tsav *Trees/k5/k5.001.so14.tre;sav;tsav/;tsav *Trees/k5/k5.001.so14.con.tre;nels*;sav/;tsav/;
-subopt 15; bbreak;  tsav *Trees/k5/k5.001.so15.tre;sav;tsav/;tsav *Trees/k5/k5.001.so15.con.tre;nels*;sav/;tsav/;
-subopt 16; bbreak;  tsav *Trees/k5/k5.001.so16.tre;sav;tsav/;tsav *Trees/k5/k5.001.so16.con.tre;nels*;sav/;tsav/;
-subopt 17; bbreak;  tsav *Trees/k5/k5.001.so17.tre;sav;tsav/;tsav *Trees/k5/k5.001.so17.con.tre;nels*;sav/;tsav/;
-subopt 18; bbreak;  tsav *Trees/k5/k5.001.so18.tre;sav;tsav/;tsav *Trees/k5/k5.001.so18.con.tre;nels*;sav/;tsav/;
-subopt 19; bbreak;  tsav *Trees/k5/k5.001.so19.tre;sav;tsav/;tsav *Trees/k5/k5.001.so19.con.tre;nels*;sav/;tsav/;
-subopt 20; bbreak;  tsav *Trees/k5/k5.001.so20.tre;sav;tsav/;tsav *Trees/k5/k5.001.so20.con.tre;nels*;sav/;tsav/;
+subopt 0.00253; bbreak;  tsav *Trees/k5/k5.001.so01.tre;sav;tsav/;tsav *Trees/k5/k5.001.so01.con.tre;nels*;sav/;tsav/;
+subopt 0.00347; bbreak;  tsav *Trees/k5/k5.001.so02.tre;sav;tsav/;tsav *Trees/k5/k5.001.so02.con.tre;nels*;sav/;tsav/;
+subopt 0.00475; bbreak;  tsav *Trees/k5/k5.001.so03.tre;sav;tsav/;tsav *Trees/k5/k5.001.so03.con.tre;nels*;sav/;tsav/;
+subopt 0.00650; bbreak;  tsav *Trees/k5/k5.001.so04.tre;sav;tsav/;tsav *Trees/k5/k5.001.so04.con.tre;nels*;sav/;tsav/;
+subopt 0.00891; bbreak;  tsav *Trees/k5/k5.001.so05.tre;sav;tsav/;tsav *Trees/k5/k5.001.so05.con.tre;nels*;sav/;tsav/;
+subopt 0.01220; bbreak;  tsav *Trees/k5/k5.001.so06.tre;sav;tsav/;tsav *Trees/k5/k5.001.so06.con.tre;nels*;sav/;tsav/;
+subopt 0.01672; bbreak;  tsav *Trees/k5/k5.001.so07.tre;sav;tsav/;tsav *Trees/k5/k5.001.so07.con.tre;nels*;sav/;tsav/;
+subopt 0.02290; bbreak;  tsav *Trees/k5/k5.001.so08.tre;sav;tsav/;tsav *Trees/k5/k5.001.so08.con.tre;nels*;sav/;tsav/;
+subopt 0.03137; bbreak;  tsav *Trees/k5/k5.001.so09.tre;sav;tsav/;tsav *Trees/k5/k5.001.so09.con.tre;nels*;sav/;tsav/;
+subopt 0.04298; bbreak;  tsav *Trees/k5/k5.001.so10.tre;sav;tsav/;tsav *Trees/k5/k5.001.so10.con.tre;nels*;sav/;tsav/;
+subopt 0.05887; bbreak;  tsav *Trees/k5/k5.001.so11.tre;sav;tsav/;tsav *Trees/k5/k5.001.so11.con.tre;nels*;sav/;tsav/;
+subopt 0.08065; bbreak;  tsav *Trees/k5/k5.001.so12.tre;sav;tsav/;tsav *Trees/k5/k5.001.so12.con.tre;nels*;sav/;tsav/;
+subopt 0.11047; bbreak;  tsav *Trees/k5/k5.001.so13.tre;sav;tsav/;tsav *Trees/k5/k5.001.so13.con.tre;nels*;sav/;tsav/;
+subopt 0.15133; bbreak;  tsav *Trees/k5/k5.001.so14.tre;sav;tsav/;tsav *Trees/k5/k5.001.so14.con.tre;nels*;sav/;tsav/;
+subopt 0.20731; bbreak;  tsav *Trees/k5/k5.001.so15.tre;sav;tsav/;tsav *Trees/k5/k5.001.so15.con.tre;nels*;sav/;tsav/;
+subopt 0.28398; bbreak;  tsav *Trees/k5/k5.001.so16.tre;sav;tsav/;tsav *Trees/k5/k5.001.so16.con.tre;nels*;sav/;tsav/;
+subopt 0.38902; bbreak;  tsav *Trees/k5/k5.001.so17.tre;sav;tsav/;tsav *Trees/k5/k5.001.so17.con.tre;nels*;sav/;tsav/;
+subopt 0.53290; bbreak;  tsav *Trees/k5/k5.001.so18.tre;sav;tsav/;tsav *Trees/k5/k5.001.so18.con.tre;nels*;sav/;tsav/;
+subopt 0.73000; bbreak;  tsav *Trees/k5/k5.001.so19.tre;sav;tsav/;tsav *Trees/k5/k5.001.so19.con.tre;nels*;sav/;tsav/;
+subopt 1.00000; bbreak;  tsav *Trees/k5/k5.001.so20.tre;sav;tsav/;tsav *Trees/k5/k5.001.so20.con.tre;nels*;sav/;tsav/;
 
 /* Clear memory */
 keep 0; hold 10000;
@@ -193,26 +193,26 @@ ttag=;resample=jak replications 5000 gc frequency from 'nt';log Trees/kX/kX.001.
 /* Restore previous trees ready for Bremer support calculations */
 keep 0;shortread Trees/tmp.ctf;hold 200;
 /* Conduct Bremer support calculations */
-subopt 1 ; bbreak;  tsav *Trees/kX/kX.001.so01.tre;sav;tsav/;tsav *Trees/kX/kX.001.so01.con.tre;nels*;sav/;tsav/;
-subopt 2 ; bbreak;  tsav *Trees/kX/kX.001.so02.tre;sav;tsav/;tsav *Trees/kX/kX.001.so02.con.tre;nels*;sav/;tsav/;
-subopt 3 ; bbreak;  tsav *Trees/kX/kX.001.so03.tre;sav;tsav/;tsav *Trees/kX/kX.001.so03.con.tre;nels*;sav/;tsav/;
-subopt 4 ; bbreak;  tsav *Trees/kX/kX.001.so04.tre;sav;tsav/;tsav *Trees/kX/kX.001.so04.con.tre;nels*;sav/;tsav/;
-subopt 5 ; bbreak;  tsav *Trees/kX/kX.001.so05.tre;sav;tsav/;tsav *Trees/kX/kX.001.so05.con.tre;nels*;sav/;tsav/;
-subopt 6 ; bbreak;  tsav *Trees/kX/kX.001.so06.tre;sav;tsav/;tsav *Trees/kX/kX.001.so06.con.tre;nels*;sav/;tsav/;
-subopt 7 ; bbreak;  tsav *Trees/kX/kX.001.so07.tre;sav;tsav/;tsav *Trees/kX/kX.001.so07.con.tre;nels*;sav/;tsav/;
-subopt 8 ; bbreak;  tsav *Trees/kX/kX.001.so08.tre;sav;tsav/;tsav *Trees/kX/kX.001.so08.con.tre;nels*;sav/;tsav/;
-subopt 9 ; bbreak;  tsav *Trees/kX/kX.001.so09.tre;sav;tsav/;tsav *Trees/kX/kX.001.so09.con.tre;nels*;sav/;tsav/;
-subopt 10; bbreak;  tsav *Trees/kX/kX.001.so10.tre;sav;tsav/;tsav *Trees/kX/kX.001.so10.con.tre;nels*;sav/;tsav/;
-subopt 11; bbreak;  tsav *Trees/kX/kX.001.so11.tre;sav;tsav/;tsav *Trees/kX/kX.001.so11.con.tre;nels*;sav/;tsav/;
-subopt 12; bbreak;  tsav *Trees/kX/kX.001.so12.tre;sav;tsav/;tsav *Trees/kX/kX.001.so12.con.tre;nels*;sav/;tsav/;
-subopt 13; bbreak;  tsav *Trees/kX/kX.001.so13.tre;sav;tsav/;tsav *Trees/kX/kX.001.so13.con.tre;nels*;sav/;tsav/;
-subopt 14; bbreak;  tsav *Trees/kX/kX.001.so14.tre;sav;tsav/;tsav *Trees/kX/kX.001.so14.con.tre;nels*;sav/;tsav/;
-subopt 15; bbreak;  tsav *Trees/kX/kX.001.so15.tre;sav;tsav/;tsav *Trees/kX/kX.001.so15.con.tre;nels*;sav/;tsav/;
-subopt 16; bbreak;  tsav *Trees/kX/kX.001.so16.tre;sav;tsav/;tsav *Trees/kX/kX.001.so16.con.tre;nels*;sav/;tsav/;
-subopt 17; bbreak;  tsav *Trees/kX/kX.001.so17.tre;sav;tsav/;tsav *Trees/kX/kX.001.so17.con.tre;nels*;sav/;tsav/;
-subopt 18; bbreak;  tsav *Trees/kX/kX.001.so18.tre;sav;tsav/;tsav *Trees/kX/kX.001.so18.con.tre;nels*;sav/;tsav/;
-subopt 19; bbreak;  tsav *Trees/kX/kX.001.so19.tre;sav;tsav/;tsav *Trees/kX/kX.001.so19.con.tre;nels*;sav/;tsav/;
-subopt 20; bbreak;  tsav *Trees/kX/kX.001.so20.tre;sav;tsav/;tsav *Trees/kX/kX.001.so20.con.tre;nels*;sav/;tsav/;
+subopt 0.00253; bbreak;  tsav *Trees/kX/kX.001.so01.tre;sav;tsav/;tsav *Trees/kX/kX.001.so01.con.tre;nels*;sav/;tsav/;
+subopt 0.00347; bbreak;  tsav *Trees/kX/kX.001.so02.tre;sav;tsav/;tsav *Trees/kX/kX.001.so02.con.tre;nels*;sav/;tsav/;
+subopt 0.00475; bbreak;  tsav *Trees/kX/kX.001.so03.tre;sav;tsav/;tsav *Trees/kX/kX.001.so03.con.tre;nels*;sav/;tsav/;
+subopt 0.00650; bbreak;  tsav *Trees/kX/kX.001.so04.tre;sav;tsav/;tsav *Trees/kX/kX.001.so04.con.tre;nels*;sav/;tsav/;
+subopt 0.00891; bbreak;  tsav *Trees/kX/kX.001.so05.tre;sav;tsav/;tsav *Trees/kX/kX.001.so05.con.tre;nels*;sav/;tsav/;
+subopt 0.01220; bbreak;  tsav *Trees/kX/kX.001.so06.tre;sav;tsav/;tsav *Trees/kX/kX.001.so06.con.tre;nels*;sav/;tsav/;
+subopt 0.01672; bbreak;  tsav *Trees/kX/kX.001.so07.tre;sav;tsav/;tsav *Trees/kX/kX.001.so07.con.tre;nels*;sav/;tsav/;
+subopt 0.02290; bbreak;  tsav *Trees/kX/kX.001.so08.tre;sav;tsav/;tsav *Trees/kX/kX.001.so08.con.tre;nels*;sav/;tsav/;
+subopt 0.03137; bbreak;  tsav *Trees/kX/kX.001.so09.tre;sav;tsav/;tsav *Trees/kX/kX.001.so09.con.tre;nels*;sav/;tsav/;
+subopt 0.04298; bbreak;  tsav *Trees/kX/kX.001.so10.tre;sav;tsav/;tsav *Trees/kX/kX.001.so10.con.tre;nels*;sav/;tsav/;
+subopt 0.05887; bbreak;  tsav *Trees/kX/kX.001.so11.tre;sav;tsav/;tsav *Trees/kX/kX.001.so11.con.tre;nels*;sav/;tsav/;
+subopt 0.08065; bbreak;  tsav *Trees/kX/kX.001.so12.tre;sav;tsav/;tsav *Trees/kX/kX.001.so12.con.tre;nels*;sav/;tsav/;
+subopt 0.11047; bbreak;  tsav *Trees/kX/kX.001.so13.tre;sav;tsav/;tsav *Trees/kX/kX.001.so13.con.tre;nels*;sav/;tsav/;
+subopt 0.15133; bbreak;  tsav *Trees/kX/kX.001.so14.tre;sav;tsav/;tsav *Trees/kX/kX.001.so14.con.tre;nels*;sav/;tsav/;
+subopt 0.20731; bbreak;  tsav *Trees/kX/kX.001.so15.tre;sav;tsav/;tsav *Trees/kX/kX.001.so15.con.tre;nels*;sav/;tsav/;
+subopt 0.28398; bbreak;  tsav *Trees/kX/kX.001.so16.tre;sav;tsav/;tsav *Trees/kX/kX.001.so16.con.tre;nels*;sav/;tsav/;
+subopt 0.38902; bbreak;  tsav *Trees/kX/kX.001.so17.tre;sav;tsav/;tsav *Trees/kX/kX.001.so17.con.tre;nels*;sav/;tsav/;
+subopt 0.53290; bbreak;  tsav *Trees/kX/kX.001.so18.tre;sav;tsav/;tsav *Trees/kX/kX.001.so18.con.tre;nels*;sav/;tsav/;
+subopt 0.73000; bbreak;  tsav *Trees/kX/kX.001.so19.tre;sav;tsav/;tsav *Trees/kX/kX.001.so19.con.tre;nels*;sav/;tsav/;
+subopt 1.00000; bbreak;  tsav *Trees/kX/kX.001.so20.tre;sav;tsav/;tsav *Trees/kX/kX.001.so20.con.tre;nels*;sav/;tsav/;
 
 quit;
 macro -;
