@@ -3,12 +3,35 @@
 \name{clPlotQuartets}
 \alias{clPlotQuartets}
 \alias{clPlotAverageQuartets}
+\alias{clPlotTheseAverageQuartets}
+\alias{clPlotSplits}
+\alias{clPlotTheseAverageSplits}
+\alias{clPlotTheseBestAverageSplits}
+\alias{clPlotAverageSplits}
+\alias{clPlotBestAverageSplits}
 \title{Plot results}
 \usage{
 clPlotQuartets(dataset, tree, cex = 1.1, pch = 2, col = clColours,
   ...)
 
 clPlotAverageQuartets(dataset, cex = 1.1, pch = 2, col = clColours,
+  ...)
+
+clPlotTheseAverageQuartets(dataset, cex = 1.1, pch = 2,
+  col = "black", ...)
+
+clPlotSplits(dataset, tree, cex = 1.1, pch = 2, col = clColours, ...)
+
+clPlotTheseAverageSplits(dataset, cex = 1.1, pch = 2, col = "black",
+  ...)
+
+clPlotTheseBestAverageSplits(dataset, cex = 1.1, pch = 2,
+  col = "black", ...)
+
+clPlotAverageSplits(dataset, cex = 1.1, pch = 2, col = clColours,
+  ...)
+
+clPlotBestAverageSplits(dataset, cex = 1.1, pch = 2, col = clColours,
   ...)
 }
 \arguments{
@@ -28,6 +51,18 @@ Plot results
 \section{Functions}{
 \itemize{
 \item \code{clPlotAverageQuartets}: Plots average across all 100 trees
+
+\item \code{clPlotTheseAverageQuartets}: Plot average for single dataset across all 100 trees
+
+\item \code{clPlotSplits}: Splits equivalent of clPlotQuartets
+
+\item \code{clPlotTheseAverageSplits}: Splits equivalent of clPlotTheseAverageQuartets
+
+\item \code{clPlotTheseBestAverageSplits}: Splits equivalent of clPlotTheseBestAverageQuartets
+
+\item \code{clPlotAverageSplits}: Splits equivalent of clPlotAverageQuartets
+
+\item \code{clPlotBestAverageSplits}: Splits equivalent of clPlotAverageQuartets
 }}
 
 \author{
