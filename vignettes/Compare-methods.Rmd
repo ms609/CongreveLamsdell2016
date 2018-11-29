@@ -126,7 +126,6 @@ AddLegend <- function(pos='bottomright') {
 }
 
 Plottem <- function (i) { 
-  
   TernaryQuarts(TREE=i)
   title(main=paste0("\nQuartets"), cex.main=0.8)
   arrows(sqrt(3/4) * 0.5, 0.5, sqrt(3/4) * 0.8, 0.5, length=0.1)
@@ -166,7 +165,7 @@ text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing divergence', cex=0.8, srt=270)
 clInitializeTernaryQuarts(zoom=3, padding=0.01)
 clPlotAverageQuartets(clBootGcQuartets, cex=1.1, pch=PCH)
 clPlotAverageQuartets(clMkvQuartets, cex=1.1, pch=PCH['mk'])
-title("Results for all datasets (means)", cex.main=1.2)
+title("\nResults for all datasets (means)", cex.main=1.2)
 
 clInitializeTernarySplits()
 clPlotAverageSplits(clBootGcPartitions, cex=1.1, pch=PCH)
