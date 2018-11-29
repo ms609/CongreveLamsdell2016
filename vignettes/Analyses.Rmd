@@ -57,8 +57,9 @@ Before running the script, you'll need an installation of Perl.  [Strawberry Per
 
 Then:
 
-*	Create a local directory (default: `C:/Research/iw`) with three subdirectories entitled `tntscript`, `S1-TNT`, and `Trees`.  `Trees` should contain the further subdirectories
-`eq`, `k1`, `k2`, `k3`, `k5` and `kX`.
+*	Create a local directory (default: `C:/Research/iw`) with three subdirectories entitled `tntscript`, `S1-TNT`, and `Trees`.  Then, within the new `Trees` directory, 
+create the further subdirectories `eq`, `k1`, `k2`, `k3`, `k5` and `kX`.
+
 ```{r eval=FALSE}
 HOME <- "C:/Research/iw" # Must not end in a trailing '/'
 INST_ROOT <- "https://raw.githubusercontent.com/ms609/CongreveLamsdell2016/master/inst/"
@@ -66,7 +67,8 @@ sapply(paste0(HOME, '/', c('', 'tntscript', 'Matrices', 'Trees')), dir.create)
 sapply(paste0(HOME, '/Trees/', c('eq', 'k1', 'k2', 'k3', 'k5', 'kX')), dir.create)
 ```
 
-*	[Install TNT](http://www.lillo.org.ar/phylogeny/tnt/)
+*	[Install TNT](http://www.lillo.org.ar/phylogeny/tnt/).
+
 ```{r eval=FALSE, message=FALSE}
 zipFile <- paste0(HOME, '/TNT.ZIP')
 # This is the Windows path; use the appropriate path for your operating system
@@ -77,7 +79,11 @@ unzip(zipFile, 'tnt.exe', exdir=HOME)
 file.remove(zipFile)
 ```
 
-*	Copy tnt2nex.pl and mptgen.pl into this root directory, updating each file so its variable $dir corresponds to the appropriate path
+*	Copy `mptgen.pl` and (optinally) `tnt2nex.pl` into this root directory, updating each file so its variable $dir corresponds to the appropriate path.  
+`tnt2nex.pl` translates TNT output into NEXUS format and may be useful if you 
+wish to perform further analysis of TNT output.  This will be performed
+automatically if you uncomment the final line of `mptgen.pl`.
+
 ```{r eval=FALSE}
 tnt2nexPath <-  paste0(HOME, '/tnt2nex.pl')
 mptgenPath <-  paste0(HOME, '/mptgen.pl')
@@ -93,13 +99,15 @@ mptgen[3] <- paste0('$dir = "', HOME, '";')
 writeLines(mptgen, mptgenPath)
 ```
 
-*	Copy the file template.run into the tntscript subdirectory
+*	Copy the file `template.run` into the tntscript subdirectory.
+
 ```{r eval=FALSE}
 download.file(paste0(INST_ROOT, "analysis-parsimony/template.run"), 
               paste0(HOME, '/tntscript/template.run'))
 ```
 
-*	Download Appendix S1 from Congreve and Lamsdell [-@Congreve2016dd]  (doi:[10.5061/dryad.7dq0j/1](https://dx.doi.org/10.5061/dryad.7dq0j/1)) and unzip its 100 text files to `Matrices`
+*	Download Appendix S1 from Congreve and Lamsdell [-@Congreve2016dd]  (doi:[10.5061/dryad.7dq0j/1](https://dx.doi.org/10.5061/dryad.7dq0j/1)) and unzip its 100 text files to `Matrices`.
+
 ```{r eval=FALSE}
 tempFile <- tempfile(fileext='.zip')
 download.file("https://datadryad.org/bitstream/handle/10255/dryad.101095/S1%20-%20TNT%20files.zip", tempFile)
