@@ -23,7 +23,19 @@ package directory on installation, and can be downloaded from [Github](https://g
 If you have [RStudio](https://www.rstudio.com/), you can open the R Markdown
 file used to generate this document (`vignettes/Conduct-analyses.Rmd`) to run the
 R scripts that will copy all necessary files and begin analyses on your 
-behalf.
+behalf.  You will need to specify some paths for automatic downloading:
+```{R}
+# Directory in which to install MrBayes
+BAYES_DIR <- "C:/Research/MrBayes"
+
+# Directory in which to conduct parsimony analysis
+HOME <- "C:/Research/iw" # Must not end in a trailing '/'
+
+# GitHub remote
+INST_ROOT <- "https://raw.githubusercontent.com/ms609/CongreveLamsdell2016/master/inst/"
+```
+
+
 
 ## Bayesian analysis
 
@@ -35,14 +47,48 @@ The script reads the datasets of Congreve and Lamsdell [-@Congreve2016], appends
 
 Before running the script:
 
-*	Install MrBayes (mrbayes.sourceforge.net)
+*	[Install MrBayes](http://mrbayes.sourceforge.net/)
+```{r eval=FALSE}
+MRBAYES_RELEASE <- "https://github.com/NBISweden/MrBayes/releases/download/v3.2.6/MrBayes-3.2.6_WIN32_x64.zip"
+zipFile <- paste0(BAYES_DIR, '/MrBayes.zip')
+download.file(MRBAYES_RELEASE, destfile=zipFile, method='auto', mode='wb')
+unzip(zipFile, c('MrBayes/mrbayes_x64.exe', 'MrBayes/mrbayes_x86.exe'), 
+      exdir=BAYES_DIR, junkpaths=TRUE)
+file.remove(zipFile)
+```
 
 *	Download Appendix S5 from Congreve and Lamsdell [-@Congreve2016dd] 
-(doi:[10.5061/dryad.7dq0j/5](https://dx.doi.org/10.5061/dryad.7dq0j/5)) and unzip its 100 nexus files to a local directory (default: C:/Bayes64/iw) 
+(doi:[10.5061/dryad.7dq0j/5](https://dx.doi.org/10.5061/dryad.7dq0j/5)) and unzip its 100 nexus files to a local directory (default: `C:/Research/MrBayes/iw`)
+```{r eval=FALSE}
+tempFile <- tempfile(fileext='.zip')
+download.file("https://datadryad.org/bitstream/handle/10255/dryad.108351/S5%20-%20Character%20Weights%20Test%20NEXUS%20files.zip", tempFile)
+unzip(tempFile, exdir=paste0(BAYES_DIR, '/iw'), junkpaths=TRUE,
+      files = paste0('Weights tests/', formatC(1:100, width=3, flag=0), '.txt.nex'))
+file.remove(tempFile)
+```
 
-*	Copy mrbayesblock.nex to the same directory
+*	Copy `mrbayesblock.nex` to the `iw` directory, and 
+  `bayesgen.pl` and `t2nex.pl` to the root MrBayes directory.  
+  Modify the latter files to specify path to MrBayes (default: `C:/Research/MrBayes/`)
+  and path to extracted matrices (default: `C:/Research/MrBayes/iw`)
+```{r eval=FALSE}
+download.file(paste0(INST_ROOT, "analysis-bayesian/mrbayesblock.nex"), 
+              paste0(BAYES_DIR, '/iw/mrbayesblock.nex'))
+              
+bayesGenPath <- paste0(BAYES_DIR, '/bayesgen.pl')
+download.file(paste0(INST_ROOT, "analysis-bayesian/bayesgen.pl"), bayesGenPath)
+bayesGen <- readLines(bayesGenPath)
+bayesGen[5] <- paste0('$dir = "', BAYES_DIR, '/iw";')
+bayesGen[6] <- paste0('$bayes_dir = "', BAYES_DIR, '";')
+writeLines(bayesGen, bayesGenPath)
 
-*	Modify file to specify path to MrBayes (default: `C:/Bayes64/MrBayes/mrbayes_x64.exe`) and path to extracted matrices (default: `C:/Bayes64/iw`)
+t2nexPath <- paste0(BAYES_DIR, '/t2nex.pl')
+download.file(paste0(INST_ROOT, "analysis-bayesian/t2nex.pl"), t2nexPath)
+t2nex <- readLines(t2nexPath)
+t2nex[2] <- paste0('$dir = "', BAYES_DIR, '/iw";')
+writeLines(t2nex, t2nexPath)
+```
+
 
 ## Parsimony analysis
 
@@ -62,8 +108,6 @@ Then:
   create the further subdirectories `eq`, `k1`, `k2`, `k3`, `k5` and `kX`.
 
 ```{r eval=FALSE}
-HOME <- "C:/Research/iw" # Must not end in a trailing '/'
-INST_ROOT <- "https://raw.githubusercontent.com/ms609/CongreveLamsdell2016/master/inst/"
 sapply(paste0(HOME, '/', c('', 'Matrices', 'Trees')), dir.create)
 sapply(paste0(HOME, '/Trees/', c('eq', 'k1', 'k2', 'k3', 'k5', 'kX')), dir.create)
 ```

@@ -9,7 +9,7 @@ output: html_document
 Before running this file, convert MrBayes output into R-readable output in 
 nexTrees folder using `t2nex.pl`
 
-## Initialize variables
+## Getting things ready
 
 Before loading trees, R needs to know where abouts on the computer files are stored.
 
@@ -19,8 +19,8 @@ in which the package is installed -- great, no further work is required.
 Otherwise you might need to run `setwd("C:/path/to/CongreveLamsdell2016/data-raw")`, 
 substituting in the necessary path on your machine.
 
-Data are saved to the package using the `usedata` package (which you'll need to
-install using `install.packages('usethis')` if you haven't already).
+Data are saved to the package using the `usedata` package, which you'll need to
+install using `install.packages('usethis')` if you haven't already.
 
 ```{R Initialize}
 # Load the tree used to generate the simulated data matrices

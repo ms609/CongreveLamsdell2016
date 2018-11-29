@@ -2,9 +2,10 @@
 # Set $dir below to point to the working directory.
 # This directory should contain mrbayesblock.nex, and the trees from Congreve &
 # Lamsdell's data dryad repository (copied in this repository in inst/matrices/###.txt.nex)
-$dir = "C:/Bayes64/iw";
+$dir = "C:/Research/Bayes64/iw";
+$bayes_dir = "C:/Research/Bayes64";
 
-####
+# Nothing below this line should require editing.
 open (MBB, "<$dir/mrbayesblock.nex") or warn "ERROR: can't find template file at $dir/mrbayesblock.nex";
 @template = <MBB>;
 close MBB;
@@ -24,7 +25,7 @@ foreach my $i (1..100) {
     print SPLICE;
   }
   close SPLICE;
-  system("C:/Bayes64/MrBayes/mrbayes_x64.exe $splicefile");
+  system("$bayes_dir/mrbayes_x64.exe $splicefile");
 
   open (CONSENSUS, "<$dir/$fileno.nex.con.tre") or warn ("Can't open consensus trees");
   @lines = <CONSENSUS>;

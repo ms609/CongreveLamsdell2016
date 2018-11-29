@@ -1,7 +1,7 @@
 ## $dir should point to the same path as used in bayesgen.pl
-$dir = "C:/path/to/files";
+$dir = "C:/Research/MrBayes/iw";
 
-###
+# Nothing below this line should require editing.
 use File::Find;
 use File::stat;
 use Time::localtime;
