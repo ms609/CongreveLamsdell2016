@@ -20,4 +20,7 @@ foreach my $i (1..100) {
   close SCRIPT;
   system("tnt proc $scriptfile");
 }
-do "tnt2nex.pl";
+
+## Uncomment the following line to convert TNT files to NEXUS format
+## This may be useful if you wish to annalyse the trees in external software
+# do "tnt2nex.pl";
