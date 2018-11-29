@@ -4,9 +4,10 @@
 clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
                                        fontSize = 1,
                                        gridCol = rgb(0.92, 0.92, 0.92),
-                                       backgroundCol = rgb(0.985, 0.985, 0.992)) {
-  xLim <- c(0, 1 / zoom) - 0.01
-  yLim <- c(0.5-(1 / zoom), 0.5)
+                                       backgroundCol = rgb(0.985, 0.985, 0.992),
+                                       xLim = c(0, 1 / zoom) - 0.01,
+                                       yLim = c(0.5-(1 / zoom), 0.5)
+                                       ) {
   lab <- if (zoom == 1) c("Unresolved quartets",
                           "Different quartets",
                           "Identical quartets") else rep('', 3)
@@ -33,8 +34,9 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
 
 #' Initialize ternary plots for partition plotting
 #' @export
-clInitializeTernarySplits <- function(fontSize = 1,
-                                      gridCol = rgb(0.92, 0.92, 0.92)) {
+clInitializeTernarySplits <- function(fontSize = 1, xlim=NULL, ylim=NULL,
+                                      gridCol = rgb(0.92, 0.92, 0.92),
+                                      padding=0.1) {
   TernaryPlot(NULL, NULL, NULL, #'Unresolved', 'Different', 'Same',
               alab="Unresolved partitions",
               blab="Different partitions",
@@ -47,7 +49,8 @@ clInitializeTernarySplits <- function(fontSize = 1,
               grid.lines = 19, grid.lty='solid', grid.col=gridCol,
               grid.minor.lines = 0,
               axis.col=rgb(0.6, 0.6, 0.6),
-              padding=0.1, axis.labels = 0:19)
+              padding=padding, axis.labels = 0:19,
+              xlim=xlim, ylim=ylim)
 
   HorizontalGrid(grid.col='#888888', grid.lines=19)
 }
