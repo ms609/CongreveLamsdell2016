@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b74353fb25b3543447fa6f9f1bd2e0959bd029cb41801ab0651de86259740e7
-size 244
+begin MRBAYES;
+  exclude 56-59 ;
+  lset coding=variable rates=gamma;
+  prset ratepr = variable;
+  mcmcp ngen=10000000 printfreq=500000 printall=no samplefreq=10000 nruns=4 nchains=4 burninfrac=0.4;
+  mcmc append=no;
+  sump;
+  sumt;
+end;
