@@ -89,6 +89,8 @@ t2nex[2] <- paste0('$dir = "', BAYES_DIR, '/iw";')
 writeLines(t2nex, t2nexPath)
 ```
 
+* Perform the analyses by executing `bayesgen.pl`. (Once Perl is installed,
+you can just double-click the file.)
 
 ## Parsimony analysis
 
