@@ -92,6 +92,9 @@ writeLines(t2nex, t2nexPath)
 * Perform the analyses by executing `bayesgen.pl`. (Once Perl is installed,
 you can just double-click the file.)
 
+* Once the analyses are complete, copy all files ending `.run#.nex` to 
+  ``r HOME`/MrBayes`.
+
 ## Parsimony analysis
 
 ###mptgen.pl — Generate parsimony trees in TNT
