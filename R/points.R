@@ -45,9 +45,9 @@ clPlotTheseAverageQuartets <- function (dataset, cex=1.1, pch=2, col='black', ..
 #' Convert splits data to ternary-plottable points
 #' @export
 SplitsToPoints <- function (itemData) {
-  rbind(itemData[, 'ref'] - itemData[, 'cf'],
-        itemData[, 'cf_not_ref'],
-        itemData[, 'cf_and_ref'])
+  rbind(r2 = itemData[, 'ref'] - itemData[, 'cf'],
+         d = itemData[, 'cf_not_ref'],
+         s = itemData[, 'cf_and_ref'])
 }
 
 #' @describeIn clPlotQuartets Splits equivalent of clPlotQuartets
