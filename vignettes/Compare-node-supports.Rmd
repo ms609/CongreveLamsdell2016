@@ -228,6 +228,35 @@ text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing RF distance', cex=0.8, srt=270
 AddLegend(an='k3')
 ```
 
+Though the Bootstrap GC metric systematically produces the lowest normalized tree
+distances (SD/MaxI), it is not significantly better than other methods.
+The following table reports P values that fail to reject the null hypothesis
+that the specified node support metric is equally good at ascribing incorrect
+nodes the lowest support values.
+
+```{R compare-best, results='asis', echo=FALSE}
+TreeBests <- function (dataset) vapply(dataset, function (item) 
+  apply(apply(item, 1, function (x)
+    QuartetDivergence(t(x))), 1, max), double(dim(dataset[[1]])[3]))
+
+treeBests <- vapply(list(clBootGcQuartets, clBootFreqQuartets,
+                         clJackGcQuartets, clJackFreqQuartets, clBremQuartets),
+                    TreeBests, 
+                    matrix(0, nrow=dim(clBootGcQuartets[[1]])[3],
+                           ncol=length(clBootGcQuartets))
+                    )
+
+
+
+tests <- apply(treeBests, 2, function (slice)
+  apply(slice, 2, function (column) t.test(column, slice[, 1])$p.value))
+
+rownames(tests) <- c( 'Bootstrap GC', 'Bootstrap Freq',
+                      'Jackknife GC', 'Jackknife Freq', 'Bremer')
+knitr::kable(tests)
+
+```
+
 ## Trees 1--10
 ```{R 1-10, echo=FALSE, fig.width=9, fig.height=60}
 par(mfrow=ROWS, mar=MARGINS)
