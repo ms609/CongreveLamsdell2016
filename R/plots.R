@@ -1,6 +1,6 @@
 #' Initialize ternary plots for quartet plotting
 #' @importFrom Ternary TernaryPlot
-#' @importFrom Quartet SymmetricDifferencePoints
+## @importFrom Quartet SymmetricDifferencePoints
 #' @export
 clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
                                        fontSize = 1,
@@ -28,8 +28,9 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
               ticks.length = if (zoom == 1) 0.025 else 0.009,
               #axis.labels.col = if (zoom == 1) gridCol else rgb(0.6, 0.6, 0.6),
               padding=padding, xlim=xLim, ylim=yLim)
-  SymmetricDifferenceLines(seq(0.1, 0.9, by=0.1), col = '#888888',
-                           lty = "dotted")
+  HorizontalGrid(gridLines)
+  #SymmetricDifferenceLines(seq(0.1, 0.9, by=0.1), col = '#888888',
+  #                         lty = "dotted")
   AddToTernary(lines, list(c(0, 2/3, 1/3), c(1, 0, 0)), lty='dotted',
                col=cbPalette8[8], lwd=2)
 }
@@ -53,6 +54,7 @@ clInitializeTernarySplits <- function(fontSize = 1, xlim=NULL, ylim=NULL,
               axis.col=rgb(0.6, 0.6, 0.6),
               padding=padding, axis.labels = 0:19,
               xlim=xlim, ylim=ylim)
-  SymmetricDifferenceLines(seq(0.1, 0.9, by=0.1), col = '#888888',
-                           lty = "dotted")
+  HorizontalGrid(grid.lines=19) # grid.col='#888888',
+  #SymmetricDifferenceLines(seq(0.1, 0.9, by=0.1), col = '#888888',
+  #                         lty = "dotted")
 }
