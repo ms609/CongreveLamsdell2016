@@ -37,3 +37,4 @@ rsconnect/
 
 # Other temporary files
 ~temp*
+.Rprofile
