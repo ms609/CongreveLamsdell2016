@@ -48,13 +48,13 @@ TernaryQuarts <- function(TREE=TREE, an='eq', zoom=1, padding=0.1) {
   
   clInitializeTernaryQuarts(zoom=zoom, padding=padding)
   
-  clPlotQuartets(pch=PCH['brem'] , cex=2.5, clBremQuartets[an], TREE)
-  clPlotQuartets(pch=PCH['bootF'], cex=2.5, clBootFreqQuartets[an], TREE)
-  clPlotQuartets(pch=PCH['bootG'], cex=2.5, clBootGcQuartets[an], TREE)
-  clPlotQuartets(pch=PCH['jackF'], cex=2.5, clJackFreqQuartets[an], TREE)
-  clPlotQuartets(pch=PCH['jackG'], cex=2.5, clJackGcQuartets[an], TREE)
+  clPlotQuartets(pch=PCH['brem'] , cex=2, clBremQuartets[an], TREE)
+  clPlotQuartets(pch=PCH['bootF'], cex=2, clBootFreqQuartets[an], TREE)
+  clPlotQuartets(pch=PCH['bootG'], cex=2, clBootGcQuartets[an], TREE)
+  clPlotQuartets(pch=PCH['jackF'], cex=2, clJackFreqQuartets[an], TREE)
+  clPlotQuartets(pch=PCH['jackG'], cex=2, clJackGcQuartets[an], TREE)
   
-  clPlotQuartets(pch=PCH['mk'], clMkvQuartets, TREE, cex=1.1, col=COL['mk'])
+  clPlotQuartets(pch=PCH['mk'], clMkvQuartets, TREE, cex=2, col=COL['mk'])
   
   # Return:
   invisible()
@@ -64,13 +64,18 @@ TernaryAllQuarts <- function(an='eq', zoom=1, padding=0.1) {
   
   clInitializeTernaryQuarts(zoom=zoom, padding=padding)
   
-  clPlotAverageQuartets(pch=PCH['brem'] , cex=2.5, clBremQuartets[[an]])
-  clPlotAverageQuartets(pch=PCH['bootF'], cex=2.5, clBootFreqQuartets[[an]])
-  clPlotAverageQuartets(pch=PCH['bootG'], cex=2.5, clBootGcQuartets[[an]])
-  clPlotAverageQuartets(pch=PCH['jackF'], cex=2.5, clJackFreqQuartets[[an]])
-  clPlotAverageQuartets(pch=PCH['jackG'], cex=2.5, clJackGcQuartets[[an]])
+  clPlotTheseAverageQuartets(pch=PCH['brem'] , cex=2, col=COL[an],
+                             clBremQuartets[[an]])
+  clPlotTheseAverageQuartets(pch=PCH['bootF'], cex=2, col=COL[an],
+                             clBootFreqQuartets[[an]])
+  clPlotTheseAverageQuartets(pch=PCH['bootG'], cex=2, col=COL[an],
+                             clBootGcQuartets[[an]])
+  clPlotTheseAverageQuartets(pch=PCH['jackF'], cex=2, col=COL[an],
+                             clJackFreqQuartets[[an]])
+  clPlotTheseAverageQuartets(pch=PCH['jackG'], cex=2, col=COL[an],
+                             clJackGcQuartets[[an]])
   
-  clPlotTheseAverageQuartets(pch=PCH['mk'], clMkvQuartets, cex=1.1, col=COL['mk'])
+  clPlotTheseAverageQuartets(pch=PCH['mk'], clMkvQuartets, cex=2, col=COL['mk'])
   
   # Return:
   invisible()
@@ -84,13 +89,13 @@ TernaryParts<-function(TREE=TREE, an='eq') {
   
   HorizontalGrid(19)
   
-  clPlotSplits(pch=PCH['brem'] , cex=2.5, clBremPartitions[[an]], TREE)
-  clPlotSplits(pch=PCH['bootF'], cex=2.5, clBootGcPartitions[[an]], TREE)
-  clPlotSplits(pch=PCH['bootG'], cex=2.5, clBootFreqPartitions[[an]], TREE)
-  clPlotSplits(pch=PCH['jackF'], cex=2.5, clJackGcPartitions[[an]], TREE)
-  clPlotSplits(pch=PCH['jackG'], cex=2.5, clJackFreqPartitions[[an]], TREE)
+  clPlotSplits(pch=PCH['brem'] , cex=2, col=COL[an], clBremPartitions[[an]], TREE)
+  clPlotSplits(pch=PCH['bootF'], cex=2, col=COL[an], clBootGcPartitions[[an]], TREE)
+  clPlotSplits(pch=PCH['bootG'], cex=2, col=COL[an], clBootFreqPartitions[[an]], TREE)
+  clPlotSplits(pch=PCH['jackF'], cex=2, col=COL[an], clJackGcPartitions[[an]], TREE)
+  clPlotSplits(pch=PCH['jackG'], cex=2, col=COL[an], clJackFreqPartitions[[an]], TREE)
   
-  clPlotSplits(pch=PCH['mk'], cex=1, clMkvPartitions, TREE, col=COL['mk'])
+  clPlotSplits(pch=PCH['mk'], cex=2, clMkvPartitions, TREE, col=COL['mk'])
   
   # Return:
   invisible()
@@ -103,13 +108,18 @@ TernaryAllParts<-function(an='eq') {
   
   HorizontalGrid(19)
   
-  clPlotAverageSplits(pch=PCH['brem'] , cex=2.5, clBremPartitions[[an]])
-  clPlotAverageSplits(pch=PCH['bootF'], cex=2.5, clBootGcPartitions[[an]])
-  clPlotAverageSplits(pch=PCH['bootG'], cex=2.5, clBootFreqPartitions[[an]])
-  clPlotAverageSplits(pch=PCH['jackF'], cex=2.5, clJackGcPartitions[[an]])
-  clPlotAverageSplits(pch=PCH['jackG'], cex=2.5, clJackFreqPartitions[[an]])
+  clPlotTheseAverageSplits(pch=PCH['brem'] , col=COL[an], cex=2,
+                           clBremPartitions[[an]])
+  clPlotTheseAverageSplits(pch=PCH['bootF'], col=COL[an], cex=2,
+                           clBootGcPartitions[[an]])
+  clPlotTheseAverageSplits(pch=PCH['bootG'], col=COL[an], cex=2,
+                           clBootFreqPartitions[[an]])
+  clPlotTheseAverageSplits(pch=PCH['jackF'], col=COL[an], cex=2,
+                           clJackGcPartitions[[an]])
+  clPlotTheseAverageSplits(pch=PCH['jackG'], col=COL[an], cex=2,
+                           clJackFreqPartitions[[an]])
   
-  clPlotTheseAverageSplits(pch=PCH['mk'], cex=1, clMkvPartitions, col=COL['mk'])
+  clPlotTheseAverageSplits(pch=PCH['mk'], cex=2, clMkvPartitions, col=COL['mk'])
   
   # Return:
   invisible()
@@ -135,7 +145,7 @@ CompareNodeSupports <- function (i) {
   text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing divergence', cex=0.8, srt=270)
   
   TernaryQuarts(TREE=i, an='eq', zoom=3, padding=0.01)
-  title(main=paste0("\nDataset ", i, ": CI=",round(clCI[i], 2)), cex.main=1.2)
+  title(main=paste0("\nDataset ", i, ": CI=",round(clCI[i], 2), ". Equal weights"), cex.main=1.2)
   
   TernaryParts(TREE=i, an='eq')
   
@@ -153,7 +163,7 @@ CompareNodeSupports <- function (i) {
   text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing divergence', cex=0.8, srt=270)
   
   TernaryQuarts(TREE=i, an='k3', zoom=3, padding=0.01)
-  
+  title(main="\nImplied weights (k = 3)", cex.main=1.2)
   TernaryParts(TREE=i, an='k3')
   
   arrows(sqrt(3/4) * 0.98, 0.40, sqrt(3/4) * 0.98, 0.20, length=0.1)
@@ -173,7 +183,7 @@ arrows(sqrt(3/4) * 0.98, 0.40, sqrt(3/4) * 0.98, 0.20, length=0.1)
 text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing divergence', cex=0.8, srt=270)
 
 TernaryAllQuarts(an='eq', zoom=3, padding=0.01)
-title(main="\nAll datasets (averaged)", cex.main=1.2)
+title(main="\nAll datasets (averaged). Equal weights.", cex.main=1.2)
 
 TernaryAllParts(an='eq')
 
@@ -192,6 +202,7 @@ text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing divergence', cex=0.8, srt=270)
 
 TernaryAllQuarts(an='k3', zoom=3, padding=0.01)
 
+title(main="\nImplied weights (k = 3)", cex.main=1.2)
 TernaryAllParts(an='k3')
 
 arrows(sqrt(3/4) * 0.98, 0.40, sqrt(3/4) * 0.98, 0.20, length=0.1)
