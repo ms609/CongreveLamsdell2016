@@ -30,7 +30,9 @@ Suggests:
   TreeSearch (> 0.2.0),
   Ternary,
   usethis
-Remotes: ms609/Quartet
+Remotes: 
+  ms609/Quartet
+  ms609/TreeSearch
 LazyData: true
 ByteCompile: true
 VignetteBuilder: knitr
