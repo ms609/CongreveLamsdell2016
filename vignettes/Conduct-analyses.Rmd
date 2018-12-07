@@ -168,6 +168,7 @@ you can just double-click the file.)
 # Analysing output data
 
 Once these analyses have generated the necessary data, these can be analysed
-using the scripts in [https://github.com/ms609/CongreveLamsdell2016/blob/master/data-raw/GenerateData.Rmd].
+using the scripts in [https://github.com/ms609/CongreveLamsdell2016/blob/master/data-raw/GenerateData.Rmd].  The results of these analyses are available in the
+R data objects; to view them, install the package in R and view the help files.
 
 # References
