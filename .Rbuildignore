@@ -4,6 +4,7 @@
 .covrignore
 cran-comments.md
 ^.*\.json$
+^.*\.sh$
 ^.*\.xml$
 ^.*\.yml$
 /^\.git/
