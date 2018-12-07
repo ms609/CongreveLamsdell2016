@@ -27,6 +27,7 @@ Suggests:
   knitr,
   phangorn,
   Quartet,
+  rmarkdown,
   TreeSearch (> 0.2.0),
   Ternary,
   usethis
