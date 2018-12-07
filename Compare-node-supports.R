@@ -42,7 +42,7 @@ PCH <- c(
 )
 
 MARGINS <- c(2.8, 0.3, 0.3, 0.3)
-ROWS <- c(20, 3)
+ROWS <- c(2, 3)
 
 TernaryQuarts <- function(TREE=TREE, an='eq', zoom=1, padding=0.1) {
   
@@ -232,43 +232,303 @@ rownames(tests) <- c( 'Bootstrap GC', 'Bootstrap Freq',
 knitr::kable(tests)
 
 
-## ----1-10, echo=FALSE, fig.width=9, fig.height=60------------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(1:10, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(1)
 
-## ----11-20, echo=FALSE, fig.width=9, fig.height=60-----------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(11:20, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(2)
 
-## ----21-30, echo=FALSE, fig.width=9, fig.height=60-----------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(21:30, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(3)
 
-## ----31-40, echo=FALSE, fig.width=9, fig.height=60-----------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(31:40, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(4)
 
-## ----41-50, echo=FALSE, fig.width=9, fig.height=60-----------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(41:50, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(5)
 
-## ----51-60, echo=FALSE, fig.width=9, fig.height=60-----------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(51:60, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(6)
 
-## ----61-70, echo=FALSE, fig.width=9, fig.height=60-----------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(61:70, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(7)
 
-## ----71-80, echo=FALSE, fig.width=9, fig.height=60-----------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(71:80, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(8)
 
-## ----81-90, echo=FALSE, fig.width=9, fig.height=60-----------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(81:90, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(9)
 
-## ----91-100, echo=FALSE, fig.width=9, fig.height=60----------------------
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(91:100, CompareNodeSupports)
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(10)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(11)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(12)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(13)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(14)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(15)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(16)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(17)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(18)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(19)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(20)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(21)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(22)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(23)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(24)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(25)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(26)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(27)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(28)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(29)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(30)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(31)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(32)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(33)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(34)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(35)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(36)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(37)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(38)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(39)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(40)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(41)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(42)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(43)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(44)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(45)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(46)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(47)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(48)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(49)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(50)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(51)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(52)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(53)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(54)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(55)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(56)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(57)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(58)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(59)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(60)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(61)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(62)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(63)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(64)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(65)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(66)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(67)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(68)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(69)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(70)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(71)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(72)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(73)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(74)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(75)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(76)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(77)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(78)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(79)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(80)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(81)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(82)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(83)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(84)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(85)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(86)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(87)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(88)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(89)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(90)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(91)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(92)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(93)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(94)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(95)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(96)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(97)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(98)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(99)
+
+## ---- echo=FALSE, fig.width=9, fig.height=6------------------------------
+par(mfrow=ROWS, mar=MARGINS); x <- CompareNodeSupports(100)
 
