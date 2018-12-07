@@ -4,6 +4,12 @@ This R package provides data and analyses that accompany the paper
 
 - Martin R. Smith (2019), Bayesian and parsimony approaches reconstruct informative trees from simulated morphological datasets, _Biological Letters_, in review.
 
+It incorporates data from:
+
+- Congreve, C. R., and J. C. Lamsdell. 2016. Implied weighting and its utility in palaeontological datasets: a study using modelled phylogenetic matrices. _Palaeontology_, 59:447–462. doi:10.1111/pala.12236.
+
+- Congreve, C. R., and J. C. Lamsdell. 2016. Data from: Implied weighting and its utility in palaeontological datasets: a study using modelled phylogenetic matrices. _Dryad Digital Repository_, doi:10.5061/dryad.7dq0j.
+
 Some of these data are used in the [`Quartet`](https://github.com/ms609/Quartet) package.
 
 ## Documentation
