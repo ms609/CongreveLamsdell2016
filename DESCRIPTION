@@ -31,7 +31,7 @@ Suggests:
   Ternary,
   usethis
 Remotes: 
-  ms609/Quartet
+  ms609/Quartet,
   ms609/TreeSearch
 LazyData: true
 ByteCompile: true
