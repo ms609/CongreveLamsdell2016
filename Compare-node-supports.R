@@ -1,5 +1,4 @@
 ## ----initialize, echo=FALSE, message=FALSE-------------------------------
-x <- Sys.setlocale("LC_ALL", "English_United Kingdom.1252") # allows PCH=183
 library("Quartet")
 library("Ternary")
 library("CongreveLamsdell2016")
@@ -135,6 +134,7 @@ AddLegend <- function(pos='bottomright', an='eq') {
 }
 
 CompareNodeSupports <- function (i) { 
+  x <- Sys.setlocale("LC_ALL", "English_United Kingdom.1252") # allows PCH=183
   
   TernaryQuarts(TREE=i, an='eq')
   title(main=paste0("\nQuartets"), cex.main=0.8)

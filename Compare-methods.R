@@ -1,5 +1,4 @@
 ## ----initialize, echo=FALSE, message=FALSE-------------------------------
-x <- Sys.setlocale("LC_ALL", "English_United Kingdom.1252") # allows PCH=183
 library("Quartet")
 library("Ternary")
 library("CongreveLamsdell2016")
@@ -100,6 +99,8 @@ AddLegend <- function(pos='bottomright') {
 }
 
 Plottem <- function (i) { 
+  x <- Sys.setlocale("LC_ALL", "English_United Kingdom.1252") # allows PCH=183
+  
   TernaryQuarts(TREE=i)
   title(main=paste0("\nQuartets"), cex.main=0.8)
   arrows(sqrt(3/4) * 0.5, 0.5, sqrt(3/4) * 0.8, 0.5, length=0.1)
