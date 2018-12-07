@@ -5,12 +5,15 @@ date: "`r Sys.Date()`"
 output: 
   bookdown::pdf_document2:
     toc: yes
+    default: yes
     includes:
       in_header: ../inst/preamble.tex
+  html_document:
+    default: yes
 bibliography: ../inst/REFERENCES.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/dependent/biology-letters.csl
 link-citations: yes
-github-repo: ms609/Quartet
+github-repo: ms609/CongreveLamsdell2016
 vignette: >
   %\VignetteIndexEntry{Data analysis protocol}
   %\VignetteEngine{knitr::rmarkdown}
@@ -37,9 +40,9 @@ INST_ROOT <- "https://raw.githubusercontent.com/ms609/CongreveLamsdell2016/maste
 
 
 
-## Bayesian analysis
+# Bayesian analysis
 
-###bayesgen.pl — Generate MrBayes files
+## bayesgen.pl — Generate MrBayes files
 
 A Perl script to execute analysis using Markov models in MrBayes.
 
@@ -95,9 +98,9 @@ you can just double-click the file.)
 * Once the analyses are complete, copy all files ending `.run#.nex` to 
   ``r HOME`/MrBayes`.
 
-## Parsimony analysis
+# Parsimony analysis
 
-###mptgen.pl — Generate parsimony trees in TNT
+## mptgen.pl — Generate parsimony trees in TNT
 
 A Perl script to generate most parsimonious trees by parsimony search in TNT.
 
@@ -155,7 +158,7 @@ download.file(paste0(INST_ROOT, "analysis-parsimony/tnt_template.run"),
               paste0(HOME, '/tnt_template.run'))
 ```
 
-*	Download Appendix S1 from Congreve and Lamsdell [-@Congreve2016dd]  (doi:[10.5061/dryad.7dq0j/1](https://dx.doi.org/10.5061/dryad.7dq0j/1)) and unzip its 100 text files to `Matrices`.
+*	Download Appendix S1 from Congreve and Lamsdell [-@Congreve2016dd]  ( [doi:10.5061/dryad.7dq0j/1](https://dx.doi.org/10.5061/dryad.7dq0j/1) ) and unzip its 100 text files to `Matrices`.
 
 ```{r eval=FALSE}
 tempFile <- tempfile(fileext='.zip')
@@ -165,3 +168,9 @@ unzip(tempFile, exdir=paste0(HOME, '/Matrices'))
 
 * Perform the analyses by executing `mptgen.pl`. (Once Perl is installed,
 you can just double-click the file.)
+
+# Analysing output data
+
+Once these analyses have generated the necessary data, 
+
+# References

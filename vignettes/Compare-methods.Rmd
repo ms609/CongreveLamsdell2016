@@ -3,16 +3,17 @@ title: "Precision and accuracy in Congreve & Lamsdell matrices"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
-  html_document:
-    default: yes
   bookdown::pdf_document2:
     toc: yes
+    default: yes
     includes:
       in_header: ../inst/preamble.tex
+  html_document:
+    default: yes
 bibliography: ../inst/REFERENCES.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/dependent/biology-letters.csl
 link-citations: yes
-github-repo: ms609/Quartet
+github-repo: ms609/CongreveLamsdell2016
 vignette: >
   %\VignetteIndexEntry{Results of data analysis}
   %\VignetteEncoding{UTF-8}
