@@ -1,0 +1,190 @@
+## ----initialize, echo=FALSE, message=FALSE-------------------------------
+x <- Sys.setlocale("LC_ALL", "English_United Kingdom.1252") # allows PCH=183
+library("Quartet")
+library("Ternary")
+library("CongreveLamsdell2016")
+data('clBremPartitions', 'clBremQuartets', 'clMkvPartitions', 'clMkvQuartets',
+     'clBootFreqPartitions', 'clBootFreqQuartets', 
+     'clBootGcPartitions', 'clBootGcQuartets',
+     'clJackFreqPartitions', 'clJackFreqQuartets',
+     'clJackGcPartitions', 'clJackGcQuartets', 
+     'clCI')
+
+## ----initialize-variables, echo=FALSE------------------------------------
+PCH <- c(
+  brem  = 2,
+  bootG = 0,
+  bootF = 5,
+  jackG = 3,
+  jackF = 4,
+  none  = NA,
+  
+  mk     = 1,
+  markov = 1,
+  equal  = 61, #'='
+  eq     = 61,
+  dot    = 183, #'.'
+  
+  k1         = 4,
+  implied1   = 4,
+  k2         = 183, 
+  implied2   = 183,
+  k3         = 183, 
+  implied3   = 183,
+  k5         = 3,
+  implied5   = 3,
+  kX         = 183,
+  implied10  = 183,
+  implied20  = 183,
+  implied200 = 183,
+  kC = 17,
+  impliedC = 17  #triupfilled
+)
+
+COL <- c(
+  black      = paste0(cbPalette8[1], '99'),
+  markov     = paste0(cbPalette8[4], '99'),
+  mk         = paste0(cbPalette8[4], '99'),
+  
+  equal      = paste0(cbPalette8[8], '99'),
+  eq        = paste0(cbPalette8[8], '99'),
+  implied1   = paste0(cbPalette8[6], '42'),
+  k1         = paste0(cbPalette8[6], '42'),
+  implied2   = paste0(cbPalette8[6], '42'),
+  k2         = paste0(cbPalette8[6], '42'),
+  implied3   = paste0(cbPalette8[6], '42'),
+  k3         = paste0(cbPalette8[6], '42'),
+  implied5   = paste0(cbPalette8[6], '42'),
+  k5         = paste0(cbPalette8[6], '42'),
+  implied10  = paste0(cbPalette8[6], '99'),
+  kX         = paste0(cbPalette8[6], '99'),
+  implied20  = paste0(cbPalette8[6], '42'),
+  implied200 = paste0(cbPalette8[6], '42'),
+  kC         = paste0(cbPalette8[2], '99'),
+  impliedC   = paste0(cbPalette8[2], '99')
+)
+
+GRID_COL <- rgb(0.92, 0.92, 0.92)
+BG_COL   <- rgb(0.985, 0.985, 0.992)
+
+
+MARGINS <- c(2.8, 0.3, 0.3, 0.3)
+ROWS <- c(10, 3)
+
+TernaryQuarts<-function(TREE=TREE, zoom=1, padding=0.1) {
+  clInitializeTernaryQuarts(zoom, padding)
+  clPlotQuartets(clBootGcQuartets, TREE, cex=1.1, pch=PCH)
+  clPlotQuartets(clMkvQuartets, TREE, cex=1.1, pch=PCH['mk'])
+
+  # Return:
+  invisible()
+}
+
+
+TernaryParts<-function(TREE=TREE) {
+  clInitializeTernarySplits()
+  clPlotSplits(clBootGcPartitions, TREE, cex=1.1, pch=PCH)
+  clPlotSplits(clMkvPartitions, TREE, cex=1.1, pch=PCH['mk'])
+  
+  # Return:
+  invisible()
+}
+
+AddLegend <- function(pos='bottomright') {
+  legend(pos, cex=0.8, bty='n',
+         lty=1,
+         pch=PCH[c('mk', 'eq', 'kX', 'k5', 'k3', 'k1', 'kC')], pt.cex=1.1,
+         col=COL[c('mk', 'eq', 'kX', 'k5', 'k3', 'k1', 'kC')],
+         legend=c('Markov', 'Equal weights', 
+                  paste0('Implied, k=', c(10, 5, '2, 3', 1, '2..10'))))
+}
+
+Plottem <- function (i) { 
+  TernaryQuarts(TREE=i)
+  title(main=paste0("\nQuartets"), cex.main=0.8)
+  arrows(sqrt(3/4) * 0.5, 0.5, sqrt(3/4) * 0.8, 0.5, length=0.1)
+  text  (sqrt(3/4) * 0.65, 0.5, pos=3, 'Decreasing resolution', cex=0.8)
+  
+  arrows(sqrt(3/4) * 0.98, 0.40, sqrt(3/4) * 0.98, 0.20, length=0.1)
+  text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing divergence', cex=0.8, srt=270)
+  
+  TernaryQuarts(TREE=i, zoom=3, padding=0.01)
+  title(main=paste0("\nDataset ", i, ": CI=",round(clCI[i], 2)), cex.main=1.2)
+  
+  TernaryParts(TREE=i)
+  
+  arrows(sqrt(3/4) * 0.98, 0.40, sqrt(3/4) * 0.98, 0.20, length=0.1)
+  text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing RF distance', cex=0.8, srt=270)
+  
+  AddLegend()
+}
+
+## ----Summary, echo=FALSE, fig.width=9, fig.height=3----------------------
+par(mfrow=c(1, ROWS[2]), mar=MARGINS)
+
+clInitializeTernaryQuarts()
+clPlotAverageQuartets(clBootGcQuartets, cex=1.1, pch=PCH)
+clPlotAverageQuartets(clMkvQuartets, cex=1.1, pch=PCH['mk'])
+
+title(main=paste0("\nQuartets"), cex.main=0.8)
+arrows(sqrt(3/4) * 0.5, 0.5, sqrt(3/4) * 0.8, 0.5, length=0.1)
+text  (sqrt(3/4) * 0.65, 0.5, pos=3, 'Decreasing resolution', cex=0.8)
+
+arrows(sqrt(3/4) * 0.98, 0.40, sqrt(3/4) * 0.98, 0.20, length=0.1)
+text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing divergence', cex=0.8, srt=270)
+
+
+clInitializeTernaryQuarts(zoom=3, padding=0.01)
+clPlotAverageQuartets(clBootGcQuartets, cex=1.1, pch=PCH)
+clPlotAverageQuartets(clMkvQuartets, cex=1.1, pch=PCH['mk'])
+title("\nResults for all datasets (means)", cex.main=1.2)
+
+clInitializeTernarySplits()
+clPlotAverageSplits(clBootGcPartitions, cex=1.1, pch=PCH)
+clPlotAverageSplits(clMkvPartitions, cex=1.1, pch=PCH['mk'])
+
+arrows(sqrt(3/4) * 0.98, 0.40, sqrt(3/4) * 0.98, 0.20, length=0.1)
+text  (sqrt(3/4) * 1.01, 0.30, pos=3, 'Increasing RF distance', cex=0.8, srt=270)
+
+AddLegend()
+
+## ----1-10, echo=FALSE, fig.width=9, fig.height=30------------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(1:10, Plottem)
+
+## ----11-20, echo=FALSE, fig.width=9, fig.height=30-----------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(11:20, Plottem)
+
+## ----21-30, echo=FALSE, fig.width=9, fig.height=30-----------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(21:30, Plottem)
+
+## ----31-40, echo=FALSE, fig.width=9, fig.height=30-----------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(31:40, Plottem)
+
+## ----41-50, echo=FALSE, fig.width=9, fig.height=30-----------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(41:50, Plottem)
+
+## ----51-60, echo=FALSE, fig.width=9, fig.height=30-----------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(51:60, Plottem)
+
+## ----61-70, echo=FALSE, fig.width=9, fig.height=30-----------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(61:70, Plottem)
+
+## ----71-80, echo=FALSE, fig.width=9, fig.height=30-----------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(71:80, Plottem)
+
+## ----81-90, echo=FALSE, fig.width=9, fig.height=30-----------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(81:90, Plottem)
+
+## ----91-100, echo=FALSE, fig.width=9, fig.height=30----------------------
+par(mfrow=ROWS, mar=MARGINS)
+x <- lapply(91:100, Plottem)
+
