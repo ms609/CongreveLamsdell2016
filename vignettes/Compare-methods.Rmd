@@ -95,7 +95,7 @@ BG_COL   <- rgb(0.985, 0.985, 0.992)
 
 
 MARGINS <- c(2.8, 0.3, 0.3, 0.3)
-ROWS <- c(10, 3)
+ROWS <- c(1, 3)
 
 TernaryQuarts<-function(TREE=TREE, zoom=1, padding=0.1) {
   clInitializeTernaryQuarts(zoom, padding)
@@ -179,63 +179,324 @@ AddLegend()
 
 
 ## Trees 1--10
-```{R 1-10, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(1:10, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(1)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(2)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(3)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(4)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(5)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(6)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(7)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(8)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(9)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(10)
 ```
 
 ## Trees 11--20
-```{R 11-20, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(11:20, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(11)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(12)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(13)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(14)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(15)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(16)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(17)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(18)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(19)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(20)
 ```
 
+
 ## Trees 21--30
-```{R 21-30, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(21:30, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(21)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(22)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(23)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(24)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(25)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(26)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(27)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(28)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(29)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(30)
 ```
 
 ## Trees 31--40
-```{R 31-40, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(31:40, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(31)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(32)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(33)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(34)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(35)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(36)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(37)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(38)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(39)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(40)
 ```
 
 ## Trees 41--50
-```{R 41-50, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(41:50, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(41)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(42)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(43)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(44)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(45)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(46)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(47)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(48)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(49)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(50)
 ```
 
 ## Trees 51--60
-```{R 51-60, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(51:60, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(51)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(52)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(53)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(54)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(55)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(56)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(57)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(58)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(59)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(60)
 ```
 
 ## Trees 61--70
-```{R 61-70, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(61:70, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(61)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(62)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(63)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(64)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(65)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(66)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(67)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(68)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(69)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(70)
 ```
 
 ## Trees 71--80
-```{R 71-80, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(71:80, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(71)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(72)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(73)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(74)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(75)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(76)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(77)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(78)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(79)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(80)
 ```
 
 ## Trees 81--90
-```{R 81-90, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(81:90, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(81)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(82)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(83)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(84)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(85)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(86)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(87)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(88)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(89)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(90)
 ```
 
 ## Trees 91--100
-```{R 91-100, echo=FALSE, fig.width=9, fig.height=30}
-par(mfrow=ROWS, mar=MARGINS)
-x <- lapply(91:100, Plottem)
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(91)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(92)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(93)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(94)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(95)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(96)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(97)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(98)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(99)
+```
+```{R, echo=FALSE, fig.width=9, fig.height=6}
+par(mfrow=ROWS, mar=MARGINS); x <- Plottem(100)
 ```
 
 ## References
