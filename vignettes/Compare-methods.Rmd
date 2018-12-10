@@ -26,7 +26,8 @@ Congreve & Lamsdell [-@Congreve2016] using a ternary plotting approach
 ```{r initialize, echo=FALSE, message=FALSE}
 library("Quartet")
 library("Ternary")
-if (!require("CongreveLamsdell2016")) devtools::load_all()
+library("CongreveLamsdell2016")
+#if (!require("CongreveLamsdell2016")) devtools::load_all()
 data('clBremPartitions', 'clBremQuartets', 'clMkvPartitions', 'clMkvQuartets',
      'clBootFreqPartitions', 'clBootFreqQuartets', 
      'clBootGcPartitions', 'clBootGcQuartets',
@@ -89,8 +90,8 @@ COL <- c(
   impliedC   = paste0(cbPalette8[2], '99')
 )
 
-GRID_COL <- rgb(0.92, 0.92, 0.92)
-BG_COL   <- rgb(0.985, 0.985, 0.992)
+GRID_COL <- rgb(0.92, 0.92, 0.92)rgb(0.985, 0.985, 0.992)
+BG_COL   <- 
 
 
 MARGINS <- c(2.8, 0.3, 0.3, 0.3)

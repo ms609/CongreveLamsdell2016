@@ -29,7 +29,8 @@ with a support value below an increasing threshold.
 ```{r initialize, echo=FALSE, message=FALSE}
 library("Quartet")
 library("Ternary")
-if (!require("CongreveLamsdell2016")) devtools::load_all()
+library("CongreveLamsdell2016")
+#if (!require("CongreveLamsdell2016")) devtools::load_all()
 data('clBremPartitions', 'clBremQuartets', 'clMkvPartitions', 'clMkvQuartets',
      'clBootFreqPartitions', 'clBootFreqQuartets', 
      'clBootGcPartitions', 'clBootGcQuartets',
