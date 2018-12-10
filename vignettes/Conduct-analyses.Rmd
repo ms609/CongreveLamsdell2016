@@ -15,8 +15,8 @@ link-citations: yes
 github-repo: ms609/CongreveLamsdell2016
 vignette: >
   %\VignetteIndexEntry{Data analysis protocol}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 The files required to reproduce these analyses are included in the R
@@ -41,9 +41,7 @@ INST_ROOT <- "https://raw.githubusercontent.com/ms609/CongreveLamsdell2016/maste
 
 # Bayesian analysis
 
-## bayesgen.pl — Generate MrBayes files
-
-A Perl script to execute analysis using Markov models in MrBayes.
+`bayesgen.pl` is a Perl script to execute analysis using Markov models in MrBayes.
 
 The script reads the datasets of Congreve and Lamsdell [-@Congreve2016], appends a MrBayes block to the Nexus files, and executes a MrBayes run, saving the consensus trees and preparing them for analysis in R.
 
@@ -99,9 +97,8 @@ you can just double-click the file.)
 
 # Parsimony analysis
 
-## mptgen.pl — Generate parsimony trees in TNT
-
-A Perl script to generate most parsimonious trees by parsimony search in TNT.
+`mptgen.pl` is a Perl script to generate most parsimonious trees by parsimony
+search in TNT.
 
 The script generates TNT scripts to perform parsimony analysis on each of the Congreve and Lamsdell datasets, under equal and implied weights, with and without suboptimal trees.
 It then executes these scripts and converts the output into a format suitable for analysis in R.
@@ -170,6 +167,8 @@ you can just double-click the file.)
 
 # Analysing output data
 
-Once these analyses have generated the necessary data, 
+Once these analyses have generated the necessary data, these can be analysed
+using the scripts in [https://github.com/ms609/CongreveLamsdell2016/blob/master/data-raw/GenerateData.Rmd].  The results of these analyses are available in the
+R data objects; to view them, install the package in R and view the help files.
 
 # References

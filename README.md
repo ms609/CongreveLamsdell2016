@@ -12,9 +12,20 @@ It incorporates data from:
 
 Some of these data are used in the [`Quartet`](https://github.com/ms609/Quartet) package.
 
+Equivalent data and analyses from data simulated by O'Reilly _et al._ (2016) 
+are available at [https://github.com/ms609/OReillyEtAl2016].
+
+## Installation 
+
+Install the package in `R` with:
+`devtools::install_github('ms609/CongreveLamsdell2016')`.
+
+
 ## Documentation
 
-The package contains HTML and PDF files:
+The package includes documentation and visualizations of its results:
+
+* R Package manual: [PDF](https://ms609.github.io/CongreveLamsdell2016/CongreveLamsdell2016_1.0.0.pdf)
 
 * How to conduct the analyses:
 [HTML](https://ms609.github.io/CongreveLamsdell2016/Conduct-analyses.html) | 
