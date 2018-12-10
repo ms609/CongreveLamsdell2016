@@ -13,7 +13,7 @@ It incorporates data from:
 Some of these data are used in the [`Quartet`](https://github.com/ms609/Quartet) package.
 
 Equivalent data and analyses from data simulated by O'Reilly _et al._ (2016) 
-are available at [https://github.com/ms609/OReillyEtAl2016].
+are available at https://github.com/ms609/OReillyEtAl2016.
 
 ## Installation 
 

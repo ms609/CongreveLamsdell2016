@@ -90,8 +90,8 @@ COL <- c(
   impliedC   = paste0(cbPalette8[2], '99')
 )
 
-GRID_COL <- rgb(0.92, 0.92, 0.92)rgb(0.985, 0.985, 0.992)
-BG_COL   <- 
+GRID_COL <- rgb(0.92, 0.92, 0.92)
+BG_COL   <- rgb(0.985, 0.985, 0.992)
 
 
 MARGINS <- c(2.8, 0.3, 0.3, 0.3)
