@@ -12,14 +12,17 @@ It incorporates data from:
 
 Some of these data are used in the [`Quartet`](https://github.com/ms609/Quartet) package.
 
-The simplest way to access the data is to install the package in `R`
-(`devtools::install_github('ms609/CongreveLamsdell2016')`), then view
-the package manual.
+## Installation 
+
+Install the package in `R` with:
+`devtools::install_github('ms609/CongreveLamsdell2016')`.
 
 
 ## Documentation
 
 The package contains HTML and PDF files:
+
+* R Package manual: [PDF](https://ms609.github.io/CongreveLamsdell2016/CongreveLamsdell2016_1.0.0.pdf)
 
 * How to conduct the analyses:
 [HTML](https://ms609.github.io/CongreveLamsdell2016/Conduct-analyses.html) | 
