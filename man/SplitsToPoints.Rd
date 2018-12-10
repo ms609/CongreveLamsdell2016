@@ -6,6 +6,13 @@
 \usage{
 SplitsToPoints(itemData)
 }
+\arguments{
+\item{itemData}{A line from \code{clBootGcPartitions} or equivalent}
+}
+\value{
+Number of partitions resolved in tree 2 only, different, and same in both
+trees, numbered ready to appear on a ternary plot.
+}
 \description{
 Convert splits data to ternary-plottable points
 }

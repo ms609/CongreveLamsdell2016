@@ -2,13 +2,36 @@
 % Please edit documentation in R/plots.R
 \name{clInitializeTernaryQuarts}
 \alias{clInitializeTernaryQuarts}
+\alias{clInitializeTernarySplits}
 \title{Initialize ternary plots for quartet plotting}
 \usage{
 clInitializeTernaryQuarts(zoom = 1, padding = 0.1, gridLines = 10,
-  fontSize = 1, gridCol = rgb(0.92, 0.92, 0.92),
-  backgroundCol = rgb(0.985, 0.985, 0.992), xLim = c(0, 1/zoom) - 0.01,
-  yLim = c(0.5 - (1/zoom), 0.5))
+  fontSize = 1, gridCol = "#EBEBEB", backgroundCol = "#FBFBFD",
+  xLim = c(0, 1/zoom) - 0.01, yLim = c(0.5 - (1/zoom), 0.5))
+
+clInitializeTernarySplits(fontSize = 1, xLim = NULL, yLim = NULL,
+  gridCol = "#EBEBEB", backgroundCol = "#FBFBFD", padding = 0.1)
+}
+\arguments{
+\item{zoom}{Level of magnification (times), used to adjust ticks and scale.}
+
+\item{padding}{Padding, passed to \code{TernaryPlot}.}
+
+\item{gridLines}{Number of grid lines, passed to \code{TernaryPlot} as \code{grid.lines}.}
+
+\item{fontSize}{Font size, passed to \code{TernaryPlot} as \code{lab.cex}.}
+
+\item{gridCol}{Colour, passed to \code{TernaryPlot} as \code{grid.col}.}
+
+\item{backgroundCol}{Background colour, passed to \code{TernaryPlot} as \code{col}.}
+
+\item{xLim, yLim}{x and y limits, passed to \code{TernaryPlot} as \code{xlim}, \code{ylim}.}
 }
 \description{
 Initialize ternary plots for quartet plotting
 }
+\section{Functions}{
+\itemize{
+\item \code{clInitializeTernarySplits}: Initialize ternary plots for partition plotting
+}}
+

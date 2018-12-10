@@ -1,8 +1,9 @@
 #' Plot results
 #'
+#' @param dataset Dataset to plot, for example \link[=clResults]{clBootGcQuartets}
+#' @param tree Integer specifying which tree to plot
 #' @param cex,pch,\dots Graphical parameters to pass to
 #' \code{\link[Ternary:AddToTernary]{JoinTheDots}}
-#' @param tree Integer specifying which tree to plot
 #' @param col Named vector specifying colour in which to plot each analysis
 #'
 #' @return Returns [invisible].
@@ -43,6 +44,9 @@ clPlotTheseAverageQuartets <- function (dataset, cex=1.1, pch=2, col='black', ..
 }
 
 #' Convert splits data to ternary-plottable points
+#' @param itemData A line from `clBootGcPartitions` or equivalent
+#' @return Number of partitions resolved in tree 2 only, different, and same in both
+#' trees, numbered ready to appear on a ternary plot.
 #' @export
 SplitsToPoints <- function (itemData) {
   rbind(r2 = itemData[, 'ref'] - itemData[, 'cf'],
