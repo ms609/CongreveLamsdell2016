@@ -26,7 +26,7 @@ Congreve & Lamsdell [-@Congreve2016] using a ternary plotting approach
 ```{r initialize, echo=FALSE, message=FALSE}
 library("Quartet")
 library("Ternary")
-library("CongreveLamsdell2016")
+if (!require("CongreveLamsdell2016")) devtools::load_all()
 data('clBremPartitions', 'clBremQuartets', 'clMkvPartitions', 'clMkvQuartets',
      'clBootFreqPartitions', 'clBootFreqQuartets', 
      'clBootGcPartitions', 'clBootGcQuartets',
