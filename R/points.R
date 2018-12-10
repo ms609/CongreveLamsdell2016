@@ -10,7 +10,8 @@
 #' @importFrom Ternary JoinTheDots
 #' @author Martin R. Smith
 #' @export
-clPlotQuartets <- function(dataset, tree, cex=1.1, pch=2, col=clColours, ...) {
+clPlotQuartets <- function(dataset, tree, cex=1.1, pch=2,
+                           col=CongreveLamsdell2016::clColours, ...) {
   if (class(dataset) == 'array') dataset <- list(dataset)
   entries <- names(dataset)
   if (is.null(entries)) entries <- seq_along(dataset)
@@ -25,7 +26,8 @@ clPlotQuartets <- function(dataset, tree, cex=1.1, pch=2, col=clColours, ...) {
 
 #' @describeIn clPlotQuartets Plots average across all 100 trees
 #' @export
-clPlotAverageQuartets <- function(dataset, cex=1.1, pch=2, col=clColours, ...) {
+clPlotAverageQuartets <- function(dataset, cex=1.1, pch=2,
+                                  col=CongreveLamsdell2016::clColours, ...) {
   lapply(names(dataset), function (weighting) {
     plotChar <- if (is.null(names(pch))) pch else pch[[weighting]]
     clPlotTheseAverageQuartets(dataset[[weighting]], col=col[weighting],
@@ -56,7 +58,8 @@ SplitsToPoints <- function (itemData) {
 
 #' @describeIn clPlotQuartets Splits equivalent of clPlotQuartets
 #' @export
-clPlotSplits <- function(dataset, tree, cex=1.1, pch=2, col=clColours, ...) {
+clPlotSplits <- function(dataset, tree, cex=1.1, pch=2,
+                         col=CongreveLamsdell2016::clColours, ...) {
   if (class(dataset) == 'array') dataset <- list(dataset)
   entries <- names(dataset)
   if (is.null(entries)) entries <- seq_along(dataset)
@@ -84,8 +87,11 @@ clPlotTheseBestAverageSplits <- function (dataset, cex=1.1, pch=2, col='black', 
 }
 
 #' @describeIn clPlotQuartets Splits equivalent of clPlotAverageQuartets
+#' @param col Vector specifying colours to use for plotting, named to match
+#' `names(dataset)`.
 #' @export
-clPlotAverageSplits <- function(dataset, cex=1.1, pch=2, col=clColours, ...) {
+clPlotAverageSplits <- function(dataset, cex=1.1, pch=2,
+                                col=CongreveLamsdell2016::clColours, ...) {
   lapply(names(dataset), function (weighting) {
     plotChar <- if (is.null(names(pch))) pch else pch[[weighting]]
     clPlotTheseAverageSplits(dataset[[weighting]], col=col[weighting],
@@ -98,7 +104,8 @@ clPlotAverageSplits <- function(dataset, cex=1.1, pch=2, col=clColours, ...) {
 
 #' @describeIn clPlotQuartets Splits equivalent of clPlotAverageQuartets
 #' @export
-clPlotBestAverageSplits <- function(dataset, cex=1.1, pch=2, col=clColours, ...) {
+clPlotBestAverageSplits <- function(dataset, cex=1.1, pch=2,
+                                    col=CongreveLamsdell2016::clColours, ...) {
   lapply(names(dataset), function (weighting) {
     plotChar <- if (is.null(names(pch))) pch else pch[[weighting]]
     clPlotTheseBestAverageSplits(dataset[[weighting]], col=col[weighting],

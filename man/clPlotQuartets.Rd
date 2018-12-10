@@ -11,16 +11,17 @@
 \alias{clPlotBestAverageSplits}
 \title{Plot results}
 \usage{
-clPlotQuartets(dataset, tree, cex = 1.1, pch = 2, col = clColours,
-  ...)
+clPlotQuartets(dataset, tree, cex = 1.1, pch = 2,
+  col = CongreveLamsdell2016::clColours, ...)
 
-clPlotAverageQuartets(dataset, cex = 1.1, pch = 2, col = clColours,
-  ...)
+clPlotAverageQuartets(dataset, cex = 1.1, pch = 2,
+  col = CongreveLamsdell2016::clColours, ...)
 
 clPlotTheseAverageQuartets(dataset, cex = 1.1, pch = 2,
   col = "black", ...)
 
-clPlotSplits(dataset, tree, cex = 1.1, pch = 2, col = clColours, ...)
+clPlotSplits(dataset, tree, cex = 1.1, pch = 2,
+  col = CongreveLamsdell2016::clColours, ...)
 
 clPlotTheseAverageSplits(dataset, cex = 1.1, pch = 2, col = "black",
   ...)
@@ -28,11 +29,11 @@ clPlotTheseAverageSplits(dataset, cex = 1.1, pch = 2, col = "black",
 clPlotTheseBestAverageSplits(dataset, cex = 1.1, pch = 2,
   col = "black", ...)
 
-clPlotAverageSplits(dataset, cex = 1.1, pch = 2, col = clColours,
-  ...)
+clPlotAverageSplits(dataset, cex = 1.1, pch = 2,
+  col = CongreveLamsdell2016::clColours, ...)
 
-clPlotBestAverageSplits(dataset, cex = 1.1, pch = 2, col = clColours,
-  ...)
+clPlotBestAverageSplits(dataset, cex = 1.1, pch = 2,
+  col = CongreveLamsdell2016::clColours, ...)
 }
 \arguments{
 \item{dataset}{Dataset to plot, for example \link[=clResults]{clBootGcQuartets}}
@@ -43,6 +44,9 @@ clPlotBestAverageSplits(dataset, cex = 1.1, pch = 2, col = clColours,
 \code{\link[Ternary:AddToTernary]{JoinTheDots}}}
 
 \item{col}{Named vector specifying colour in which to plot each analysis}
+
+\item{col}{Vector specifying colours to use for plotting, named to match
+\code{names(dataset)}.}
 }
 \value{
 Returns \link{invisible}.
