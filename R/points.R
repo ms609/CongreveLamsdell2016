@@ -4,8 +4,8 @@
 #' @param tree Integer specifying which tree to plot
 #' @param cex,pch,\dots Graphical parameters to pass to
 #' \code{\link[Ternary:AddToTernary]{JoinTheDots}}
-#' @param col Named vector specifying colour in which to plot each analysis
-#'
+#' @param col Named vector specifying colours to use to plot each analysis,
+#' named to match `names(dataset)`.
 #' @return Returns [invisible].
 #' @importFrom Ternary JoinTheDots
 #' @author Martin R. Smith
@@ -87,8 +87,6 @@ clPlotTheseBestAverageSplits <- function (dataset, cex=1.1, pch=2, col='black', 
 }
 
 #' @describeIn clPlotQuartets Splits equivalent of clPlotAverageQuartets
-#' @param col Vector specifying colours to use for plotting, named to match
-#' `names(dataset)`.
 #' @export
 clPlotAverageSplits <- function(dataset, cex=1.1, pch=2,
                                 col=CongreveLamsdell2016::clColours, ...) {

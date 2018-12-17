@@ -43,10 +43,8 @@ clPlotBestAverageSplits(dataset, cex = 1.1, pch = 2,
 \item{cex, pch, \dots}{Graphical parameters to pass to
 \code{\link[Ternary:AddToTernary]{JoinTheDots}}}
 
-\item{col}{Named vector specifying colour in which to plot each analysis}
-
-\item{col}{Vector specifying colours to use for plotting, named to match
-\code{names(dataset)}.}
+\item{col}{Named vector specifying colours to use to plot each analysis,
+named to match \code{names(dataset)}.}
 }
 \value{
 Returns \link{invisible}.
