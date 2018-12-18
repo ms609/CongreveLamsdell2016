@@ -23,13 +23,17 @@ This package is a new submission.
 
 The package `Quartet`, currently in preparation for CRAN submission, was used to 
 generate some of these data, and is used to generate package vignettes.  
-The present package is also called in the `Quartet` package vignettes, and included
-in its `Suggests` field.  
+
+The `Quartet` package, however, uses data in this package to generate its own
+vignettes, so this package (`COngreveLamsdell2016`) is included in the
+`Suggests` field of `Quartet`'s DESCRIPTION file.
+
+Neither package contains functions that require functions from the other, so 
+the circularity ought not to be an issue for an end user.
 
 One option is to remove the affected vignette from this package, then create a
 new submission once `Quartet` is available on CRAN, but this seems to create 
-unnecessary administrative overhead for both you and me.  I'd be happy to hear
-other suggestions.
+unnecessary administrative overhead.  I'd be happy to hear other suggestions.
 
 ## Downstream dependencies
 There are currently no downstream dependencies for this package.

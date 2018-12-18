@@ -233,4 +233,5 @@ usethis::use_data(clBootFreqQuartets, clBootFreqPartitions,
                   clBootGcQuartets, clBootGcPartitions,
                   clJackGcQuartets, clJackGcPartitions, overwrite=TRUE)
 
+tools::resaveRdaFiles('data') # Use optimal compression
 ```
