@@ -218,16 +218,16 @@ clJackFreqQuartets   <- lapply(jackFreqTrees, vapply,
 clBootFreqPartitions <- lapply(bootFreqTrees, vapply, 
                                PartitionScores, FUN.VALUE=BlankReturn('freq', 8L))
 clJackFreqPartitions <- lapply(jackFreqTrees, vapply, 
-                               PartitionScores, FUN.VALUE=BlankReturn('freq', 8))
+                               PartitionScores, FUN.VALUE=BlankReturn('freq', 8L))
 
 clBootGcQuartets   <- lapply(bootGcTrees, vapply, 
-                             QuartetScores, FUN.VALUE=BlankReturn('gc', 7))
+                             QuartetScores, FUN.VALUE=BlankReturn('gc', 7L))
 clJackGcQuartets   <- lapply(jackGcTrees, vapply, 
-                             QuartetScores, FUN.VALUE=BlankReturn('gc', 7))
+                             QuartetScores, FUN.VALUE=BlankReturn('gc', 7L))
 clBootGcPartitions <- lapply(bootGcTrees, vapply, 
-                             PartitionScores, FUN.VALUE=BlankReturn('gc', 8))
+                             PartitionScores, FUN.VALUE=BlankReturn('gc', 8L))
 clJackGcPartitions <- lapply(jackGcTrees, vapply, 
-                             PartitionScores, FUN.VALUE=BlankReturn('gc', 8))
+                             PartitionScores, FUN.VALUE=BlankReturn('gc', 8L))
 
 usethis::use_data(clBootFreqQuartets, clBootFreqPartitions,
                   clJackFreqQuartets, clJackFreqPartitions, 
