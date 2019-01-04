@@ -51,9 +51,9 @@ clPlotTheseAverageQuartets <- function (dataset, cex=1.1, pch=2, col='black', ..
 #' trees, numbered ready to appear on a ternary plot.
 #' @export
 SplitsToPoints <- function (itemData) {
-  rbind(r2 = itemData[, 'ref'] - itemData[, 'cf'],
-         d = itemData[, 'cf_not_ref'],
-         s = itemData[, 'cf_and_ref'])
+  rbind(r2 = itemData[, 'r2'],
+         d = itemData[, 'd2'],
+         s = itemData[, 's'])
 }
 
 #' @describeIn clPlotQuartets Splits equivalent of clPlotQuartets
