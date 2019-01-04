@@ -1,5 +1,5 @@
 ## Test environments
-* local Windows 10 install, R 3.5.1
+* local Windows 10 install, R 3.5.2
 * R-hub, with `check_rhub()`
 * check_win_devel()`
 
