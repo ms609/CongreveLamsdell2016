@@ -53,7 +53,8 @@ TIP_ORDER <- as.character(c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 19, 18, 17,
 
 # Define the expected format of tree statistics (needed for vapply)
 # (Using lapply or sapply instead of vapply can be simpler, and is only slightly slower)
-BlankReturn <- function (analysis) matrix(0, ncol=6, nrow=length(SUBOPTIMAL[[analysis]]))
+BlankReturn <- function (analysis, nCol) 
+  matrix(0, ncol=nCol, nrow=length(SUBOPTIMAL[[analysis]]))
 
 #' @param tree Output of TreeSearch::TNTText2Tree(text)
 TranslateTntTips <- function(tree) {
@@ -179,8 +180,8 @@ for (NUM in FILE_NUMS) {
 
 # Load consensus trees from Equal Weights and Markov model analyses
 markovTrees <- lapply(sprintf(TREE_FILE, 'mk', 'mk', ''), ape::read.nexus)
-clMkvQuartets <- vapply(markovTrees, QuartetScores, BlankReturn('mkv'))
-clMkvPartitions <- vapply(markovTrees, PartitionScores, BlankReturn('mkv'))
+clMkvQuartets <- vapply(markovTrees, QuartetScores, BlankReturn('mkv', 7L))
+clMkvPartitions <- vapply(markovTrees, PartitionScores, BlankReturn('mkv', 8L))
 usethis::use_data(clMkvQuartets, clMkvPartitions, overwrite=TRUE)
 ```
 
@@ -194,8 +195,8 @@ bremTrees[['kC']] <- lapply(seq_along(FILE_NUMS), function(i) lapply(1:21, funct
                  bremTrees[['k5']][[i]][[j]], bremTrees[['kX']][[i]][[j]])
   ))
 
-clBremQuartets <- lapply(bremTrees, vapply, QuartetScores, BlankReturn('brem'))
-clBremPartitions <-  lapply(bremTrees, vapply, PartitionScores, BlankReturn('brem'))
+clBremQuartets <- lapply(bremTrees, vapply, QuartetScores, BlankReturn('brem', 7L))
+clBremPartitions <-  lapply(bremTrees, vapply, PartitionScores, BlankReturn('brem', 8L))
 
 usethis::use_data(clBremQuartets, clBremPartitions, overwrite=TRUE)
 ```
@@ -211,22 +212,22 @@ jackGcTrees   <- GenerateTrees('jak', 'gc')
 
 
 clBootFreqQuartets   <- lapply(bootFreqTrees, vapply, 
-                               QuartetScores, FUN.VALUE=BlankReturn('freq'))
+                               QuartetScores, FUN.VALUE=BlankReturn('freq', 7L))
 clJackFreqQuartets   <- lapply(jackFreqTrees, vapply, 
-                               QuartetScores, FUN.VALUE=BlankReturn('freq'))
+                               QuartetScores, FUN.VALUE=BlankReturn('freq', 7L))
 clBootFreqPartitions <- lapply(bootFreqTrees, vapply, 
-                               PartitionScores, FUN.VALUE=BlankReturn('freq'))
+                               PartitionScores, FUN.VALUE=BlankReturn('freq', 8L))
 clJackFreqPartitions <- lapply(jackFreqTrees, vapply, 
-                               PartitionScores, FUN.VALUE=BlankReturn('freq'))
+                               PartitionScores, FUN.VALUE=BlankReturn('freq', 8))
 
 clBootGcQuartets   <- lapply(bootGcTrees, vapply, 
-                             QuartetScores, FUN.VALUE=BlankReturn('gc'))
+                             QuartetScores, FUN.VALUE=BlankReturn('gc', 7))
 clJackGcQuartets   <- lapply(jackGcTrees, vapply, 
-                             QuartetScores, FUN.VALUE=BlankReturn('gc'))
+                             QuartetScores, FUN.VALUE=BlankReturn('gc', 7))
 clBootGcPartitions <- lapply(bootGcTrees, vapply, 
-                             PartitionScores, FUN.VALUE=BlankReturn('gc'))
+                             PartitionScores, FUN.VALUE=BlankReturn('gc', 8))
 clJackGcPartitions <- lapply(jackGcTrees, vapply, 
-                             PartitionScores, FUN.VALUE=BlankReturn('gc'))
+                             PartitionScores, FUN.VALUE=BlankReturn('gc', 8))
 
 usethis::use_data(clBootFreqQuartets, clBootFreqPartitions,
                   clJackFreqQuartets, clJackFreqPartitions, 

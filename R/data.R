@@ -59,11 +59,11 @@
 #' phylogenetic analysis under different methods:
 #'
 #' \itemize{
-#' \item{`markov`: }{Using the Markov K model in MrBayes.}
-#' \item{`equal`: }{Using equal weights in TNT.}
-#' \item{`implied1`, `implied2`, `implied3`, `implied5`, `implied10`: }{Using implied weights in TNT,
+#' \item{`Mkv`: }{Using the Markov K model in MrBayes.}
+#' \item{`eq`: }{Using equal weights in TNT.}
+#' \item{`k1`, `k2`, `k3`, `k5`, `kX`: }{Using implied weights in TNT,
 #'   with the concavity constant (_k_) set to 1, 2, 3, 5, or 10}
-#' \item{`impliedC`: }{By taking the strict *c*onsensus of all trees recovered by implied
+#' \item{`kC`: }{By taking the strict *c*onsensus of all trees recovered by implied
 #' weights parsimony analysis under the _k_ values 2, 3, 5 and 10 (but not 1).}
 #' }
 #'
@@ -91,10 +91,29 @@
 #'     * `Jack`: Jackknife supports (_p_ = 0.36).
 #'     `Boot` and `Jack` results are reported both as the `freq`uency of splits
 #'     among replicates, and using the `gc` (Groups Present / Contradicted)
-#'     measure (Goloboff _et al_. 2003)
-#'   2.  The number of quartets or partitions in total, the same, different, resolved
-#'  in the estimated tree but not the generative tree (= 0), resolved in the
-#'  generative tree but not the estimated tree
+#'     measure (Goloboff _et al_. 2003); frequency columns correspond to
+#'     100%, 97.5%, 95% ... 0% support; gc columns correspond to 100%, 95%, ...
+#'     0% present, 5%, 10%, ... 100% contradicted.
+#'   2.  Counts of the condition of each quartet or partition:
+#'     * `Q`: The total number of quartets defined on 22 taxa.
+#'     * `N`: The total number of partitions present, counting each tree separately.
+#'     * `P1`: The number of partitions in tree 1 (the reconstructed tree).
+#'     * `P2`: The number of partitions in tree 2 (the generative tree).
+#'
+#'     * `s`: The number of quartets or partitions resolved identically in
+#'            each tree.
+#'     * `d`: The number of quartets resolved differently in each tree.
+#'     * `d1`: The number of partitions resolved in tree 1, but contradicted by
+#'             tree 2.
+#'     * `d2`: The number of partitions resolved in tree 2, but contradicted by
+#'             tree 1.
+#'     * `r1`: The number of partitions or quartets resolved in tree 1 that are
+#'             neither present in nor contradicted by tree 2.
+#'     * `r2`: The number of partitions or quartets resolved in tree 2 that are
+#'             neither present in nor contradicted by tree 1.
+#'
+#'     * `u`: The number of quartets that are not resolved in either tree.
+#'
 #'   3.  The number of the matrix, from 1 to 100.
 #'
 #' @seealso [clMatrices], [clReferenceTree].
