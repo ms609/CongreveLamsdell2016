@@ -45,17 +45,6 @@ clPlotTheseAverageQuartets <- function (dataset, cex=1.1, pch=2, col='black', ..
               col=col, cex=cex, pch=pch, ...)
 }
 
-#' Convert splits data to ternary-plottable points
-#' @param itemData A line from `clBootGcPartitions` or equivalent
-#' @return Number of partitions resolved in tree 2 only, different, and same in both
-#' trees, numbered ready to appear on a ternary plot.
-#' @export
-SplitsToPoints <- function (itemData) {
-  rbind(r2 = itemData[, 'r2'],
-         d = itemData[, 'd2'],
-         s = itemData[, 's'])
-}
-
 #' @describeIn clPlotQuartets Splits equivalent of clPlotQuartets
 #' @export
 clPlotSplits <- function(dataset, tree, cex=1.1, pch=2,
@@ -64,7 +53,7 @@ clPlotSplits <- function(dataset, tree, cex=1.1, pch=2,
   entries <- names(dataset)
   if (is.null(entries)) entries <- seq_along(dataset)
   lapply(entries, function (weighting) {
-    JoinTheDots(SplitsToPoints(dataset[[weighting]][, , tree]),
+    JoinTheDots(dataset[[weighting]][, c('r2', 'd2', 's'), tree],
                 col=col[weighting], cex=cex, pch=pch, ...)
   })
 
@@ -75,15 +64,14 @@ clPlotSplits <- function(dataset, tree, cex=1.1, pch=2,
 #' @describeIn clPlotQuartets Splits equivalent of clPlotTheseAverageQuartets
 #' @export
 clPlotTheseAverageSplits <- function (dataset, cex=1.1, pch=2, col='black', ...) {
-  JoinTheDots(SplitsToPoints(apply(dataset[, , ], 2, rowMeans, na.rm=TRUE)),
+  JoinTheDots(apply(dataset[, c('r2', 'd2', 's'), ], 2, rowMeans, na.rm=TRUE),
               col=col, cex=cex, pch=pch, ...)
 }
 
 #' @describeIn clPlotQuartets Splits equivalent of clPlotTheseBestAverageQuartets
 #' @export
 clPlotTheseBestAverageSplits <- function (dataset, cex=1.1, pch=2, col='black', ...) {
-  JoinTheDots(SplitsToPoints(t(as.matrix(rowMeans(dataset[1, , ])))),
-                             col=col, cex=cex, pch=pch, ...)
+  JoinTheDots(t(as.matrix(rowMeans(dataset[1, c('r2', 'd2', 's'), ]))), col=col, cex=cex, pch=pch, ...)
 }
 
 #' @describeIn clPlotQuartets Splits equivalent of clPlotAverageQuartets
