@@ -51,7 +51,7 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
 
 #' @describeIn clInitializeTernaryQuarts Initialize ternary plots for partition plotting
 #' @export
-clInitializeTernarySplits <- function(fontSize = 1, xLim=NULL, yLim=NULL,
+clInitializeTernarySplits <- function(fontSize = 1, xLim = NULL, yLim = NULL,
                                       gridCol = "#EBEBEB",
                                       backgroundCol = "#FBFBFD",
                                       padding=0.1, isometric=TRUE) {
