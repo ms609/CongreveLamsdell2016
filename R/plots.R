@@ -4,6 +4,8 @@
 #' @param backgroundCol Background colour, passed to `TernaryPlot` as `col`.
 #' @param gridLines Number of grid lines, passed to `TernaryPlot` as `grid.lines`.
 #' @param xLim,yLim x and y limits, passed to `TernaryPlot` as `xlim`, `ylim`.
+#' @param isometric Logical specifying whether plot should be isometric, passed
+#' to `TernaryPlot` as `isometric`.
 #' @param fontSize Font size, passed to `TernaryPlot` as `lab.cex`.
 #' @param padding Padding, passed to `TernaryPlot`.
 #' @param zoom Level of magnification (times), used to adjust ticks and scale.
@@ -18,7 +20,8 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
                                        gridCol = "#EBEBEB",
                                        backgroundCol = "#FBFBFD",
                                        xLim = c(0, 1 / zoom) - 0.01,
-                                       yLim = c(0.5-(1 / zoom), 0.5)
+                                       yLim = c(0.5-(1 / zoom), 0.5),
+                                       isometric=TRUE
                                        ) {
   lab <- if (zoom == 1) c("Unresolved quartets",
                           "Different quartets",
@@ -27,7 +30,7 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
   TernaryPlot(atip=NULL, btip=NULL, ctip=NULL,
               alab=lab[1], blab=lab[2], clab=lab[3],
               lab.cex=fontSize, lab.offset=0.13,
-              point='right', isometric = TRUE,
+              point='right', isometric = isometric,
               col=backgroundCol,
               grid.lty='solid', grid.col=gridCol, grid.lines=gridLines,
               grid.minor.lines = 0,
@@ -51,7 +54,7 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
 clInitializeTernarySplits <- function(fontSize = 1, xLim=NULL, yLim=NULL,
                                       gridCol = "#EBEBEB",
                                       backgroundCol = "#FBFBFD",
-                                      padding=0.1) {
+                                      padding=0.1, isometric=TRUE) {
   TernaryPlot(NULL, NULL, NULL, #'Unresolved', 'Different', 'Same',
               alab="Unresolved partitions",
               blab="Different partitions",
@@ -65,7 +68,7 @@ clInitializeTernarySplits <- function(fontSize = 1, xLim=NULL, yLim=NULL,
               grid.minor.lines = 0,
               axis.col="#999999",
               padding=padding, axis.labels = 0:19,
-              xlim=xLim, ylim=yLim)
+              xlim=xLim, ylim=yLim, isometric=isometric)
   HorizontalGrid(grid.lines=19) # grid.col='#888888',
   #SymmetricDifferenceLines(seq(0.1, 0.9, by=0.1), col = '#888888',
   #                         lty = "dotted")

@@ -7,10 +7,12 @@
 \usage{
 clInitializeTernaryQuarts(zoom = 1, padding = 0.1, gridLines = 10,
   fontSize = 1, gridCol = "#EBEBEB", backgroundCol = "#FBFBFD",
-  xLim = c(0, 1/zoom) - 0.01, yLim = c(0.5 - (1/zoom), 0.5))
+  xLim = c(0, 1/zoom) - 0.01, yLim = c(0.5 - (1/zoom), 0.5),
+  isometric = TRUE)
 
 clInitializeTernarySplits(fontSize = 1, xLim = NULL, yLim = NULL,
-  gridCol = "#EBEBEB", backgroundCol = "#FBFBFD", padding = 0.1)
+  gridCol = "#EBEBEB", backgroundCol = "#FBFBFD", padding = 0.1,
+  isometric = TRUE)
 }
 \arguments{
 \item{zoom}{Level of magnification (times), used to adjust ticks and scale.}
@@ -26,6 +28,9 @@ clInitializeTernarySplits(fontSize = 1, xLim = NULL, yLim = NULL,
 \item{backgroundCol}{Background colour, passed to \code{TernaryPlot} as \code{col}.}
 
 \item{xLim, yLim}{x and y limits, passed to \code{TernaryPlot} as \code{xlim}, \code{ylim}.}
+
+\item{isometric}{Logical specifying whether plot should be isometric, passed
+to \code{TernaryPlot} as \code{isometric}.}
 }
 \description{
 Initialize ternary plots for quartet plotting
