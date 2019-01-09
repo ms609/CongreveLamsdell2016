@@ -69,7 +69,8 @@ file.remove(tempFile)
 
 *	Copy `mrbayesblock.nex` to the `iw` directory, and 
   `bayesgen.pl` and `t2nex.pl` to the root MrBayes directory.  
-  Modify the latter files to specify path to MrBayes (default: `C:/Research/MrBayes/`)
+  Modify the latter files to specify the path to MrBayes 
+  (default: `C:/Research/MrBayes/`)
   and path to extracted matrices (default: `C:/Research/MrBayes/iw`)
 ```{r eval=FALSE}
 download.file(paste0(INST_ROOT, "analysis-bayesian/mrbayesblock.nex"), 
