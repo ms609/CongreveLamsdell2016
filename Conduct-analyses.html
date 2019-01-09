@@ -411,7 +411,7 @@ unzip(tempFile, exdir=paste0(BAYES_DIR, '/iw'), junkpaths=TRUE,
 file.remove(tempFile)</code></pre>
 <ul>
 <li>Copy <code>mrbayesblock.nex</code> to the <code>iw</code> directory, and <code>bayesgen.pl</code> and <code>t2nex.pl</code> to the root MrBayes directory.<br />
-Modify the latter files to specify path to MrBayes (default: <code>C:/Research/MrBayes/</code>) and path to extracted matrices (default: <code>C:/Research/MrBayes/iw</code>)</li>
+Modify the latter files to specify the path to MrBayes (default: <code>C:/Research/MrBayes/</code>) and path to extracted matrices (default: <code>C:/Research/MrBayes/iw</code>)</li>
 </ul>
 <pre class="r"><code>download.file(paste0(INST_ROOT, &quot;analysis-bayesian/mrbayesblock.nex&quot;), 
               paste0(BAYES_DIR, '/iw/mrbayesblock.nex'))
