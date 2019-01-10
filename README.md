@@ -10,7 +10,7 @@ It incorporates data from:
 
 - Congreve, C. R., and J. C. Lamsdell. 2016. Data from: Implied weighting and its utility in palaeontological datasets: a study using modelled phylogenetic matrices. _Dryad Digital Repository_, doi:10.5061/dryad.7dq0j.
 
-Some of these data are used in the [`Quartet`](https://github.com/ms609/Quartet) package.
+Some of these data are used in the [`Quartet`](https://ms609.github.io/Quartet) package.
 
 Equivalent data and analyses from data simulated by O'Reilly _et al._ (2016) 
 are available at https://github.com/ms609/OReillyEtAl2016.
