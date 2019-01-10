@@ -33,10 +33,11 @@ clInitializeTernarySplits(fontSize = 1, xLim = NULL, yLim = NULL,
 to \code{TernaryPlot} as \code{isometric}.}
 }
 \description{
-Initialize ternary plots for quartet plotting
+Sets up a blank ternary plot ready for analytical results to be added.
 }
 \section{Functions}{
 \itemize{
-\item \code{clInitializeTernarySplits}: Initialize ternary plots for partition plotting
+\item \code{clInitializeTernarySplits}: Initialize ternary plots for
+partition plotting.
 }}
 

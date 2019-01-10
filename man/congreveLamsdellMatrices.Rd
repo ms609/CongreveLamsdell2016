@@ -3,12 +3,12 @@
 \docType{data}
 \name{clCI}
 \alias{clCI}
-\title{Congreve Lamsdell consistency indices}
+\title{Consistency indices}
 \format{An object of class \code{numeric} of length 100.}
 \usage{
 clCI
 }
 \description{
-Congreve Lamsdell consistency indices
+Consistency indices of Congreve & Lamsdell datasets.
 }
 \keyword{datasets}

@@ -3,12 +3,12 @@
 \docType{data}
 \name{clColours}
 \alias{clColours}
-\title{Default colours for analyses}
+\title{Default colours for analyses.}
 \format{An object of class \code{character} of length 8.}
 \usage{
 clColours
 }
 \description{
-Default colours for analyses
+Default colours for analyses.
 }
 \keyword{datasets}

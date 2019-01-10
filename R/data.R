@@ -29,9 +29,9 @@
 #' Tree topology for matrix simulation
 #'
 #' The tree topology used to generate the matrices in \code{\link{clMatrices}}
-#' Congreve & Lamsdell (2016)
+#' Congreve & Lamsdell (2016).
 #'
-#' @format A single phylogenetic tree saved as an object of class \code{phylo}
+#' @format A single phylogenetic tree saved as an object of class \code{phylo}.
 #'
 #' @references
 #'   - Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
@@ -46,9 +46,7 @@
 #'   data(clReferenceTree)
 #'   plot(clReferenceTree)
 #'
-#' @source Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
-#'   utility in palaeontological datasets: a study using modelled phylogenetic
-#'    matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
+#' @source Congreve & Lamsdell (2016).
 "clReferenceTree"
 
 #' Congreve and Lamsdell tree distances
@@ -59,11 +57,11 @@
 #' phylogenetic analysis under different methods:
 #'
 #' \itemize{
-#' \item{`Mkv`: }{Using the Markov K model in MrBayes.}
-#' \item{`eq`: }{Using equal weights in TNT.}
-#' \item{`k1`, `k2`, `k3`, `k5`, `kX`: }{Using implied weights in TNT,
-#'   with the concavity constant (_k_) set to 1, 2, 3, 5, or 10}
-#' \item{`kC`: }{By taking the strict *c*onsensus of all trees recovered by implied
+#' \item{`Mkv`: }{using the Markov K model in MrBayes;}
+#' \item{`eq`: }{using equal weights in TNT;}
+#' \item{`k1`, `k2`, `k3`, `k5`, `kX`: }{using implied weights in TNT,
+#'   with the concavity constant (_k_) set to 1, 2, 3, 5, or 10;}
+#' \item{`kC`: }{by taking the strict *c*onsensus of all trees recovered by implied
 #' weights parsimony analysis under the _k_ values 2, 3, 5 and 10 (but not 1).}
 #' }
 #'
@@ -79,44 +77,62 @@
 #' as listed above.
 #'
 #' Each list entry is a three-dimensional array, whose dimensions are:
-#'   1.  The suboptimality of the tree.  Different measures of node
-#'   support are employed:
-#'     * `Mkv`: Posterior probabilities, at 2.5% intervals (50%, 52.5%, ...
-#'      97.5%, 100%).
-#'     * `Brem`: Bremer supports: the consensus of all trees that are
-#'     (equal weights) 0, 1, .... 19, 20 steps less optimal than the optimal
-#'  tree (implied weights: the consensus of all trees that are 0.73^(19:0)
-#' less optimal than the optimal tree).
-#'     * `Boot`: Bootstrap supports (symmetric resampling, _p_ = 0.33).
-#'     * `Jack`: Jackknife supports (_p_ = 0.36).
-#'     `Boot` and `Jack` results are reported both as the `freq`uency of splits
-#'     among replicates, and using the `gc` (Groups Present / Contradicted)
-#'     measure (Goloboff _et al_. 2003); frequency columns correspond to
-#'     100%, 97.5%, 95% ... 0% support; gc columns correspond to 100%, 95%, ...
-#'     0% present, 5%, 10%, ... 100% contradicted.
-#'   2.  Counts of the condition of each quartet or partition:
-#'     * `Q`: The total number of quartets defined on 22 taxa.
-#'     * `N`: The total number of partitions present, counting each tree separately.
-#'     * `P1`: The number of partitions in tree 1 (the reconstructed tree).
-#'     * `P2`: The number of partitions in tree 2 (the generative tree).
+#' \enumerate{
 #'
-#'     * `s`: The number of quartets or partitions resolved identically in
-#'            each tree.
-#'     * `d`: The number of quartets resolved differently in each tree.
-#'     * `d1`: The number of partitions resolved in tree 1, but contradicted by
-#'             tree 2.
-#'     * `d2`: The number of partitions resolved in tree 2, but contradicted by
-#'             tree 1.
-#'     * `r1`: The number of partitions or quartets resolved in tree 1 that are
-#'             neither present in nor contradicted by tree 2.
-#'     * `r2`: The number of partitions or quartets resolved in tree 2 that are
-#'             neither present in nor contradicted by tree 1.
+#'  \item  The suboptimality of the tree.  Different measures of node
+#'      support are employed:
 #'
-#'     * `u`: The number of quartets that are not resolved in either tree.
+#'          * `Mkv`: Posterior probabilities, at 2.5\% intervals (50\%, 52.5\%, ...
+#'           97.5\%, 100\%).
 #'
-#'   3.  The number of the matrix, from 1 to 100.
+#'          * `Brem`: Bremer supports: the consensus of all trees that are
+#'            (equal weights) 0, 1, .... 19, 20 steps less optimal than the optimal
+#'            tree (implied weights: the consensus of all trees that are 0.73^(19:0)
+#'            less optimal than the optimal tree).
+#'
+#'          * `Boot`: Bootstrap supports (symmetric resampling, _p_ = 0.33).
+#'
+#'          * `Jack`: Jackknife supports (_p_ = 0.36).
+#'
+#'            `Boot` and `Jack` results are reported both as the `freq`uency of splits
+#'            among replicates, and using the `gc` (Groups Present / Contradicted)
+#'            measure (Goloboff _et al_. 2003); frequency columns correspond to
+#'            100\%, 97.5\%, 95\% ... 0\% support; gc columns correspond to 100\%, 95\%,
+#'            ... 0\% present, 5\%, 10\%, ... 100\% contradicted.
+#'
+#'   \item  Counts of the condition of each quartet or partition:
+#'
+#'       * `Q`: The total number of quartets defined on 22 taxa.
+#'
+#'       * `N`: The total number of partitions present, counting each tree separately.
+#'
+#'       * `P1`: The number of partitions in tree 1 (the reconstructed tree).
+#'
+#'       * `P2`: The number of partitions in tree 2 (the generative tree).
+#'
+#'       * `s`: The number of quartets or partitions resolved identically in
+#'              each tree.
+#'       * `d`: The number of quartets resolved differently in each tree.
+#'
+#'       * `d1`: The number of partitions resolved in tree 1, but contradicted by
+#'               tree 2.
+#'
+#'       * `d2`: The number of partitions resolved in tree 2, but contradicted by
+#'               tree 1.
+#'
+#'       * `r1`: The number of partitions or quartets resolved in tree 1 that are
+#'               neither present in nor contradicted by tree 2.
+#'
+#'       * `r2`: The number of partitions or quartets resolved in tree 2 that are
+#'               neither present in nor contradicted by tree 1.
+#'
+#'       * `u`: The number of quartets that are not resolved in either tree.
+#'
+#'   \item  The number of the matrix, from 1 to 100.
+#' }
 #'
 #' @seealso [clMatrices], [clReferenceTree].
+#'
 #' @references
 #'   Goloboff, P. A., J. S. Farris, M. Källersjö, B. Oxelman, M. J. Ramírez, and
 #'    C. A. Szumik. 2003. Improvements to resampling measures of group support.
@@ -124,6 +140,7 @@
 #' @source Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
 #'   utility in palaeontological datasets: a study using modelled phylogenetic
 #'    matrices. _Palaeontology_ 59(3), 447--465. \doi{10.1111/pala.12236}.
+#'
 #' @name clResults
 NULL
 
@@ -167,7 +184,6 @@ NULL
 #'
 #' Consistency indices of Congreve & Lamsdell datasets.
 #'
-#' C
 #' @rdname congreveLamsdellMatrices
 "clCI"
 

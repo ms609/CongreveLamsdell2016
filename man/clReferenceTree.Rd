@@ -4,18 +4,16 @@
 \name{clReferenceTree}
 \alias{clReferenceTree}
 \title{Tree topology for matrix simulation}
-\format{A single phylogenetic tree saved as an object of class \code{phylo}}
+\format{A single phylogenetic tree saved as an object of class \code{phylo}.}
 \source{
-Congreve, C. R. & Lamsdell, J. C. (2016). Implied weighting and its
-utility in palaeontological datasets: a study using modelled phylogenetic
-matrices. Palaeontology 59(3), 447--465. \doi{10.1111/pala.12236}.
+Congreve & Lamsdell (2016).
 }
 \usage{
 clReferenceTree
 }
 \description{
 The tree topology used to generate the matrices in \code{\link{clMatrices}}
-Congreve & Lamsdell (2016)
+Congreve & Lamsdell (2016).
 }
 \examples{
   library(ape) # Contains tree plotting functions
