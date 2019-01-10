@@ -1,18 +1,15 @@
-year <- "2017"
-
-citHeader(paste0("Data: Congreve & Lamsdell (2016a, b). Analysis: Smith (", year,
-          ")."))
+citHeader(paste0("Data: Congreve & Lamsdell (2016a, b). Analysis: Smith (2019)."))
 
 citEntry(entry = "article",
-        journal = "BioRxiv",
+        journal = "Biology Letters",
         author = personList(as.person("Martin R. Smith")),
-        title = "Quantifying and visualising divergence between pairs of phylogenetic trees",
-        year = year,
+        title = "Bayesian and parsimony approaches reconstruct informative trees from simulated morphological datasets",
+        year = "2019",
 
         textVersion =
-        paste0("Smith (", year, "). ",
-               "Quantifying and visualising divergence between pairs of phylogenetic trees. ",
-               "BioRxiv",
+        paste0("Smith (2019). ",
+               "Bayesian and parsimony approaches reconstruct informative trees from simulated morphological datasets. ",
+               "Biology Letters, in production. Prepreint at BioRxiv",
                ", doi: 10.1101/227942"))
 
 citEntry(entry= "article",
