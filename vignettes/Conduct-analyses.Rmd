@@ -20,7 +20,7 @@ vignette: >
 ---
 
 The files required to reproduce these analyses are included in the R
-package directory on installation, and can be downloaded from [Github](https://github.com/ms609/CongreveLamsdell2016/tree/master/inst).
+package directory on installation, and can be downloaded from [GitHub](https://github.com/ms609/CongreveLamsdell2016/tree/master/inst).
 
 If you have [RStudio](https://www.rstudio.com/), you can open the R Markdown
 file used to generate this document (`vignettes/Conduct-analyses.Rmd`) to run the
@@ -128,7 +128,7 @@ unzip(zipFile, 'tnt.exe', exdir=HOME)
 file.remove(zipFile)
 ```
 
-*	Copy `mptgen.pl` and (optinally) `tnt2nex.pl` into this root directory, updating each file so its variable $dir corresponds to the appropriate path.  
+*	Copy `mptgen.pl` and (optionally) `tnt2nex.pl` into this root directory, updating each file so its variable $dir corresponds to the appropriate path.  
 `tnt2nex.pl` translates TNT output into NEXUS format and may be useful if you 
 wish to perform further analysis of TNT output.  This will be performed
 automatically if you uncomment the final line of `mptgen.pl`.
