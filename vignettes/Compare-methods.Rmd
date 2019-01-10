@@ -1,5 +1,5 @@
 ---
-title: "Precision and accuracy in Congreve & Lamsdell matrices"
+title: "Resolution and accuracy in Congreve & Lamsdell matrices"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
@@ -14,7 +14,7 @@ csl: https://raw.githubusercontent.com/citation-style-language/styles/master/dep
 link-citations: yes
 github-repo: ms609/CongreveLamsdell2016
 vignette: >
-  %\VignetteIndexEntry{Results of data analysis}
+  %\VignetteIndexEntry{Results: Method choice}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 ---
@@ -122,9 +122,8 @@ AddLegend <- function(pos='bottomright') {
 }
 
 Plottem <- function (i) { 
-  x <- Sys.setlocale("LC_ALL", "C.UTF-8") # allows PCH=183
-  
   TernaryQuarts(TREE=i)
+  
   title(main=paste0("\nQuartets"), cex.main=0.8)
   arrows(sqrt(3/4) * 0.5, 0.5, sqrt(3/4) * 0.8, 0.5, length=0.1)
   text  (sqrt(3/4) * 0.65, 0.5, pos=3, 'Decreasing resolution', cex=0.8)
@@ -146,6 +145,7 @@ Plottem <- function (i) {
 
 ## Summary
 ```{R Summary, echo=FALSE, fig.width=9, fig.height=3}
+Sys.setlocale("LC_ALL", "C.UTF-8") # allows PCH=183
 par(mfrow=c(1, ROWS[2]), mar=MARGINS)
 
 clInitializeTernaryQuarts()

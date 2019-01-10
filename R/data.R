@@ -163,9 +163,13 @@ NULL
 #' @rdname clResults
 "clJackGcQuartets"
 
-#' Congreve Lamsdell consistency indices
+#' Consistency indices
+#'
+#' Consistency indices of Congreve & Lamsdell datasets.
+#'
+#' C
 #' @rdname congreveLamsdellMatrices
 "clCI"
 
-#' Default colours for analyses
+#' Default colours for analyses.
 "clColours"

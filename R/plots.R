@@ -1,5 +1,7 @@
 #' Initialize ternary plots for quartet plotting
 #'
+#' Sets up a blank ternary plot ready for analytical results to be added.
+#'
 #' @param gridCol Colour, passed to `TernaryPlot` as `grid.col`.
 #' @param backgroundCol Background colour, passed to `TernaryPlot` as `col`.
 #' @param gridLines Number of grid lines, passed to `TernaryPlot` as `grid.lines`.
@@ -49,7 +51,8 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
                col=Ternary::cbPalette8[8], lwd=2)
 }
 
-#' @describeIn clInitializeTernaryQuarts Initialize ternary plots for partition plotting
+#' @describeIn clInitializeTernaryQuarts Initialize ternary plots for
+#' partition plotting.
 #' @export
 clInitializeTernarySplits <- function(fontSize = 1, xLim = NULL, yLim = NULL,
                                       gridCol = "#EBEBEB",

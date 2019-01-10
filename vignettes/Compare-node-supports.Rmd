@@ -14,7 +14,7 @@ csl: https://raw.githubusercontent.com/citation-style-language/styles/master/dep
 link-citations: yes
 github-repo: ms609/CongreveLamsdell2016
 vignette: >
-  %\VignetteIndexEntry{Results of data analysis}
+  %\VignetteIndexEntry{Results: Node supports}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 ---
@@ -161,7 +161,7 @@ AddLegend <- function(pos='bottomright', an='eq') {
 }
 
 CompareNodeSupports <- function (i) { 
-  x <- Sys.setlocale("LC_ALL", "English_United Kingdom.1252") # allows PCH=183
+  x <- Sys.setlocale("LC_ALL", "C.UTF-8") # allows PCH=183
   
   TernaryQuarts(TREE=i, an='eq')
   title(main=paste0("\nQuartets"), cex.main=0.8)
