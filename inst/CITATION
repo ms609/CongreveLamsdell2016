@@ -13,7 +13,7 @@ citEntry(entry = "article",
                ", doi: 10.1101/227942"))
 
 citEntry(entry= "article",
-  author = personList(as.person("Congreve, Curtis R."), as.person("Lamsdell, James C.")),
+  author = personList(as.person("Curtis R. Congreve"), as.person("James C. Lamsdell")),
   issue = "3",
   journal = "Palaeontology",
   pages = "447-465",
@@ -28,7 +28,7 @@ citEntry(entry= "article",
 )
 
 citEntry(entry= "article",
-  author = personList(as.person("Congreve, Curtis R."), as.person("Lamsdell, James C.")),
+  author = personList(as.person("Curtis R. Congreve"), as.person("James C. Lamsdell")),
   journal = "Dryad Digital Repository",
   pages = "doi:10.5061/dryad.7dq0j",
   title = "Data from: Implied weighting and its utility in palaeontological datasets: a study using modelled phylogenetic matrices",
