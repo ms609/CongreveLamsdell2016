@@ -31,8 +31,6 @@ Suggests:
   rmarkdown,
   TreeSearch (> 0.2.0),
   usethis
-Remotes: 
-  ms609/Quartet
 LazyData: true
 ByteCompile: true
 VignetteBuilder: knitr
