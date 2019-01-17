@@ -27,10 +27,8 @@ r_binary_packages:
 # Some packages not available as binaries:
 r_packages:
  - bookdown
+ - Quartet
  - Ternary
-
-r_github_packages:
- - ms609/Quartet # TODO move to r_packages once on CRAN
 
 before_script:
  - R -e "devtools::document()"
