@@ -1,7 +1,7 @@
 ## Test environments
 * local Windows 10 install, R 3.5.2
 * R-hub, with `check_rhub()`
-* check_win_devel()`
+* Windows, R devel, with `check_win_devel()`
 
 ## R CMD check results
 There were no ERRORs or WARNINGs.
