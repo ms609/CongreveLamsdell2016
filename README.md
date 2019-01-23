@@ -2,7 +2,7 @@
 
 This R package provides data and analyses that accompany the paper
 
-- Smith, M. R. (2019), Bayesian and parsimony approaches reconstruct informative trees from simulated morphological datasets, _Biological Letters_, 20180632, 
+- Smith, M. R. (2019), Bayesian and parsimony approaches reconstruct informative trees from simulated morphological datasets, _Biological Letters_, 15:20180632, 
 doi:[10.1098/rsbl.2018.0632](https://doi.org/10.1098/rsbl.2018.0632).
 
 It incorporates data from:
