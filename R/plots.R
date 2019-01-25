@@ -19,19 +19,19 @@
 #' @export
 clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
                                        fontSize = 1,
-                                       gridCol = "#EBEBEB",
-                                       backgroundCol = "#FBFBFD",
+                                       gridCol = "#dBdBdB",
+                                       backgroundCol = "#FdFdFe",
                                        xLim = c(0, 1 / zoom) - 0.01,
                                        yLim = c(0.5-(1 / zoom), 0.5),
                                        isometric=TRUE
                                        ) {
-  lab <- if (zoom == 1) c("Unresolved quartets",
-                          "Different quartets",
-                          "Identical quartets") else rep('', 3)
+  lab <- if (zoom == 1) c("unresolved quartets",
+                          "different quartets",
+                          "identical quartets") else rep('', 3)
 
   TernaryPlot(atip=NULL, btip=NULL, ctip=NULL,
               alab=lab[1], blab=lab[2], clab=lab[3],
-              lab.cex=fontSize, lab.offset=0.13,
+              lab.cex=fontSize, lab.offset=0.18, # higher value as longer tick labels
               point='right', isometric = isometric,
               col=backgroundCol,
               grid.lty='solid', grid.col=gridCol, grid.lines=gridLines,
@@ -41,8 +41,9 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
               else if (zoom == 3.5) round(seq(0, choose(22, 4), length.out=20), 0)
               else FALSE,
               axis.col="#999999",
+              axis.cex=fontSize,
+              axis.labels.col = "black",
               ticks.length = if (zoom == 1) 0.025 else 0.009,
-              #axis.labels.col = if (zoom == 1) gridCol else "#999999,
               padding=padding, xlim=xLim, ylim=yLim)
   HorizontalGrid(gridLines)
   #SymmetricDifferenceLines(seq(0.1, 0.9, by=0.1), col = '#888888',
@@ -55,24 +56,21 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
 #' partition plotting.
 #' @export
 clInitializeTernarySplits <- function(fontSize = 1, xLim = NULL, yLim = NULL,
-                                      gridCol = "#EBEBEB",
-                                      backgroundCol = "#FBFBFD",
+                                      gridCol = "#dBdBdB",
+                                      backgroundCol = "#FdFdFe",
                                       padding=0.1, isometric=TRUE) {
-  TernaryPlot(NULL, NULL, NULL, #'Unresolved', 'Different', 'Same',
-              alab="Unresolved partitions",
-              blab="Different partitions",
-              clab="Identical partitions",
-              #alab=expression("Unresolved partitions" %->% ''),
-              #blab=expression("" %<-% "Different partitions"),
-              #clab=expression("Identical partitions" %->% ""),
-              lab.cex=fontSize, lab.offset=0.12,
+  TernaryPlot(NULL, NULL, NULL,
+              alab="unresolved partitions",
+              blab="different partitions",
+              clab="identical partitions",
+              lab.cex=fontSize, lab.offset=0.16,
               col=backgroundCol, point='right',
               grid.lines = 19, grid.lty='solid', grid.col=gridCol,
               grid.minor.lines = 0,
               axis.col="#999999",
+              axis.cex=fontSize,
+              axis.labels.col = 'black',
               padding=padding, axis.labels = 0:19,
               xlim=xLim, ylim=yLim, isometric=isometric)
-  HorizontalGrid(grid.lines=19) # grid.col='#888888',
-  #SymmetricDifferenceLines(seq(0.1, 0.9, by=0.1), col = '#888888',
-  #                         lty = "dotted")
+  HorizontalGrid(grid.lines=19)
 }
