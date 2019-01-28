@@ -8,11 +8,10 @@ There were no ERRORs or WARNINGs.
 
 There was 1 NOTE:
 
-
-* checking CRAN incoming feasibility ... NOTE
-  Maintainer: 'Smith Martin R. <martin.smith@durham.ac.uk>'
-  
-  New submission
+>  checking CRAN incoming feasibility ... NOTE
+>  Maintainer: 'Smith Martin R. <martin.smith@durham.ac.uk>'
+>  
+>  New submission
   
 This package is a new submission.
 
