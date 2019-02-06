@@ -1,3 +1,11 @@
+[![Project Status: Inactive.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+[![Build Status](https://travis-ci.org/ms609/CongreveLamsdell2016.svg?branch=master)](https://travis-ci.org/ms609/CongreveLamsdell2016)
+[![CRAN Status Badge](https://www.r-pkg.org/badges/version/CongreveLamsdell2016)](https://cran.r-project.org/package=CongreveLamsdell2016)
+[![CRAN Downloads](https://cranlogs.r-pkg.org/badges/CongreveLamsdell2016)](https://cran.r-project.org/package=CongreveLamsdell2016)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2536874.svg)](https://doi.org/10.5281/zenodo.2536874)
+
+
+
 # CongreveLamsdell2016
 
 This R package provides data and analyses that accompany the paper
