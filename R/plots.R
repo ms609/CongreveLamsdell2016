@@ -19,8 +19,8 @@
 #' @export
 clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
                                        fontSize = 1,
-                                       gridCol = "#dBdBdB",
-                                       backgroundCol = "#FdFdFe",
+                                       gridCol = "#DBDBDB",
+                                       backgroundCol = "#FDFDFE",
                                        xLim = c(0, 1 / zoom) - 0.01,
                                        yLim = c(0.5-(1 / zoom), 0.5),
                                        isometric=TRUE
@@ -56,8 +56,8 @@ clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
 #' partition plotting.
 #' @export
 clInitializeTernarySplits <- function(fontSize = 1, xLim = NULL, yLim = NULL,
-                                      gridCol = "#dBdBdB",
-                                      backgroundCol = "#FdFdFe",
+                                      gridCol = "#DBDBDB",
+                                      backgroundCol = "#FDFDFE",
                                       padding=0.1, isometric=TRUE) {
   TernaryPlot(NULL, NULL, NULL,
               alab="unresolved partitions",

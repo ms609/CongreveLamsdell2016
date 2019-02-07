@@ -6,12 +6,12 @@
 \title{Initialize ternary plots for quartet plotting}
 \usage{
 clInitializeTernaryQuarts(zoom = 1, padding = 0.1, gridLines = 10,
-  fontSize = 1, gridCol = "#EBEBEB", backgroundCol = "#FBFBFD",
+  fontSize = 1, gridCol = "#DBDBDB", backgroundCol = "#FDFDFE",
   xLim = c(0, 1/zoom) - 0.01, yLim = c(0.5 - (1/zoom), 0.5),
   isometric = TRUE)
 
 clInitializeTernarySplits(fontSize = 1, xLim = NULL, yLim = NULL,
-  gridCol = "#EBEBEB", backgroundCol = "#FBFBFD", padding = 0.1,
+  gridCol = "#DBDBDB", backgroundCol = "#FDFDFE", padding = 0.1,
   isometric = TRUE)
 }
 \arguments{
