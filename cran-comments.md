@@ -8,27 +8,16 @@ There were no ERRORs or WARNINGs.
 
 There were 2 NOTEs:
 
->  * checking CRAN incoming feasibility ... NOTE
-> Maintainer: 'Smith Martin R. <martin.smith@durham.ac.uk>'
-> 
-> New submission
-  
-This package is a new submission.
 
-> Found the following (possibly) invalid URLs:
->   URL: https://doi.org/10.1098/rsbl.2018.0632
->     From: README.md
->     Status: 404
->     Message: Not Found
+> * checking CRAN incoming feasibility ... NOTE
+> Maintainer: 'Martin R. Smith <martin.smith@durham.ac.uk>'
 > 
-> Found the following (possibly) invalid DOIs:
->   DOI: 10.1098/rsbl.2018.0632
->     From: DESCRIPTION
->     Status: Not Found
->     Message: 404
+> Days since last update: 2
 
-The doi 10.1098/rsbl.2018.0632 is valid, but has not yet been activated
-at CrossRef; it will go live once the associated paper is published.
+This package has been resubmitted to address a request from Uwe Ligges:
+> Please omit the citation (it is in the Description already) and 
+> make the rest title case.
+
 
 > * checking installed package size ... NOTE
 >   installed size is  5.4Mb
