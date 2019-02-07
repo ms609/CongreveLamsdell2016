@@ -12,7 +12,7 @@ citEntry(entry = "article",
         textVersion =
         paste0("Smith, M. R. (2019). Bayesian and parsimony approaches reconstruct ",
                "informative trees from simulated morphological datasets. ",
-               "Biology Letters, 15(2):20180632. ",
+               "Biology Letters, 15:20180632. ",
                "doi: 10.1098/rsbl.2018.0632"))
 
 citEntry(entry= "article",
