@@ -35,9 +35,9 @@ at CrossRef; it will go live once the associated paper is published.
 >   sub-directories of 1Mb or more:
 >     doc   4.5Mb
 
-The package has been built with --compact-divnettes, which yields file size
-reductions of ~20%.  The images in the vignettes are vector images and I am
-aware of no obvious route to reducing their size further.
+The package has been built with --compact-vignettes, which yields file size
+reductions of ~20%.  The images in the vignettes are vector images (by design)
+and I am aware of no obvious route to reducing their size further.
 
 For what it's worth, this is primarily a data package, so I do not envisage it
 being updated with any frequency, which hopefully offsets the cost of its large
