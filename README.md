@@ -24,10 +24,17 @@ Some of these data are used in the [`Quartet`](https://ms609.github.io/Quartet) 
 Equivalent data and analyses from data simulated by O'Reilly _et al._ (2016) 
 are available at [ms609.github.io/OReillyEtAl2016](https://ms609.github.io/OReillyEtAl2016).
 
-## Installation 
+## Installation
+## 
+Install and load the library from CRAN as follows:
 
-Install the package in `R` with:
-`devtools::install_github('ms609/CongreveLamsdell2016')`.
+```
+install.packages('CongreveLamsdell2016')
+library('CongreveLamsdell2016')
+```
+
+<!--You can install the development version with:
+`devtools::install_github('ms609/CongreveLamsdell2016')`.-->
 
 
 ## Documentation
