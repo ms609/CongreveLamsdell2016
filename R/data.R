@@ -42,9 +42,8 @@
 #'    matrices. Dryad Digital Repository. \doi{10.5061/dryad.7dq0j}.
 #'
 #' @examples
-#'   library(ape) # Contains tree plotting functions
 #'   data(clReferenceTree)
-#'   plot(clReferenceTree)
+#'   if (requireNamespace('ape', quietly = TRUE)) plot(clReferenceTree)
 #'
 #' @source Congreve & Lamsdell (2016).
 "clReferenceTree"

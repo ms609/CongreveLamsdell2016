@@ -16,9 +16,8 @@ The tree topology used to generate the matrices in \code{\link{clMatrices}}
 Congreve & Lamsdell (2016).
 }
 \examples{
-  library(ape) # Contains tree plotting functions
   data(clReferenceTree)
-  plot(clReferenceTree)
+  if (requireNamespace('ape', quietly = TRUE)) plot(clReferenceTree)
 
 }
 \references{
