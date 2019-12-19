@@ -16,7 +16,7 @@
 #' @export
 clPlotQuartets <- function(dataset, tree, cex=1.1, pch=2,
                            col=CongreveLamsdell2016::clColours, ...) {
-  if (class(dataset) == 'array') dataset <- list(dataset)
+  if (inherits(dataset, 'array')) dataset <- list(dataset)
   entries <- names(dataset)
   if (is.null(entries)) entries <- seq_along(dataset)
   lapply(entries, function (weighting) {
@@ -53,7 +53,7 @@ clPlotTheseAverageQuartets <- function (dataset, cex=1.1, pch=2, col='black', ..
 #' @export
 clPlotSplits <- function(dataset, tree, cex=1.1, pch=2,
                          col=CongreveLamsdell2016::clColours, ...) {
-  if (class(dataset) == 'array') dataset <- list(dataset)
+  if (inherits(dataset, 'array')) dataset <- list(dataset)
   entries <- names(dataset)
   if (is.null(entries)) entries <- seq_along(dataset)
   lapply(entries, function (weighting) {
