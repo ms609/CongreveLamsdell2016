@@ -15,7 +15,6 @@
 #' @importFrom Ternary TernaryPlot HorizontalGrid AddToTernary
 #' @importFrom graphics lines
 #'
-## @importFrom Quartet SymmetricDifferencePoints
 #' @export
 clInitializeTernaryQuarts <- function (zoom = 1, padding = 0.1, gridLines = 10,
                                        fontSize = 1,
