@@ -41,7 +41,7 @@ library('CongreveLamsdell2016')
 
 The package includes documentation and visualizations of its results:
 
-* R Package manual: [PDF](https://ms609.github.io/CongreveLamsdell2016/CongreveLamsdell2016_1.0.0.pdf)
+* R Package manual: [PDF](https://ms609.github.io/CongreveLamsdell2016/CongreveLamsdell2016_1.0.2.pdf)
 
 * How to conduct the analyses:
 [HTML](https://ms609.github.io/CongreveLamsdell2016/Conduct-analyses.html) | 
