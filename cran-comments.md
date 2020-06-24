@@ -1,3 +1,6 @@
+The present package has been modified such that it will still compile if 
+Suggested packages are not present, per §1.1.3.1 of 'Writing R Extensions'.
+
 ## Test environments
 * local Windows 10 install, R 3.6.1
 * ubuntu 16.04.6 LTS (on travis-ci), R devel
@@ -7,14 +10,7 @@
 ## R CMD check results
 There were no ERRORs or WARNINGs.
 
-There were 2 NOTEs:
-
-> Package suggested but not available for checking: ‘Quartet’
-
-Quartet has been archived, but was re-submitted to CRAN on Dec 16th 2019.
-
-The present package has been modified such that it will still compile if 
-Suggested packages are not present, per §1.1.3.1 of 'Writing R Extensions'.
+There was 1 NOTE:
 
 > * checking installed package size ... NOTE
 >   installed size is  5.4Mb
