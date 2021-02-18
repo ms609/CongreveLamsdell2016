@@ -34,14 +34,14 @@ PCH_IC <- 17  #triupfilled
 TREE <- 2
 
 COL <- c(
-  'mk' = cbPalette8[4],
-  'pp' = cbPalette8[8],
-  'kX' = cbPalette8[3],
-  'k5' = cbPalette8[3],
-  'k3' = cbPalette8[3],
-  'k2' = cbPalette8[3],
-  'k1' = cbPalette8[3],
-  'eq' = cbPalette8[2]
+  'mk' = Ternary::cbPalette8[4],
+  'pp' = Ternary::cbPalette8[8],
+  'kX' = Ternary::cbPalette8[3],
+  'k5' = Ternary::cbPalette8[3],
+  'k3' = Ternary::cbPalette8[3],
+  'k2' = Ternary::cbPalette8[3],
+  'k1' = Ternary::cbPalette8[3],
+  'eq' = Ternary::cbPalette8[2]
 )
 
 PCH <- c(
