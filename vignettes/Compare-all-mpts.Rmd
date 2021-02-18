@@ -1,0 +1,102 @@
+---
+title: "All-mpt comparison (draft)"
+author: "Martin R. Smith <martin.smith@durham.ac.uk>"
+date: "`r Sys.Date()`"
+output: 
+  bookdown::pdf_document2:
+    toc: yes
+    includes:
+      in_header: ../inst/preamble.tex
+  html_document:
+    default: yes
+bibliography: ../inst/REFERENCES.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/dependent/biology-letters.csl
+link-citations: yes
+github-repo: ms609/CongreveLamsdell2016
+vignette: >
+  %\VignetteIndexEntry{Results: Comparing all MPT}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r init, echo = FALSE}
+library("TreeTools", warn.conflicts = FALSE)
+library("TreeSearch")
+library("TreeDist")
+
+
+PCH_MK <- 1   # circle
+PCH_PP <- 7
+PCH_EQ <- 61  #'='
+PCH_XX <- 18 # 183 #'.' is invalid in some locales
+PCH_IW <- 2   #triup
+PCH_IC <- 17  #triupfilled
+TREE <- 2
+
+COL <- c(
+  'mk' = cbPalette8[4],
+  'pp' = cbPalette8[8],
+  'kX' = cbPalette8[3],
+  'k5' = cbPalette8[3],
+  'k3' = cbPalette8[3],
+  'k2' = cbPalette8[3],
+  'k1' = cbPalette8[3],
+  'eq' = cbPalette8[2]
+)
+
+PCH <- c(
+  pp = 7,
+  eq = 61,
+  k1 = 2,
+  k2 = 2,
+  k3 = 2,
+  k5 = 2,
+  kX = 2,
+  brem = 2,
+  bootG = 0,
+  bootF = 5,
+  jackG = 3,
+  jackF = 4,
+  mk = 1
+  
+)
+
+data("referenceTree")
+FILE_NUMS <- formatC(1:100, width = 3, format = 'd', flag = '0')
+CID <- function (an) {
+  if (dir.exists('data-raw')) {
+    origDir <- setwd('data-raw')
+    on.exit(setwd(origDir))
+  } else if (dir.exists('../data-raw')) {
+    origDir <- setwd('../data-raw')
+    on.exit(setwd(origDir))
+  }
+  vapply(FILE_NUMS, function (num) {
+    anFile <- paste0('trees/', an, '/', an, '.', num, 
+                     if (an == 'mk') '.con',
+                     '.tre')
+    if (file.exists(anFile)) {
+      trees <- if (an == 'pp') {
+        read.tree(anFile)
+      } else if (an == 'mk') {
+        read.nexus(anFile)[[1]]
+      } else {
+        ReadTntTree(anFile, tipLabels = names(congreveLamsdellMatrices[[1]]))
+      }
+      dists <- ClusteringInfoDistance(trees, referenceTree)
+      mean(dists)
+    } else NA
+  }, double(1))
+}
+eqCID <-CID('eq')
+```
+
+```{r analyse, echo = FALSE, fig.asp = 1}
+boxplot(CID('mk'), CID('pp'), CID('kX'), CID('k5'), CID('k3'), CID('k2'), 
+        CID('k1'), eqCID, notch = TRUE, axes = FALSE,
+        col = paste0(COL, '44'), border = paste0(COL, 'ee'))
+axis(1, 1:8, c('Mk', 'PP', 'k10', 'k5', 'k3', 'k2', 'k1', 'EW'))
+axis(2)
+
+```
+

@@ -85,15 +85,16 @@ Resampling <- function (jackFile) {
                                         (nTntNode - 2L):0]))[order(jackNodeOrder)]
   jackScores <- gsub("\\?", 0, jackScores)
   jackScores <- gsub("\\[(\\d+)\\]", "-\\1", jackScores)
-  jackScores <- matrix(as.double(unlist(strsplit(jackScores, '/'))), 2, dimnames=list(c('freq', 'gc'), NULL))
+  jackScores <- matrix(as.double(unlist(strsplit(jackScores, '/'))), 2,
+                       dimnames = list(c('freq', 'gc'), NULL))
   
   attr(jackTree, 'scores') <- jackScores
   # Return:
   jackTree
 }
 
-QuartetScores <- function (X) Quartet::QuartetStatus(X, cf=referenceTree)
-PartitionScores <- function (X) Quartet::SplitStatus(X, cf=referenceTree)
+QuartetScores <- function (X) Quartet::QuartetStatus(X, cf = referenceTree)
+PartitionScores <- function (X) Quartet::SplitStatus(X, cf = referenceTree)
 
 # Not used: remove the least supported node in turn until none remain
 ReduceTreesNodeByNode <- function(tree, nodeSupport) {
