@@ -19,9 +19,13 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
 ---
 
+Mean clustering information distance between each optimal tree under each method
+and the generative tree, for all 100 datasets.
+
 ```{r init, echo = FALSE}
-library("TreeTools", warn.conflicts = FALSE)
+library("TreeTools", warn.conflicts = FALSE, quietly = TRUE)
 library("TreeSearch")
+library("Quartet", exclude = "RobinsonFoulds")
 library("TreeDist")
 
 
@@ -88,15 +92,52 @@ CID <- function (an) {
     } else NA
   }, double(1))
 }
-eqCID <-CID('eq')
+QD <- function (an) {
+  if (dir.exists('data-raw')) {
+    origDir <- setwd('data-raw')
+    on.exit(setwd(origDir))
+  } else if (dir.exists('../data-raw')) {
+    origDir <- setwd('../data-raw')
+    on.exit(setwd(origDir))
+  }
+  vapply(FILE_NUMS, function (num) {
+    anFile <- paste0('trees/', an, '/', an, '.', num, 
+                     if (an == 'mk') '.con',
+                     '.tre')
+    if (file.exists(anFile)) {
+      trees <- if (an == 'pp') {
+        read.tree(anFile)
+      } else if (an == 'mk') {
+        read.nexus(anFile)[[1]]
+      } else {
+        ReadTntTree(anFile, tipLabels = names(congreveLamsdellMatrices[[1]]))
+      }
+      dists <- QuartetDivergence(QuartetStatus(trees, referenceTree),
+                                 similarity = FALSE)
+      mean(dists)
+    } else NA
+  }, double(1))
+}
+eqCID <- CID('eq')
+eqQD <- QD('eq')
 ```
 
-```{r analyse, echo = FALSE, fig.asp = 1}
+```{r analyse-cid, echo = FALSE, fig.asp = 1}
 boxplot(CID('mk'), CID('pp'), CID('kX'), CID('k5'), CID('k3'), CID('k2'), 
         CID('k1'), eqCID, notch = TRUE, axes = FALSE,
-        col = paste0(COL, '44'), border = paste0(COL, 'ee'))
+        col = paste0(COL, '44'), border = paste0(COL, 'ee'),
+        ylab = "Clustering information distance / bits")
 axis(1, 1:8, c('Mk', 'PP', 'k10', 'k5', 'k3', 'k2', 'k1', 'EW'))
 axis(2)
 
+```
+
+```{r analyse-qd, echo = FALSE, fig.asp = 1}
+boxplot(QD('mk'), QD('pp'), QD('kX'), QD('k5'), QD('k3'), QD('k2'), 
+        QD('k1'), eqQD, notch = TRUE, axes = FALSE,
+        yalb = "Normalized quartet divergence",
+        col = paste0(COL, '44'), border = paste0(COL, 'ee'))
+axis(1, 1:8, c('Mk', 'PP', 'k10', 'k5', 'k3', 'k2', 'k1', 'EW'))
+axis(2)
 ```
 
